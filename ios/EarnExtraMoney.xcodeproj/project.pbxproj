@@ -14,6 +14,16 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-EarnExtraMoney-EarnExtraMoneyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-EarnExtraMoney-EarnExtraMoneyTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9F5025DD79E3F6D838D10426 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EF4EEC94A4742F276839C523 /* PrivacyInfo.xcprivacy */; };
+		E2F645C62C19CCED00D08E2D /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645BD2C19CCED00D08E2D /* Inter-ExtraLight.ttf */; };
+		E2F645C72C19CCED00D08E2D /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645BE2C19CCED00D08E2D /* Inter-Bold.ttf */; };
+		E2F645C82C19CCED00D08E2D /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645BF2C19CCED00D08E2D /* Inter-Light.ttf */; };
+		E2F645C92C19CCED00D08E2D /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645C02C19CCED00D08E2D /* Inter-SemiBold.ttf */; };
+		E2F645CA2C19CCED00D08E2D /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645C12C19CCED00D08E2D /* Inter-Regular.ttf */; };
+		E2F645CB2C19CCED00D08E2D /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645C22C19CCED00D08E2D /* Inter-Black.ttf */; };
+		E2F645CC2C19CCED00D08E2D /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645C32C19CCED00D08E2D /* Inter-ExtraBold.ttf */; };
+		E2F645CD2C19CCED00D08E2D /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645C42C19CCED00D08E2D /* Inter-Thin.ttf */; };
+		E2F645CE2C19CCED00D08E2D /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645C52C19CCED00D08E2D /* Inter-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +46,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = EarnExtraMoney/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = EarnExtraMoney/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = EarnExtraMoney/main.m; sourceTree = "<group>"; };
-	    13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = EarnExtraMoney/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = EarnExtraMoney/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-EarnExtraMoney-EarnExtraMoneyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EarnExtraMoney-EarnExtraMoneyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-EarnExtraMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarnExtraMoney.debug.xcconfig"; path = "Target Support Files/Pods-EarnExtraMoney/Pods-EarnExtraMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-EarnExtraMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarnExtraMoney.release.xcconfig"; path = "Target Support Files/Pods-EarnExtraMoney/Pods-EarnExtraMoney.release.xcconfig"; sourceTree = "<group>"; };
@@ -44,7 +54,17 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-EarnExtraMoney.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EarnExtraMoney.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EarnExtraMoney/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-EarnExtraMoney-EarnExtraMoneyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarnExtraMoney-EarnExtraMoneyTests.release.xcconfig"; path = "Target Support Files/Pods-EarnExtraMoney-EarnExtraMoneyTests/Pods-EarnExtraMoney-EarnExtraMoneyTests.release.xcconfig"; sourceTree = "<group>"; };
+		E2F645BD2C19CCED00D08E2D /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-ExtraLight.ttf"; path = "../../Sources/Assets/Fonts/Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E2F645BE2C19CCED00D08E2D /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Bold.ttf"; path = "../../Sources/Assets/Fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
+		E2F645BF2C19CCED00D08E2D /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Light.ttf"; path = "../../Sources/Assets/Fonts/Inter-Light.ttf"; sourceTree = "<group>"; };
+		E2F645C02C19CCED00D08E2D /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-SemiBold.ttf"; path = "../../Sources/Assets/Fonts/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		E2F645C12C19CCED00D08E2D /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Regular.ttf"; path = "../../Sources/Assets/Fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
+		E2F645C22C19CCED00D08E2D /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Black.ttf"; path = "../../Sources/Assets/Fonts/Inter-Black.ttf"; sourceTree = "<group>"; };
+		E2F645C32C19CCED00D08E2D /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-ExtraBold.ttf"; path = "../../Sources/Assets/Fonts/Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E2F645C42C19CCED00D08E2D /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Thin.ttf"; path = "../../Sources/Assets/Fonts/Inter-Thin.ttf"; sourceTree = "<group>"; };
+		E2F645C52C19CCED00D08E2D /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Medium.ttf"; path = "../../Sources/Assets/Fonts/Inter-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EF4EEC94A4742F276839C523 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = EarnExtraMoney/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +114,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				EF4EEC94A4742F276839C523 /* PrivacyInfo.xcprivacy */,
 			);
 			name = EarnExtraMoney;
 			sourceTree = "<group>";
@@ -118,6 +139,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				E27A0F5E2C19CB060019478D /* Fonts */,
 				13B07FAE1A68108700A75B9A /* EarnExtraMoney */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* EarnExtraMoneyTests */,
@@ -148,6 +170,22 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-EarnExtraMoney-EarnExtraMoneyTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E27A0F5E2C19CB060019478D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E2F645C22C19CCED00D08E2D /* Inter-Black.ttf */,
+				E2F645BE2C19CCED00D08E2D /* Inter-Bold.ttf */,
+				E2F645C32C19CCED00D08E2D /* Inter-ExtraBold.ttf */,
+				E2F645BD2C19CCED00D08E2D /* Inter-ExtraLight.ttf */,
+				E2F645BF2C19CCED00D08E2D /* Inter-Light.ttf */,
+				E2F645C52C19CCED00D08E2D /* Inter-Medium.ttf */,
+				E2F645C12C19CCED00D08E2D /* Inter-Regular.ttf */,
+				E2F645C02C19CCED00D08E2D /* Inter-SemiBold.ttf */,
+				E2F645C42C19CCED00D08E2D /* Inter-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +282,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				E2F645CB2C19CCED00D08E2D /* Inter-Black.ttf in Resources */,
+				E2F645C72C19CCED00D08E2D /* Inter-Bold.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9F5025DD79E3F6D838D10426 /* PrivacyInfo.xcprivacy in Resources */,
+				E2F645CD2C19CCED00D08E2D /* Inter-Thin.ttf in Resources */,
+				E2F645CC2C19CCED00D08E2D /* Inter-ExtraBold.ttf in Resources */,
+				E2F645C82C19CCED00D08E2D /* Inter-Light.ttf in Resources */,
+				E2F645CE2C19CCED00D08E2D /* Inter-Medium.ttf in Resources */,
+				E2F645C62C19CCED00D08E2D /* Inter-ExtraLight.ttf in Resources */,
+				E2F645CA2C19CCED00D08E2D /* Inter-Regular.ttf in Resources */,
+				E2F645C92C19CCED00D08E2D /* Inter-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -544,6 +593,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CXX = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
@@ -563,6 +613,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -582,7 +634,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = "$(inherited)  ";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -590,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -617,6 +673,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				CXX = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
@@ -629,6 +686,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -647,7 +706,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = "$(inherited)  ";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
