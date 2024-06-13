@@ -2,9 +2,9 @@ const Colors = {
   Transparent: 'transparent',
   Black: '#00142F',
   White: '#ffffff',
-  Button: '#FFB905',
-  Loader: '#FFB905',
+  Primary: '#6F58F4',
   Placeholder: '#ffffff40',
+  skip: '#E5E5E5',
 };
 
 export default Colors;

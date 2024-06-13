@@ -5,8 +5,8 @@ const RNGradient = ({ children, colors, style, start, end, ...rest }) => {
   return (
     <LinearGradient
       colors={colors}
-      start={start || { x: 0, y: 0 }}
-      end={end || { x: 0, y: 0.75 }}
+      start={start || { x: 0, y: 1 }}
+      end={end || { x: 0, y: 0 }}
       style={style}
       {...rest}>
       {children}

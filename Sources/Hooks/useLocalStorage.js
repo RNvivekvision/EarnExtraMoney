@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { Functions } from '../Utils';
-import { setLocalData } from '../Redux/Actions';
+// import { useDispatch } from 'react-redux';
+// import { setLocalData } from '../Redux/Actions';
 
 const useLocalStorage = () => {
   const [State, setState] = useState({ localdata: null });
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // console.log('useLocalStorage -> ', JSON.stringify(State, null, 2));
 
@@ -18,7 +18,7 @@ const useLocalStorage = () => {
       const appdata = await Functions.getAppData('appdata');
       if (appdata !== null) {
         setState(p => ({ ...p, localdata: appdata }));
-        dispatch(setLocalData(appdata));
+        // dispatch(setLocalData(appdata));
       }
     } catch (e) {
       console.log('Error getDataFromLocalStorage -> ', e);

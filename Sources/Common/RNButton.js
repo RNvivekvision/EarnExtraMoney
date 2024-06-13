@@ -42,7 +42,7 @@ const useStyles = ({ disable }) => {
     Container: {
       ...RNStyles.center,
       ...RNStyles.flexRow,
-      backgroundColor: disable ? Colors.Placeholder : Colors.Button,
+      backgroundColor: disable ? Colors.Placeholder : Colors.Primary,
       paddingVertical: hp(1.7),
       paddingHorizontal: wp(4),
       marginHorizontal: wp(4),
@@ -50,8 +50,8 @@ const useStyles = ({ disable }) => {
       borderRadius: 100,
     },
     buttonText: {
-      fontFamily: FontFamily.Bold,
-      color: Colors.Black,
+      fontFamily: FontFamily.SemiBold,
+      color: Colors.White,
     },
     icon: {
       width: iconSize,

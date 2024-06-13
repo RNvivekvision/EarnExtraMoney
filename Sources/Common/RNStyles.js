@@ -37,7 +37,7 @@ const RNStyles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: Colors.Black,
+    backgroundColor: Colors.White,
   },
   center: {
     alignItems: 'center',
@@ -86,7 +86,7 @@ const RNStyles = StyleSheet.create({
     width: '100%',
     height: '100%',
     zIndex: 1,
-    backgroundColor: Colors.Transparent || Colors.White,
+    backgroundColor: Colors.Transparent,
     alignItems: 'center',
     justifyContent: 'center',
   },

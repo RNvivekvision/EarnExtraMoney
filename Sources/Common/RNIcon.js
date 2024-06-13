@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     ...RNStyles.center,
     width: size,
     height: size,
-    backgroundColor: Colors.Button,
+    backgroundColor: Colors.Primary,
   },
   icon: {
     ...RNStyles.image60,

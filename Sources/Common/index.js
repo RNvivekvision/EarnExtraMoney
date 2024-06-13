@@ -12,5 +12,6 @@ export { default as RNScrollView } from './RNScrollView';
 export { default as RNContainer } from './RNContainer';
 export { default as RNInput } from './RNInput';
 export { default as RNStyles } from './RNStyles';
-// export { default as RNGradient } from './RNGradient';
+export { default as RNProgress } from './RNProgress';
+export { default as RNGradient } from './RNGradient';
 // export { default as RNBottomSheet } from './RNBottomSheet';

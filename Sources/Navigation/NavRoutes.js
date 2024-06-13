@@ -1,4 +1,5 @@
 const NavRoutes = {
+  SplashScreen: 'Splash Screen',
   OnBoarding: 'On Boarding',
 };
 

@@ -8,7 +8,7 @@ const RNLoader = ({ visible, style, color, size }) => {
       <View style={styles.loaderContainer}>
         <ActivityIndicator
           size={size ?? 'large'}
-          color={color || Colors.Loader}
+          color={color || Colors.Primary}
         />
       </View>
     </View>
