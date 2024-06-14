@@ -7,6 +7,7 @@ import Reanimated, {
   interpolate,
   useAnimatedStyle,
 } from 'react-native-reanimated';
+import { useInset } from '../../Hooks';
 
 const width = wp(100);
 const RenderOnboarding = ({ item, index, scroll, isLast }) => {
@@ -23,8 +24,8 @@ const RenderOnboarding = ({ item, index, scroll, isLast }) => {
         <View style={styles.gradientContainer}>
           {item.text1 && (
             <RNGradient
-              colors={[Colors.White, Colors.White + '50']}
-              style={{ height: hp(5) }}
+              colors={[Colors.White, Colors.White + '10']}
+              style={{ height: hp(4) }}
             />
           )}
           <View style={styles.textContainer}>
@@ -38,9 +39,10 @@ const RenderOnboarding = ({ item, index, scroll, isLast }) => {
 };
 
 const useStyles = ({ isLast }) => {
+  const inset = useInset();
   return StyleSheet.create({
     container: {
-      paddingTop: hp(10),
+      paddingTop: inset.top + hp(3),
       width: wp(100),
     },
     title: {
@@ -51,7 +53,7 @@ const useStyles = ({ isLast }) => {
     },
     imageContainer: {
       width: '100%',
-      height: hp(50),
+      height: wp(100),
       overflow: 'hidden',
     },
     image: {
@@ -74,7 +76,7 @@ const useStyles = ({ isLast }) => {
     textContainer: {
       ...RNStyles.center,
       backgroundColor: Colors.White,
-      paddingVertical: hp(2),
+      paddingVertical: hp(3),
       justifyContent: 'flex-end',
     },
     text1: {

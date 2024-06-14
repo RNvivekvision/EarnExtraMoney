@@ -1,2 +1,4 @@
 import Onboarding from './OnBoarding';
-export { Onboarding };
+import Terms from './Terms';
+import Langugage from './Langugage';
+export { Onboarding, Terms, Langugage };

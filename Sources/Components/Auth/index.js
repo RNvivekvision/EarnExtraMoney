@@ -1,2 +1,4 @@
 import RenderOnboarding from './RenderOnboarding';
-export { RenderOnboarding };
+import RenderTerms from './RenderTerms';
+import RenderLanguages from './RenderLanguages';
+export { RenderOnboarding, RenderTerms, RenderLanguages };

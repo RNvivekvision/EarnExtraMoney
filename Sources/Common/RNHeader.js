@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StatusBar, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { RNIcon, RNStyles, RNText, RNScrollView } from './index';
 import { Images } from '../Constants';
-import { useGoogleAds, useInset, useUserClick } from '../Hooks';
+import { useInset } from '../Hooks';
 
 const RNHeader = ({
   title,
@@ -14,36 +14,49 @@ const RNHeader = ({
   children,
   style,
   footer,
-  drawer,
   noScroll,
+  back,
+  onSettigPress,
+  onNextPress,
 }) => {
   const styles = useStyles();
   const navigation = useNavigation();
-  const { showInterstitialAd } = useGoogleAds();
-  const { incrementCount } = useUserClick();
 
   const onBackPress = async () => {
-    incrementCount();
-
-    if (drawer) {
-      navigation.openDrawer();
-      return;
-    }
-
-    await showInterstitialAd();
     navigation.goBack();
   };
 
   return (
     <View style={RNStyles.container}>
+      <StatusBar barStyle={'light-content'} />
       <View style={[styles.Container, containerStyle]}>
-        <RNIcon
-          icon={drawer ? Images.Drawer : Images.Back}
-          iconStyle={RNStyles.image60}
-          onPress={onBackPress}
-          containerStyle={styles.icon}
-        />
+        {back && (
+          <RNIcon
+            icon={Images.back}
+            iconStyle={RNStyles.image60}
+            onPress={onBackPress}
+            containerStyle={styles.icon}
+          />
+        )}
         <RNText style={[styles.title, titleStyle]}>{title}</RNText>
+        {onSettigPress && (
+          <RNIcon
+            icon={Images.setting}
+            iconStyle={RNStyles.image60}
+            onPress={onSettigPress}
+            containerStyle={styles.icon}
+          />
+        )}
+        {onNextPress && (
+          <TouchableOpacity onPress={onNextPress} style={styles.next}>
+            <RNText
+              color={Colors.White}
+              family={FontFamily.SemiBold}
+              size={FontSize.font12}>
+              {'Next'}
+            </RNText>
+          </TouchableOpacity>
+        )}
       </View>
       {noScroll ? (
         children
@@ -57,7 +70,7 @@ const RNHeader = ({
   );
 };
 
-const iconSize = wp(8);
+const iconSize = wp(7);
 const useStyles = () => {
   const inset = useInset();
 
@@ -66,8 +79,8 @@ const useStyles = () => {
       paddingBottom: inset.bottom,
     },
     Container: {
-      ...RNStyles.flexRow,
-      backgroundColor: Colors.Black,
+      ...RNStyles.flexRowBetween,
+      backgroundColor: Colors.Primary,
       paddingHorizontal: wp(4),
       paddingTop: inset.top + hp(2),
       paddingVertical: hp(2),
@@ -76,7 +89,8 @@ const useStyles = () => {
       ...RNStyles.center,
       width: iconSize,
       height: iconSize,
-      borderRadius: 100,
+      borderRadius: wp(2),
+      backgroundColor: Colors.White + '20',
     },
     title: {
       paddingHorizontal: hp(1),
@@ -85,7 +99,12 @@ const useStyles = () => {
       fontFamily: FontFamily.Medium,
       color: Colors.White,
       width: '80%',
-      textAlign: 'center',
+    },
+    next: {
+      borderRadius: wp(2),
+      backgroundColor: Colors.White + '20',
+      paddingHorizontal: wp(3),
+      paddingVertical: hp(1),
     },
   });
 };

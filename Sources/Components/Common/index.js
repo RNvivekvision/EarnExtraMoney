@@ -1,2 +1,3 @@
 import LOPagginationDots from './LOPagginationDots';
-export { LOPagginationDots };
+import LOTerms from './LOTerms';
+export { LOPagginationDots, LOTerms };

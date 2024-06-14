@@ -1,3 +1,3 @@
 export { NativeAd } from './Ads';
-export { RenderOnboarding } from './Auth';
-export { LOPagginationDots } from './Common';
+export { RenderOnboarding, RenderTerms, RenderLanguages } from './Auth';
+export { LOPagginationDots, LOTerms } from './Common';

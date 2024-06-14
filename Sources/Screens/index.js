@@ -1,3 +1,3 @@
 export { default as SplashScreen } from './SplashScreen';
-export { Onboarding } from './Auth';
-export {} from './App';
+export { Onboarding, Terms, Langugage } from './Auth';
+export { Welcome, SmartWays } from './App';

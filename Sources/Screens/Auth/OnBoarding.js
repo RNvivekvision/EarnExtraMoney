@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RNButton, RNContainer, RNStyles } from '../../Common';
 import { DummyData } from '../../Utils';
@@ -13,19 +13,67 @@ import Reanimated, {
   useSharedValue,
 } from 'react-native-reanimated';
 import { Colors, FontSize, hp, wp } from '../../Theme';
+import { NavRoutes } from '../../Navigation';
 
 const Onboarding = ({ navigation }) => {
+  const [State, setState] = useState({ currentSlider: 0 });
+  const flatListRef = useRef();
   const scroll = useSharedValue(0);
   const styles = useStyles();
 
-  const onScroll = useAnimatedScrollHandler(({ contentOffset }) => {
-    scroll.value = contentOffset.x;
-  }, []);
+  const show = {
+    back: State.currentSlider > 0,
+    getStarted: State.currentSlider < DummyData.onboarding.length - 1,
+    skip:
+      State.currentSlider > 0 &&
+      State.currentSlider !== DummyData.onboarding.length - 1,
+  };
+
+  const onScroll = useAnimatedScrollHandler(
+    ({ contentOffset, layoutMeasurement }) => {
+      scroll.value = contentOffset.x;
+      const currentSlider = Math.floor(
+        contentOffset.x / layoutMeasurement.width,
+      );
+    },
+    [],
+  );
+
+  const onViewableItemsChanged = ({ viewableItems }) => {
+    const currentSlider = viewableItems[0].index;
+    setState(p => ({ ...p, currentSlider }));
+  };
+
+  const onNext = () => {
+    flatListRef.current.scrollToIndex({
+      animated: true,
+      index: State.currentSlider + 1,
+    });
+  };
+
+  const onBack = () => {
+    flatListRef.current.scrollToIndex({
+      animated: true,
+      index: State.currentSlider - 1,
+    });
+  };
+
+  const onSkip = () => {
+    flatListRef.current.scrollToIndex({
+      animated: true,
+      index: DummyData.onboarding.length - 1,
+    });
+  };
+
+  const onGetStarted = () => {
+    navigation.navigate(NavRoutes.Terms);
+  };
 
   return (
     <RNContainer style={styles.container}>
       <View style={styles.flatlistContainer}>
         <Reanimated.FlatList
+          ref={flatListRef}
           data={DummyData.onboarding}
           keyExtractor={(v, i) => String(i)}
           horizontal={true}
@@ -33,6 +81,10 @@ const Onboarding = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
           scrollEventThrottle={0.16}
           onScroll={onScroll}
+          onViewableItemsChanged={onViewableItemsChanged}
+          viewabilityConfig={{
+            itemVisiblePercentThreshold: 50,
+          }}
           renderItem={({ item, index }) => (
             <RenderOnboarding
               item={item}
@@ -46,22 +98,36 @@ const Onboarding = ({ navigation }) => {
           scroll={scroll}
           length={DummyData.onboarding.length}
         />
-        <RNButton
-          title={'SKIP'}
-          style={styles.skip}
-          textStyle={styles.skipText}
-        />
-        <View style={styles.buttonsContainer}>
+        {show.skip && (
           <RNButton
-            title={'Back'}
-            style={styles.back}
-            textStyle={styles.backText}
+            title={'SKIP'}
+            style={styles.skip}
+            textStyle={styles.skipText}
+            onPress={onSkip}
           />
-          <RNButton title={'Next'} style={styles.next} />
-        </View>
+        )}
+        {show.getStarted ? (
+          <View style={styles.buttonsContainer}>
+            {show.back && (
+              <RNButton
+                title={'Back'}
+                style={styles.back}
+                textStyle={styles.backText}
+                onPress={onBack}
+              />
+            )}
+            <RNButton title={'Next'} style={styles.next} onPress={onNext} />
+          </View>
+        ) : (
+          <RNButton
+            title={'Get Started'}
+            style={{ marginVertical: hp(2) }}
+            onPress={onGetStarted}
+          />
+        )}
       </View>
 
-      {/* <NativeAd /> */}
+      <NativeAd />
     </RNContainer>
   );
 };
