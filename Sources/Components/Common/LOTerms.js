@@ -1,7 +1,7 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { RNImage, RNStyles, RNText } from '../../Common';
+import { RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
-import { Images } from '../../Constants';
+import { Svg } from '../../Constants';
 
 const LOTerms = ({ containerStyle, onPress, isChecked, title }) => {
   const onBoxPress = () => {
@@ -15,7 +15,13 @@ const LOTerms = ({ containerStyle, onPress, isChecked, title }) => {
       activeOpacity={0.6}>
       <View style={RNStyles.flexRow}>
         <View style={styles.Box}>
-          {isChecked && <RNImage source={Images.true} style={styles.icon} />}
+          {isChecked && (
+            <Svg.True
+              width={size.true}
+              height={size.true}
+              fill={Colors.Black}
+            />
+          )}
         </View>
         <RNText
           size={FontSize.font14}
@@ -28,7 +34,7 @@ const LOTerms = ({ containerStyle, onPress, isChecked, title }) => {
   );
 };
 
-const size = wp(7);
+const size = { box: wp(7), true: wp(4) };
 const styles = StyleSheet.create({
   container: {
     paddingVertical: hp(2),
@@ -40,13 +46,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.Black,
     borderRadius: wp(1),
-    width: size,
-    height: size,
-  },
-  icon: {
-    ...RNStyles.image70,
-    borderRadius: wp(2),
-    tintColor: Colors.Black,
+    width: size.box,
+    height: size.box,
   },
 });
 

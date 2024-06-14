@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { RNText, RNStyles, RNImage, RNGradient } from '../../Common';
-import { Colors, FontFamily, FontSize, height, hp, wp } from '../../Theme';
+import { RNText, RNStyles, RNGradient } from '../../Common';
+import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import Reanimated, {
   Extrapolation,
   interpolate,
@@ -12,15 +12,13 @@ import { useInset } from '../../Hooks';
 const width = wp(100);
 const RenderOnboarding = ({ item, index, scroll, isLast }) => {
   const styles = useStyles({ isLast });
+  const size = wp(isLast ? 80 : 120);
 
   return (
     <Reanimated.View style={[styles.container]}>
       <RNText style={styles.title}>{item.title}</RNText>
       <View style={styles.imageContainer}>
-        <RNImage
-          source={item.image}
-          style={isLast ? styles.lastImage : styles.image}
-        />
+        <item.icon width={size} height={size} style={{ alignSelf: 'center' }} />
         <View style={styles.gradientContainer}>
           {item.text1 && (
             <RNGradient
@@ -55,16 +53,6 @@ const useStyles = ({ isLast }) => {
       width: '100%',
       height: wp(100),
       overflow: 'hidden',
-    },
-    image: {
-      ...RNStyles.image100,
-      height: '130%',
-      alignSelf: 'center',
-    },
-    lastImage: {
-      width: wp(70),
-      height: wp(70),
-      alignSelf: 'center',
     },
     gradientContainer: {
       position: isLast ? 'relative' : 'absolute',

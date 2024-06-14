@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { RNContainer, RNHeader } from '../../Common';
 
 const SmartWays = () => {
+  const onSettigPress = () => {};
+
   return (
-    <View>
-      <Text>SmartWays</Text>
-    </View>
+    <RNContainer>
+      <RNHeader
+        title={'Smart Way to Earn Money'}
+        onSettigPress={onSettigPress}></RNHeader>
+    </RNContainer>
   );
 };
 

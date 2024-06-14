@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { StatusBar, StyleSheet, View } from 'react-native';
 import Splash from 'react-native-splash-screen';
 import { RNProgress, RNStyles, RNText } from '../Common';
 import { Colors, FontFamily, hp, wp } from '../Theme';
-import { Images } from '../Constants';
+import { Svg } from '../Constants';
 import { NavRoutes } from '../Navigation';
 
 const SplashScreen = ({ navigation }) => {
@@ -17,11 +17,8 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <View style={RNStyles.container}>
-      <Image
-        source={Images.SplashScreen}
-        resizeMode={'contain'}
-        style={RNStyles.image100}
-      />
+      <StatusBar barStyle={'dark-content'} />
+      <Svg.SplashScreenSvg width={wp(100)} height={hp(100)} />
 
       <View style={styles.loaderContainer}>
         <RNProgress onFinish={onProgressFinish} />

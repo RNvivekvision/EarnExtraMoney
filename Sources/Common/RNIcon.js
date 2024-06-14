@@ -2,15 +2,14 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Colors, wp } from '../Theme';
 import RNStyles from './RNStyles';
-import RNImage from './RNImage';
 
-const RNIcon = ({ icon, onPress, containerStyle, iconStyle }) => {
+const RNIcon = ({ Svg, svgProps, onPress, containerStyle }) => {
   return (
     <TouchableOpacity
       activeOpacity={0.6}
       onPress={onPress}
       style={[styles.container, containerStyle]}>
-      <RNImage source={icon} style={[styles.icon, iconStyle]} />
+      <Svg {...svgProps} />
     </TouchableOpacity>
   );
 };
@@ -22,9 +21,6 @@ const styles = StyleSheet.create({
     width: size,
     height: size,
     backgroundColor: Colors.Primary,
-  },
-  icon: {
-    ...RNStyles.image60,
   },
 });
 

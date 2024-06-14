@@ -3,7 +3,7 @@ import { StatusBar, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { RNIcon, RNStyles, RNText, RNScrollView } from './index';
-import { Images } from '../Constants';
+import { Svg } from '../Constants';
 import { useInset } from '../Hooks';
 
 const RNHeader = ({
@@ -32,8 +32,12 @@ const RNHeader = ({
       <View style={[styles.Container, containerStyle]}>
         {back && (
           <RNIcon
-            icon={Images.back}
-            iconStyle={RNStyles.image60}
+            Svg={Svg.Back}
+            svgProps={{
+              width: size.icon,
+              height: size.icon,
+              fill: Colors.White,
+            }}
             onPress={onBackPress}
             containerStyle={styles.icon}
           />
@@ -41,8 +45,8 @@ const RNHeader = ({
         <RNText style={[styles.title, titleStyle]}>{title}</RNText>
         {onSettigPress && (
           <RNIcon
-            icon={Images.setting}
-            iconStyle={RNStyles.image60}
+            Svg={Svg.Setting}
+            svgProps={{ width: size.icon, height: size.icon }}
             onPress={onSettigPress}
             containerStyle={styles.icon}
           />
@@ -70,7 +74,6 @@ const RNHeader = ({
   );
 };
 
-const iconSize = wp(7);
 const useStyles = () => {
   const inset = useInset();
 
@@ -87,8 +90,8 @@ const useStyles = () => {
     },
     icon: {
       ...RNStyles.center,
-      width: iconSize,
-      height: iconSize,
+      width: size.iconContainer,
+      height: size.iconContainer,
       borderRadius: wp(2),
       backgroundColor: Colors.White + '20',
     },
@@ -108,5 +111,7 @@ const useStyles = () => {
     },
   });
 };
+
+const size = { icon: wp(5), iconContainer: wp(7) };
 
 export default RNHeader;

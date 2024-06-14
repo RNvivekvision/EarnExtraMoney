@@ -7,13 +7,14 @@ import {
   View,
 } from 'react-native';
 import { Colors, FontFamily, FontSize, hp, isAndroid, wp } from '../../Theme';
-import { RNImage, RNStyles, RNText } from '../../Common';
-import { Images } from '../../Constants';
+import { RNStyles, RNText } from '../../Common';
+import { Svg } from '../../Constants';
 if (isAndroid) {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
     UIManager.setLayoutAnimationEnabledExperimental(true);
   }
 }
+const size = { icon: wp(8), back: wp(4) };
 const RenderTerms = ({ item, index }) => {
   const [State, setState] = useState({ showText: index === 0 });
   const onPress = () => {
@@ -25,10 +26,17 @@ const RenderTerms = ({ item, index }) => {
     <View style={styles.container}>
       <TouchableOpacity onPress={onPress} style={styles.titleContainer}>
         <View style={RNStyles.flexRow}>
-          <RNImage source={item.icon} style={styles.icon} />
+          <item.icon width={size.icon} height={size.icon} />
           <RNText style={styles.title}>{item.title}</RNText>
         </View>
-        <RNImage source={Images.back} style={styles.back} />
+        <Svg.Back
+          width={size.back}
+          height={size.back}
+          fill={Colors.Black}
+          style={{
+            transform: [{ rotate: State.showText ? '90deg' : '-90deg' }],
+          }}
+        />
       </TouchableOpacity>
 
       {State.showText && (
@@ -55,10 +63,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.Placeholder,
     borderRadius: wp(2),
-  },
-  icon: {
-    width: wp(7),
-    height: wp(7),
   },
   title: {
     paddingLeft: wp(2),

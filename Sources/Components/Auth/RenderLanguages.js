@@ -1,9 +1,10 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import Reanimated, { SlideInLeft } from 'react-native-reanimated';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
-import { RNImage, RNStyles, RNText } from '../../Common';
-import { Images } from '../../Constants';
+import { RNStyles, RNText } from '../../Common';
+import { Svg } from '../../Constants';
 
+const size = wp(4);
 const RenderLanguages = ({ item, index, isChecked, onPress }) => {
   return (
     <Reanimated.View
@@ -18,7 +19,9 @@ const RenderLanguages = ({ item, index, isChecked, onPress }) => {
           <RNText style={styles.title}>{item.title}</RNText>
         </View>
         <View style={styles.checkBoxContainer}>
-          {isChecked && <RNImage source={Images.true} style={styles.true} />}
+          {isChecked && (
+            <Svg.True width={size} height={size} fill={Colors.Primary} />
+          )}
         </View>
       </TouchableOpacity>
     </Reanimated.View>
@@ -51,10 +54,6 @@ const styles = StyleSheet.create({
     height: wp(7),
     borderRadius: wp(1),
     backgroundColor: Colors.Primary + '20',
-  },
-  true: {
-    ...RNStyles.image60,
-    tintColor: Colors.Primary,
   },
 });
 
