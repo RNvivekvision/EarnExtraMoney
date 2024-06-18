@@ -1,5 +1,5 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import Reanimated, { SlideInLeft } from 'react-native-reanimated';
+import Reanimated, { FadeInDown } from 'react-native-reanimated';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { RNStyles, RNText } from '../../Common';
 import { Svg } from '../../Constants';
@@ -8,7 +8,7 @@ const size = wp(4);
 const RenderLanguages = ({ item, index, isChecked, onPress }) => {
   return (
     <Reanimated.View
-      entering={SlideInLeft.delay(index * 100)}
+      entering={FadeInDown.delay(index * 100)}
       style={styles.container}>
       <TouchableOpacity
         activeOpacity={0.6}

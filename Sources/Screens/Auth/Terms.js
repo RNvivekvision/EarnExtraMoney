@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native';
-import { RNButton, RNContainer, RNHeader } from '../../Common';
-import { DummyData } from '../../Utils';
-import { LOTerms, NativeAd, RenderTerms } from '../../Components';
 import { useState } from 'react';
 import { NavRoutes } from '../../Navigation';
+import { LOTerms, NativeAd, RenderTerms } from '../../Components';
+import { RNButton, RNContainer, RNHeader } from '../../Common';
+import { DummyData } from '../../Utils';
+import { Strings } from '../../Constants';
 
 const Terms = ({ navigation }) => {
   const [State, setState] = useState({ isChecked: false });
@@ -14,17 +14,17 @@ const Terms = ({ navigation }) => {
 
   return (
     <RNContainer>
-      <RNHeader title={'Terms & Conditions'}>
+      <RNHeader title={Strings.termsAndCondition}>
         {DummyData.termsOfUse.map((v, i) => (
           <RenderTerms key={i} item={v} index={i} />
         ))}
         <LOTerms
           isChecked={State.isChecked}
           onPress={() => setState(p => ({ ...p, isChecked: !p.isChecked }))}
-          title={'Please check for accept terms of condition'}
+          title={Strings.Pleasecheckforaccept}
         />
         <RNButton
-          title={'Accept'}
+          title={Strings.Accept}
           disable={!State.isChecked}
           onPress={onAcceptPress}
         />
@@ -35,5 +35,3 @@ const Terms = ({ navigation }) => {
 };
 
 export default Terms;
-
-const styles = StyleSheet.create({});

@@ -45,7 +45,7 @@ const RNHeader = ({
         <RNText style={[styles.title, titleStyle]}>{title}</RNText>
         {onSettigPress && (
           <RNIcon
-            Svg={Svg.Setting}
+            Svg={Svg.SettingIcon}
             svgProps={{ width: size.icon, height: size.icon }}
             onPress={onSettigPress}
             containerStyle={styles.icon}
@@ -101,7 +101,7 @@ const useStyles = () => {
       fontSize: FontSize.font18,
       fontFamily: FontFamily.Medium,
       color: Colors.White,
-      width: '80%',
+      flex: 1,
     },
     next: {
       borderRadius: wp(2),
@@ -112,6 +112,6 @@ const useStyles = () => {
   });
 };
 
-const size = { icon: wp(5), iconContainer: wp(7) };
+const size = { icon: wp(4), iconContainer: wp(7) };
 
 export default RNHeader;

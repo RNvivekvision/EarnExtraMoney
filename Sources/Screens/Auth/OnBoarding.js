@@ -14,6 +14,7 @@ import Reanimated, {
 } from 'react-native-reanimated';
 import { Colors, FontSize, hp, wp } from '../../Theme';
 import { NavRoutes } from '../../Navigation';
+import { Strings } from '../../Constants';
 
 const Onboarding = ({ navigation }) => {
   const [State, setState] = useState({ currentSlider: 0 });
@@ -100,7 +101,7 @@ const Onboarding = ({ navigation }) => {
         />
         {show.skip && (
           <RNButton
-            title={'SKIP'}
+            title={Strings.SKIP}
             style={styles.skip}
             textStyle={styles.skipText}
             onPress={onSkip}
@@ -110,17 +111,21 @@ const Onboarding = ({ navigation }) => {
           <View style={styles.buttonsContainer}>
             {show.back && (
               <RNButton
-                title={'Back'}
+                title={Strings.Back}
                 style={styles.back}
                 textStyle={styles.backText}
                 onPress={onBack}
               />
             )}
-            <RNButton title={'Next'} style={styles.next} onPress={onNext} />
+            <RNButton
+              title={Strings.Next}
+              style={styles.next}
+              onPress={onNext}
+            />
           </View>
         ) : (
           <RNButton
-            title={'Get Started'}
+            title={Strings.GetStarted}
             style={{ marginVertical: hp(2) }}
             onPress={onGetStarted}
           />

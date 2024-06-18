@@ -3,7 +3,7 @@ import { StatusBar, StyleSheet, View } from 'react-native';
 import Splash from 'react-native-splash-screen';
 import { RNProgress, RNStyles, RNText } from '../Common';
 import { Colors, FontFamily, hp, wp } from '../Theme';
-import { Svg } from '../Constants';
+import { Strings, Svg } from '../Constants';
 import { NavRoutes } from '../Navigation';
 
 const SplashScreen = ({ navigation }) => {
@@ -28,7 +28,7 @@ const SplashScreen = ({ navigation }) => {
           pRight={wp(8)}
           pTop={wp(2)}
           family={FontFamily.SemiBold}>
-          {'Loading...'}
+          {Strings.Loading}
         </RNText>
       </View>
     </View>

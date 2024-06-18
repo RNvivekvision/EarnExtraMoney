@@ -4,10 +4,11 @@ import { FontFamily, FontSize, hp } from '../../Theme';
 import { NativeAd, RenderLanguages } from '../../Components';
 import { DummyData } from '../../Utils';
 import { NavRoutes } from '../../Navigation';
+import { Strings } from '../../Constants';
 
 const Langugage = ({ navigation }) => {
   const [State, setState] = useState({
-    selectedLanguage: DummyData.Languages[0],
+    selectedLanguage: DummyData.languages[0],
   });
 
   const onChangeLanguage = langugage => {
@@ -23,19 +24,17 @@ const Langugage = ({ navigation }) => {
 
   return (
     <RNContainer>
-      <RNHeader title={'Select your Languages'} onNextPress={onNextPress}>
+      <RNHeader title={Strings.SelectyourLanguages} onNextPress={onNextPress}>
         <RNText
           spacing={1}
           size={FontSize.font13}
           family={FontFamily.Medium}
           align={'center'}
           pVertical={hp(2)}>
-          {
-            'To make sure you receive the best personalized offers we need to know your language.'
-          }
+          {Strings.SelectyourLanguagesDesc}
         </RNText>
 
-        {DummyData.Languages.map((v, i) => (
+        {DummyData.languages.map((v, i) => (
           <RenderLanguages
             key={i}
             item={v}

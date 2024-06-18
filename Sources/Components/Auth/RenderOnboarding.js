@@ -64,7 +64,7 @@ const useStyles = ({ isLast }) => {
     textContainer: {
       ...RNStyles.center,
       backgroundColor: Colors.White,
-      paddingVertical: hp(3),
+      paddingVertical: hp(2),
       justifyContent: 'flex-end',
     },
     text1: {

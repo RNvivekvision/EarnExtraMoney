@@ -1,19 +1,19 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNContainer, RNHeader, RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
-import { NativeAd } from '../../Components';
-import { Svg } from '../../Constants';
+import { Strings, Svg } from '../../Constants';
 import { NavRoutes } from '../../Navigation';
+import { NativeAd } from '../../Components';
 
 const Welcome = ({ navigation }) => {
   return (
     <RNContainer>
-      <RNHeader title={'Welcome to Easy Earnings!'}>
+      <RNHeader title={Strings.WelcometoEasyEarnings}>
         <RNText style={styles.title1}>
-          {'Unlock Your Financial Freedom Today'}
+          {Strings.WelcometoEasyEarnings_title0}
         </RNText>
         <RNText style={styles.title2}>
-          {'Discover simple ways to earn extra income right from your phone.'}
+          {Strings.WelcometoEasyEarnings_title1}
         </RNText>
 
         <NativeAd big />
@@ -24,15 +24,15 @@ const Welcome = ({ navigation }) => {
           style={styles.StartContainer}>
           <Svg.Start width={size.start * 2} height={size.start} />
           <View>
-            <RNText
-              family={FontFamily.Medium}
-              size={FontSize.font20}>{`Let' Start`}</RNText>
+            <RNText family={FontFamily.Medium} size={FontSize.font20}>
+              {Strings.LetsStart}
+            </RNText>
             <RNText
               color={Colors.welcomeDescription}
               pTop={hp(0.5)}
               family={FontFamily.Medium}
               size={FontSize.font10}>
-              {'Begin your journey with us today.'}
+              {Strings.LetsStartDesc}
             </RNText>
           </View>
         </TouchableOpacity>
@@ -41,29 +41,25 @@ const Welcome = ({ navigation }) => {
           <TouchableOpacity activeOpacity={0.6} style={styles.rateUsContainer}>
             <Svg.RateUs width={size.rateUs} height={size.rateUs} />
             <RNText style={styles.buttonTitle} pTop={hp(1)}>
-              {'Rate Us'}
+              {Strings.RateUs}
             </RNText>
-            <RNText style={styles.buttonText}>{'Help us improve.'}</RNText>
+            <RNText style={styles.buttonText}>{Strings.Helpusimprove}</RNText>
           </TouchableOpacity>
 
           <View style={styles.shareButtonContainer}>
             <TouchableOpacity activeOpacity={0.6} style={styles.shareContainer}>
               <Svg.Share width={size.share} height={size.share} />
               <View style={{ paddingLeft: wp(4) }}>
-                <RNText style={styles.buttonTitle}>{'Share'}</RNText>
-                <RNText style={styles.buttonText}>
-                  {'Loved it? Tell your friends!'}
-                </RNText>
+                <RNText style={styles.buttonTitle}>{Strings.Share}</RNText>
+                <RNText style={styles.buttonText}>{Strings.ShareDesc}</RNText>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity activeOpacity={0.6} style={styles.shareContainer}>
               <Svg.Privacy width={size.share} height={size.share} />
               <View style={{ paddingLeft: wp(4) }}>
-                <RNText style={styles.buttonTitle}>{'Privacy'}</RNText>
-                <RNText style={styles.buttonText}>
-                  {'Your privacy is our priority'}
-                </RNText>
+                <RNText style={styles.buttonTitle}>{Strings.Privacy}</RNText>
+                <RNText style={styles.buttonText}>{Strings.PrivacyDesc}</RNText>
               </View>
             </TouchableOpacity>
           </View>
@@ -104,18 +100,20 @@ const styles = StyleSheet.create({
     marginHorizontal: wp(4),
     marginVertical: hp(2),
     height: wp(40),
+    // backgroundColor: '#f00',
   },
   rateUsContainer: {
     ...RNStyles.shadow,
     backgroundColor: Colors.White,
     width: '44%',
+    height: '95%',
     borderRadius: wp(3),
     paddingHorizontal: wp(4),
     paddingVertical: hp(2),
   },
   shareButtonContainer: {
     flex: 1,
-    height: '100%',
+    // height: '100%',
     justifyContent: 'space-between',
     marginLeft: wp(4),
   },
