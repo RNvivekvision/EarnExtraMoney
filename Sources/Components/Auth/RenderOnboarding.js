@@ -14,6 +14,37 @@ const RenderOnboarding = ({ item, index, scroll, isLast }) => {
   const styles = useStyles({ isLast });
   const size = wp(isLast ? 80 : 120);
 
+  const animatedStyles = useAnimatedStyle(() => {
+    const inputRange = [
+      (index - 1) * width,
+      index * width,
+      (index + 1) * width,
+    ];
+    const scale = interpolate(
+      scroll.value,
+      inputRange,
+      [0, 1, 0],
+      Extrapolation.CLAMP,
+    );
+    const opacity = interpolate(
+      scroll.value,
+      inputRange,
+      [0, 1, 0],
+      Extrapolation.CLAMP,
+    );
+    const translateX = interpolate(
+      scroll.value,
+      inputRange,
+      [-width, 0, width],
+      Extrapolation.CLAMP,
+    );
+
+    return {
+      opacity: opacity,
+      transform: [{ scale: scale }, { translateX }],
+    };
+  }, []);
+
   return (
     <Reanimated.View style={[styles.container]}>
       <RNText style={styles.title}>{item.title}</RNText>
@@ -70,11 +101,12 @@ const useStyles = ({ isLast }) => {
     text1: {
       textAlign: 'center',
       paddingVertical: hp(1),
+      width: '90%',
     },
     text2: {
       textAlign: 'center',
-      fontSize: FontSize.font12,
       width: '75%',
+      fontSize: FontSize.font12,
     },
   });
 };

@@ -7,7 +7,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { Colors, wp } from '../Theme';
 
-const ProgressBar = ({ onFinish, second = 3 }) => {
+const RNProgress = ({ onFinish, dep, second = 3 }) => {
   const progress = useSharedValue(0);
   const duration = second * 1000;
 
@@ -17,9 +17,13 @@ const ProgressBar = ({ onFinish, second = 3 }) => {
     });
 
     setTimeout(() => {
-      onFinish?.();
+      finish();
     }, duration);
-  }, []);
+  }, dep);
+
+  const finish = () => {
+    onFinish?.();
+  };
 
   const animatedStyle = useAnimatedStyle(
     () => ({
@@ -58,4 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProgressBar;
+export default RNProgress;

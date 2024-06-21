@@ -1,17 +1,28 @@
 import { RenderSettings } from '../../Components';
 import { RNContainer, RNHeader } from '../../Common';
 import { Strings, Svg } from '../../Constants';
-import { DummyData } from '../../Utils';
 import { wp } from '../../Theme';
+import { useDummyData } from '../../Hooks';
+import { Functions } from '../../Utils';
 
 const size = {
   setting: wp(75),
 };
 
 const Setting = ({ navigation }) => {
-  const onItemPress = item => {
+  const { setting } = useDummyData();
+
+  const onItemPress = async item => {
     if (item?.navigate) {
       return navigation.navigate(item.navigate);
+    }
+    if (item?.rateUs) {
+      Functions.RateUs({
+        onError: () => console.error('Error Rate Us'),
+      });
+    }
+    if (item?.shareApp) {
+      await Functions.ShareApp();
     }
   };
 
@@ -24,7 +35,7 @@ const Setting = ({ navigation }) => {
           style={{ alignSelf: 'center' }}
         />
 
-        {DummyData.setting.map((v, i) => (
+        {setting.map((v, i) => (
           <RenderSettings key={i} item={v} index={i} onPress={onItemPress} />
         ))}
       </RNHeader>

@@ -1,10 +1,12 @@
 import { RNContainer, RNHeader } from '../../Common';
-import { DummyData } from '../../Utils';
 import { NativeAd, RenderSmartWays } from '../../Components';
 import { Strings } from '../../Constants';
 import { NavRoutes } from '../../Navigation';
+import { useDummyData } from '../../Hooks';
 
 const SmartWays = ({ navigation }) => {
+  const { smartWays } = useDummyData();
+
   const onSettigPress = () => {
     navigation.navigate(NavRoutes.Setting);
   };
@@ -20,7 +22,7 @@ const SmartWays = ({ navigation }) => {
       <RNHeader
         title={Strings.SmartWaytoEarnMoney}
         onSettigPress={onSettigPress}>
-        {DummyData.smartWays.map((v, i) => (
+        {smartWays.map((v, i) => (
           <RenderSmartWays key={i} item={v} index={i} onPress={onItemPress} />
         ))}
         <NativeAd two />

@@ -4,6 +4,7 @@ import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { Strings, Svg } from '../../Constants';
 import { NavRoutes } from '../../Navigation';
 import { NativeAd } from '../../Components';
+import { Functions } from '../../Utils';
 
 const Welcome = ({ navigation }) => {
   return (
@@ -38,7 +39,10 @@ const Welcome = ({ navigation }) => {
         </TouchableOpacity>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity activeOpacity={0.6} style={styles.rateUsContainer}>
+          <TouchableOpacity
+            activeOpacity={0.6}
+            onPress={Functions.RateUs}
+            style={styles.rateUsContainer}>
             <Svg.RateUs width={size.rateUs} height={size.rateUs} />
             <RNText style={styles.buttonTitle} pTop={hp(1)}>
               {Strings.RateUs}
@@ -47,7 +51,10 @@ const Welcome = ({ navigation }) => {
           </TouchableOpacity>
 
           <View style={styles.shareButtonContainer}>
-            <TouchableOpacity activeOpacity={0.6} style={styles.shareContainer}>
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={Functions.ShareApp}
+              style={styles.shareContainer}>
               <Svg.Share width={size.share} height={size.share} />
               <View style={{ paddingLeft: wp(4) }}>
                 <RNText style={styles.buttonTitle}>{Strings.Share}</RNText>
@@ -75,6 +82,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.font18,
     textAlign: 'center',
     paddingVertical: hp(2),
+    paddingHorizontal: wp(4),
   },
   title2: {
     textAlign: 'center',
@@ -130,11 +138,13 @@ const styles = StyleSheet.create({
     fontSize: FontSize.font18,
     latterSpacing: 0.5,
     fontFamily: FontFamily.Medium,
+    width: wp(30),
   },
   buttonText: {
     fontSize: FontSize.font8,
     fontFamily: FontFamily.Medium,
     color: Colors.welcomeDescription,
+    width: wp(30),
   },
 });
 

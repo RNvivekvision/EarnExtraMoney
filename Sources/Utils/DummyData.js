@@ -57,58 +57,72 @@ const DummyData = {
     {
       Icon: Svg.English,
       title: Strings.English,
+      value: 'en',
     },
     {
       Icon: Svg.Germany,
       title: Strings.German,
+      value: 'de',
     },
     {
       Icon: Svg.Hindi,
       title: Strings.Hindi,
+      value: 'hi',
     },
     {
       Icon: Svg.French,
       title: Strings.French,
+      value: 'fr',
     },
     {
       Icon: Svg.Portuguese,
       title: Strings.Portuguese,
+      value: 'pt',
     },
     {
       Icon: Svg.Indonesian,
       title: Strings.Indonesian,
+      value: 'id',
     },
     {
       Icon: Svg.Italian,
       title: Strings.Italian,
+      value: 'it',
     },
     {
       Icon: Svg.Spanish,
       title: Strings.Spanish,
+      value: 'es',
     },
     {
       Icon: Svg.Russian,
       title: Strings.Russian,
+      value: 'ru',
     },
     {
       Icon: Svg.Chinese,
       title: Strings.Chinese,
+      value: 'zh',
     },
     {
       Icon: Svg.Japanese,
       title: Strings.Japanese,
+      value: 'ja',
     },
     {
       Icon: Svg.Turkish,
       title: Strings.Turkish,
+      value: 'tr',
     },
     {
       Icon: Svg.Korean,
       title: Strings.Korean,
+      value: 'ko',
     },
     {
       Icon: Svg.Arabic,
       title: Strings.Arabic,
+      value: 'ar',
     },
   ],
   smartWays: [

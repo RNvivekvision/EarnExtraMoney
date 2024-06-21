@@ -5,14 +5,21 @@ import { RNProgress, RNStyles, RNText } from '../Common';
 import { Colors, FontFamily, hp, wp } from '../Theme';
 import { Strings, Svg } from '../Constants';
 import { NavRoutes } from '../Navigation';
+import { useLocalStorage } from '../Hooks';
 
 const SplashScreen = ({ navigation }) => {
+  const { localdata } = useLocalStorage();
+
   useEffect(() => {
     Splash.hide();
   }, []);
 
   const onProgressFinish = () => {
-    navigation.replace(NavRoutes.OnBoarding);
+    const screenName = localdata?.hasUser
+      ? NavRoutes.Welcome
+      : NavRoutes.OnBoarding;
+
+    navigation.replace(screenName);
   };
 
   return (
@@ -21,7 +28,7 @@ const SplashScreen = ({ navigation }) => {
       <Svg.SplashScreenSvg width={wp(100)} height={hp(100)} />
 
       <View style={styles.loaderContainer}>
-        <RNProgress onFinish={onProgressFinish} />
+        <RNProgress onFinish={onProgressFinish} dep={localdata?.hasUser} />
         <RNText
           align={'right'}
           color={Colors.Primary}

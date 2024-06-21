@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { NavRoutes } from '../../Navigation';
 import { LOTerms, NativeAd, RenderTerms } from '../../Components';
 import { RNButton, RNContainer, RNHeader } from '../../Common';
-import { DummyData } from '../../Utils';
 import { Strings } from '../../Constants';
+import { useDummyData } from '../../Hooks';
 
 const Terms = ({ navigation }) => {
+  const { termsOfUse } = useDummyData();
   const [State, setState] = useState({ isChecked: false });
 
   const onAcceptPress = () => {
@@ -15,7 +16,7 @@ const Terms = ({ navigation }) => {
   return (
     <RNContainer>
       <RNHeader title={Strings.termsAndCondition}>
-        {DummyData.termsOfUse.map((v, i) => (
+        {termsOfUse.map((v, i) => (
           <RenderTerms key={i} item={v} index={i} />
         ))}
         <LOTerms

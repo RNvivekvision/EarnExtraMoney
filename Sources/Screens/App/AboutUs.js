@@ -9,9 +9,11 @@ import {
 } from '../../Common';
 import { Strings, Svg } from '../../Constants';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
-import { DummyData } from '../../Utils';
+import { useDummyData } from '../../Hooks';
 
 const AboutUs = ({ navigation }) => {
+  const { FollowOn } = useDummyData();
+
   return (
     <RNContainer>
       <RNHeader title={Strings.Aboutus} back>
@@ -64,7 +66,7 @@ const AboutUs = ({ navigation }) => {
         </View>
 
         <View style={styles.iconContainer}>
-          {DummyData.FollowOn.map((v, i) => (
+          {FollowOn.map((v, i) => (
             <View key={i} style={styles.renderContainer}>
               <v.icon />
               <RNText

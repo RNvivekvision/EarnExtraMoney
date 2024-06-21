@@ -9,11 +9,14 @@ import {
 import { Colors, FontFamily, FontSize, hp, isAndroid, wp } from '../../Theme';
 import { RNStyles, RNText } from '../../Common';
 import { Svg } from '../../Constants';
+import Reanimated, { FadeInDown } from 'react-native-reanimated';
+
 if (isAndroid) {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
     UIManager.setLayoutAnimationEnabledExperimental(true);
   }
 }
+
 const size = { icon: wp(8), back: wp(4) };
 const RenderTerms = ({ item, index }) => {
   const [State, setState] = useState({ showText: index === 0 });
@@ -23,7 +26,9 @@ const RenderTerms = ({ item, index }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <Reanimated.View
+      entering={FadeInDown.delay(index * 100)}
+      style={styles.container}>
       <TouchableOpacity onPress={onPress} style={styles.titleContainer}>
         <View style={RNStyles.flexRow}>
           <item.icon width={size.icon} height={size.icon} />
@@ -44,7 +49,7 @@ const RenderTerms = ({ item, index }) => {
           <RNText style={styles.text}>{item.text}</RNText>
         </View>
       )}
-    </View>
+    </Reanimated.View>
   );
 };
 
@@ -65,9 +70,10 @@ const styles = StyleSheet.create({
     borderRadius: wp(2),
   },
   title: {
-    paddingLeft: wp(2),
+    marginHorizontal: wp(2),
     fontSize: FontSize.font14,
     fontFamily: FontFamily.Medium,
+    width: '80%',
   },
   back: {
     width: wp(4),

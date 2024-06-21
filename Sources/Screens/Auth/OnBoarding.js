@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RNButton, RNContainer, RNStyles } from '../../Common';
-import { DummyData } from '../../Utils';
-import { useInset } from '../../Hooks';
+import { useDummyData, useInset } from '../../Hooks';
 import {
   LOPagginationDots,
   NativeAd,
@@ -17,6 +16,7 @@ import { NavRoutes } from '../../Navigation';
 import { Strings } from '../../Constants';
 
 const Onboarding = ({ navigation }) => {
+  const { onboarding } = useDummyData();
   const [State, setState] = useState({ currentSlider: 0 });
   const flatListRef = useRef();
   const scroll = useSharedValue(0);
@@ -24,10 +24,9 @@ const Onboarding = ({ navigation }) => {
 
   const show = {
     back: State.currentSlider > 0,
-    getStarted: State.currentSlider < DummyData.onboarding.length - 1,
+    getStarted: State.currentSlider < onboarding.length - 1,
     skip:
-      State.currentSlider > 0 &&
-      State.currentSlider !== DummyData.onboarding.length - 1,
+      State.currentSlider > 0 && State.currentSlider !== onboarding.length - 1,
   };
 
   const onScroll = useAnimatedScrollHandler(
@@ -62,7 +61,7 @@ const Onboarding = ({ navigation }) => {
   const onSkip = () => {
     flatListRef.current.scrollToIndex({
       animated: true,
-      index: DummyData.onboarding.length - 1,
+      index: onboarding.length - 1,
     });
   };
 
@@ -75,7 +74,7 @@ const Onboarding = ({ navigation }) => {
       <View style={styles.flatlistContainer}>
         <Reanimated.FlatList
           ref={flatListRef}
-          data={DummyData.onboarding}
+          data={onboarding}
           keyExtractor={(v, i) => String(i)}
           horizontal={true}
           pagingEnabled={true}
@@ -91,14 +90,11 @@ const Onboarding = ({ navigation }) => {
               item={item}
               index={index}
               scroll={scroll}
-              isLast={index === DummyData.onboarding.length - 1}
+              isLast={index === onboarding.length - 1}
             />
           )}
         />
-        <LOPagginationDots
-          scroll={scroll}
-          length={DummyData.onboarding.length}
-        />
+        <LOPagginationDots scroll={scroll} length={onboarding.length} />
         {show.skip && (
           <RNButton
             title={Strings.SKIP}

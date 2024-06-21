@@ -1,7 +1,5 @@
-import { useCallback, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Splash from 'react-native-splash-screen';
 import { NavConfigs, NavRoutes } from './index';
 import {
   AboutUs,
@@ -23,15 +21,11 @@ import {
 const Stack = createStackNavigator();
 
 const Routes = () => {
-  useEffect(() => {
-    Splash.hide();
-  }, []);
-
-  const Screens = useCallback(() => {
-    return (
+  return (
+    <NavigationContainer>
       <Stack.Navigator screenOptions={NavConfigs.screenOptions}>
-        {/* Auth */}
         <Stack.Screen name={NavRoutes.SplashScreen} component={SplashScreen} />
+        {/* Auth */}
         <Stack.Screen name={NavRoutes.OnBoarding} component={Onboarding} />
         <Stack.Screen name={NavRoutes.Terms} component={Terms} />
         <Stack.Screen name={NavRoutes.Langugage} component={Langugage} />
@@ -60,12 +54,6 @@ const Routes = () => {
         <Stack.Screen name={NavRoutes.ContactUs} component={ContactUs} />
         <Stack.Screen name={NavRoutes.AboutUs} component={AboutUs} />
       </Stack.Navigator>
-    );
-  }, []);
-
-  return (
-    <NavigationContainer>
-      <Screens />
     </NavigationContainer>
   );
 };
