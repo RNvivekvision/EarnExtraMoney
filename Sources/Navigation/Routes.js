@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import Splash from 'react-native-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavConfigs, NavRoutes } from './index';
@@ -21,6 +23,10 @@ import {
 const Stack = createStackNavigator();
 
 const Routes = () => {
+  useEffect(() => {
+    Splash.hide();
+  }, []);
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={NavConfigs.screenOptions}>

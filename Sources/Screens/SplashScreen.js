@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import { StatusBar, StyleSheet, View } from 'react-native';
-import Splash from 'react-native-splash-screen';
 import { RNProgress, RNStyles, RNText } from '../Common';
 import { Colors, FontFamily, hp, wp } from '../Theme';
 import { Strings, Svg } from '../Constants';
@@ -10,21 +8,17 @@ import { useLocalStorage } from '../Hooks';
 const SplashScreen = ({ navigation }) => {
   const { localdata } = useLocalStorage();
 
-  useEffect(() => {
-    Splash.hide();
-  }, []);
-
   const onProgressFinish = () => {
+    localdata?.lang && Strings.setLanguage(localdata?.lang);
     const screenName = localdata?.hasUser
       ? NavRoutes.Welcome
       : NavRoutes.OnBoarding;
-
     navigation.replace(screenName);
   };
 
   return (
     <View style={RNStyles.container}>
-      <StatusBar barStyle={'dark-content'} />
+      <StatusBar barStyle={'dark-content'} translucent={true} />
       <Svg.SplashScreenSvg width={wp(100)} height={hp(100)} />
 
       <View style={styles.loaderContainer}>
@@ -53,7 +47,7 @@ const styles = StyleSheet.create({
   },
   loaderContainer: {
     position: 'absolute',
-    bottom: hp(12),
+    bottom: hp(11),
     left: 0,
     right: 0,
   },

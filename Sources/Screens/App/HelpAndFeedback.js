@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
   },
   renderContainer: {
     ...RNStyles.flexRowBetween,
+    marginHorizontal: wp(1),
   },
   radioContainer: {
     ...RNStyles.center,
@@ -117,7 +118,8 @@ const styles = StyleSheet.create({
     width: size,
     height: size,
     borderRadius: 100,
-    marginHorizontal: wp(2),
+    marginRight: wp(1),
+    // marginHorizontal: wp(2),
   },
   radio: {
     width: size * 0.6,

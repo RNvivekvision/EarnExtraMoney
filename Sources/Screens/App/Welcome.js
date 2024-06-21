@@ -21,7 +21,7 @@ const Welcome = ({ navigation }) => {
 
         <TouchableOpacity
           activeOpacity={0.6}
-          onPress={() => navigation.navigate(NavRoutes.SmartWays)}
+          onPress={() => navigation.replace(NavRoutes.SmartWays)}
           style={styles.StartContainer}>
           <Svg.Start width={size.start * 2} height={size.start} />
           <View>
