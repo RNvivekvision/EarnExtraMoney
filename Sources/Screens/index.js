@@ -3,12 +3,9 @@ export { Onboarding, Terms, Langugage } from './Auth';
 export {
   Welcome,
   SmartWays,
-  PassiveIncome,
-  OtherPassiveIncome,
-  OnlineEarning,
-  LevelUp,
   Setting,
   HelpAndFeedback,
   ContactUs,
   AboutUs,
+  Details,
 } from './App';

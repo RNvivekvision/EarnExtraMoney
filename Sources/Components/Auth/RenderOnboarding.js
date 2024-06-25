@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { RNText, RNStyles, RNGradient } from '../../Common';
+import { RNText, RNStyles, RNGradient, RNImage } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import Reanimated, {
   Extrapolation,
@@ -12,7 +12,6 @@ import { useInset } from '../../Hooks';
 const width = wp(100);
 const RenderOnboarding = ({ item, index, scroll, isLast }) => {
   const styles = useStyles({ isLast });
-  const size = wp(isLast ? 80 : 120);
 
   const animatedStyles = useAnimatedStyle(() => {
     const inputRange = [
@@ -49,7 +48,7 @@ const RenderOnboarding = ({ item, index, scroll, isLast }) => {
     <Reanimated.View style={[styles.container]}>
       <RNText style={styles.title}>{item.title}</RNText>
       <View style={styles.imageContainer}>
-        <item.icon width={size} height={size} style={{ alignSelf: 'center' }} />
+        <RNImage source={item.image} style={styles.image} />
         <View style={styles.gradientContainer}>
           {item.text1 && (
             <RNGradient
@@ -69,6 +68,8 @@ const RenderOnboarding = ({ item, index, scroll, isLast }) => {
 
 const useStyles = ({ isLast }) => {
   const inset = useInset();
+  const size = wp(isLast ? 70 : 120);
+
   return StyleSheet.create({
     container: {
       paddingTop: inset.top + hp(3),
@@ -84,6 +85,11 @@ const useStyles = ({ isLast }) => {
       width: '100%',
       height: wp(100),
       overflow: 'hidden',
+    },
+    image: {
+      width: size,
+      height: size,
+      alignSelf: 'center',
     },
     gradientContainer: {
       position: isLast ? 'relative' : 'absolute',

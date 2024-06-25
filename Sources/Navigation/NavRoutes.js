@@ -5,14 +5,11 @@ const NavRoutes = {
   Langugage: 'Langugage',
   Welcome: 'Welcome',
   SmartWays: 'Smart Ways',
-  PassiveIncome: 'Passive Income',
-  OtherPassiveIncome: 'Other Passive Income',
-  OnlineEarning: 'Online Earning',
-  LevelUp: 'Level Up',
   Setting: 'Setting',
   HelpAndFeedback: 'Help & Feedback',
   ContactUs: 'Contact Us',
   AboutUs: 'About Us',
+  Details: 'Details',
 };
 
 export default NavRoutes;

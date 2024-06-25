@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { RNContainer, RNHeader, RNText } from '../../Common';
 import { FontFamily, FontSize, hp } from '../../Theme';
 import { NativeAd, RenderLanguages } from '../../Components';
-import { DummyData, Functions } from '../../Utils';
+import { Functions } from '../../Utils';
 import { NavRoutes } from '../../Navigation';
 import { Strings } from '../../Constants';
 import { I18nManager } from 'react-native';

@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import { Colors, FontFamily, FontSize, hp, isAndroid, wp } from '../../Theme';
-import { RNStyles, RNText } from '../../Common';
+import { RNImage, RNStyles, RNText } from '../../Common';
 import { Svg } from '../../Constants';
 import Reanimated, { FadeInDown } from 'react-native-reanimated';
 
@@ -17,7 +17,7 @@ if (isAndroid) {
   }
 }
 
-const size = { icon: wp(8), back: wp(4) };
+const size = { icon: wp(7), back: wp(4) };
 const RenderTerms = ({ item, index }) => {
   const [State, setState] = useState({ showText: index === 0 });
   const onPress = () => {
@@ -31,7 +31,7 @@ const RenderTerms = ({ item, index }) => {
       style={styles.container}>
       <TouchableOpacity onPress={onPress} style={styles.titleContainer}>
         <View style={RNStyles.flexRow}>
-          <item.icon width={size.icon} height={size.icon} />
+          <RNImage source={item.icon} style={styles.icons} />
           <RNText style={styles.title}>{item.title}</RNText>
         </View>
         <Svg.Back
@@ -60,6 +60,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.Placeholder,
     borderRadius: wp(2),
+  },
+  icons: {
+    width: size.icon,
+    height: size.icon,
   },
   titleContainer: {
     ...RNStyles.flexRowBetween,

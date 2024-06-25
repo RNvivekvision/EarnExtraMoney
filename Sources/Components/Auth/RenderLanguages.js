@@ -1,7 +1,7 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import Reanimated, { FadeInDown } from 'react-native-reanimated';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
-import { RNStyles, RNText } from '../../Common';
+import { RNImage, RNStyles, RNText } from '../../Common';
 import { Svg } from '../../Constants';
 
 const size = wp(4);
@@ -15,7 +15,7 @@ const RenderLanguages = ({ item, index, isChecked, onPress }) => {
         onPress={() => onPress?.(item)}
         style={styles.button}>
         <View style={RNStyles.flexRow}>
-          <item.Icon />
+          <RNImage source={item.icon} style={styles.icon} />
           <RNText style={styles.title}>{item.title}</RNText>
         </View>
         <View style={styles.checkBoxContainer}>
@@ -42,6 +42,10 @@ const styles = StyleSheet.create({
     ...RNStyles.flexRowBetween,
     paddingHorizontal: wp(4),
     paddingVertical: hp(1.5),
+  },
+  icon: {
+    width: size * 2.2,
+    height: size * 2.2,
   },
   title: {
     paddingHorizontal: wp(4),

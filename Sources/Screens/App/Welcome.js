@@ -1,10 +1,17 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { RNContainer, RNHeader, RNStyles, RNText } from '../../Common';
+import { RNContainer, RNHeader, RNImage, RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
-import { Strings, Svg } from '../../Constants';
+import { Strings } from '../../Constants';
 import { NavRoutes } from '../../Navigation';
 import { NativeAd } from '../../Components';
 import { Functions } from '../../Utils';
+import Images from '../../Constants/Images';
+
+const size = {
+  start: wp(15),
+  rateUs: wp(18),
+  share: wp(8),
+};
 
 const Welcome = ({ navigation }) => {
   return (
@@ -23,7 +30,7 @@ const Welcome = ({ navigation }) => {
           activeOpacity={0.6}
           onPress={() => navigation.replace(NavRoutes.SmartWays)}
           style={styles.StartContainer}>
-          <Svg.Start width={size.start * 2} height={size.start} />
+          <RNImage source={Images.start} style={styles.start} />
           <View>
             <RNText family={FontFamily.Medium} size={FontSize.font20}>
               {Strings.LetsStart}
@@ -43,7 +50,7 @@ const Welcome = ({ navigation }) => {
             activeOpacity={0.6}
             onPress={Functions.RateUs}
             style={styles.rateUsContainer}>
-            <Svg.RateUs width={size.rateUs} height={size.rateUs} />
+            <RNImage source={Images.rateus} style={styles.rateus} />
             <RNText style={styles.buttonTitle} pTop={hp(1)}>
               {Strings.RateUs}
             </RNText>
@@ -55,7 +62,7 @@ const Welcome = ({ navigation }) => {
               activeOpacity={0.6}
               onPress={Functions.ShareApp}
               style={styles.shareContainer}>
-              <Svg.Share width={size.share} height={size.share} />
+              <RNImage source={Images.share} style={styles.share} />
               <View style={{ paddingLeft: wp(4) }}>
                 <RNText style={styles.buttonTitle}>{Strings.Share}</RNText>
                 <RNText style={styles.buttonText}>{Strings.ShareDesc}</RNText>
@@ -63,7 +70,7 @@ const Welcome = ({ navigation }) => {
             </TouchableOpacity>
 
             <TouchableOpacity activeOpacity={0.6} style={styles.shareContainer}>
-              <Svg.Privacy width={size.share} height={size.share} />
+              <RNImage source={Images.privacy} style={styles.share} />
               <View style={{ paddingLeft: wp(4) }}>
                 <RNText style={styles.buttonTitle}>{Strings.Privacy}</RNText>
                 <RNText style={styles.buttonText}>{Strings.PrivacyDesc}</RNText>
@@ -146,12 +153,18 @@ const styles = StyleSheet.create({
     color: Colors.welcomeDescription,
     width: wp(30),
   },
+  start: {
+    width: size.start * 2,
+    height: size.start,
+  },
+  rateus: {
+    width: size.rateUs,
+    height: size.rateUs,
+  },
+  share: {
+    width: size.share,
+    height: size.share,
+  },
 });
-
-const size = {
-  start: wp(15),
-  rateUs: wp(20),
-  share: wp(8),
-};
 
 export default Welcome;

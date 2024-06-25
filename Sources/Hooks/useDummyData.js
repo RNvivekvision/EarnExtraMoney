@@ -1,663 +1,156 @@
 import { Strings, Svg } from '../Constants';
+import Images from '../Constants/Images';
 import { NavRoutes } from '../Navigation';
 
 const useDummyData = () => {
   return {
     onboarding: [
       {
-        icon: Svg.Onboarding0,
+        image: Images.onboarding_0,
         title: Strings.onboarding0_title,
         text1: Strings.onboarding0_text1,
         text2: Strings.onboarding0_text2,
       },
       {
-        icon: Svg.Onboarding1,
+        image: Images.onboarding_1,
         title: Strings.onboarding1_title,
         text1: Strings.onboarding1_text1,
         text2: Strings.onboarding1_text2,
       },
       {
-        icon: Svg.Onboarding2,
+        image: Images.onboarding_2,
         title: Strings.onboarding2_title,
         text1: Strings.onboarding2_text1,
         text2: Strings.onboarding2_text2,
       },
       {
-        icon: Svg.Onboarding3,
+        image: Images.onboarding_3,
         text2: Strings.onboarding3_text2,
       },
     ],
     termsOfUse: [
       {
-        icon: Svg.Terms0,
+        icon: Images.terms_0,
         title: Strings.Terms,
         text: Strings.terms_text_0,
       },
       {
-        icon: Svg.Terms1,
+        icon: Images.terms_1,
         title: Strings.Security,
         text: Strings.terms_text_1,
       },
       {
-        icon: Svg.Terms2,
+        icon: Images.terms_2,
         title: Strings.ChildrensPrivacy,
         text: Strings.terms_text_2,
       },
       {
-        icon: Svg.Terms3,
+        icon: Images.terms_3,
         title: Strings.ChangestoThisPrivacyPolicy,
         text: Strings.terms_text_3,
       },
       {
-        icon: Svg.Terms4,
+        icon: Images.terms_4,
         title: Strings.Notice,
         text: Strings.terms_text_4,
       },
     ],
     languages: [
       {
-        Icon: Svg.English,
+        icon: Images.english,
         title: Strings.English,
         value: 'en',
       },
       {
-        Icon: Svg.Germany,
+        icon: Images.german,
         title: Strings.German,
         value: 'de',
       },
       {
-        Icon: Svg.Hindi,
+        icon: Images.hindi,
         title: Strings.Hindi,
         value: 'hi',
       },
       {
-        Icon: Svg.French,
+        icon: Images.french,
         title: Strings.French,
         value: 'fr',
       },
       {
-        Icon: Svg.Portuguese,
+        icon: Images.portuguese,
         title: Strings.Portuguese,
         value: 'pt',
       },
       {
-        Icon: Svg.Indonesian,
+        icon: Images.indonesia,
         title: Strings.Indonesian,
         value: 'id',
       },
       {
-        Icon: Svg.Italian,
+        icon: Images.italian,
         title: Strings.Italian,
         value: 'it',
       },
       {
-        Icon: Svg.Spanish,
+        icon: Images.spanish,
         title: Strings.Spanish,
         value: 'es',
       },
       {
-        Icon: Svg.Russian,
+        icon: Images.russian,
         title: Strings.Russian,
         value: 'ru',
       },
       {
-        Icon: Svg.Chinese,
+        icon: Images.chinese,
         title: Strings.Chinese,
         value: 'zh',
       },
       {
-        Icon: Svg.Japanese,
+        icon: Images.japanese,
         title: Strings.Japanese,
         value: 'ja',
       },
       {
-        Icon: Svg.Turkish,
+        icon: Images.turkish,
         title: Strings.Turkish,
         value: 'tr',
       },
       {
-        Icon: Svg.Korean,
+        icon: Images.korean,
         title: Strings.Korean,
         value: 'ko',
       },
       {
-        Icon: Svg.Arabic,
+        icon: Images.arabic,
         title: Strings.Arabic,
         value: 'ar',
       },
     ],
     smartWays: [
       {
-        icon: Svg.Smart0,
+        icon: Images.smartway_0,
         title: Strings.smartWay_title_0,
         text: Strings.smartWay_text_0,
-        knowMore: true,
-        navigate: NavRoutes.PassiveIncome,
+        data: passiveIncome,
       },
       {
-        icon: Svg.Smart1,
+        icon: Images.smartway_1,
         title: Strings.smartWay_title_1,
         text: Strings.smartWay_text_1,
-        knowMore: true,
-        navigate: NavRoutes.OtherPassiveIncome,
+        data: otherPassiveIncome,
       },
       {
-        icon: Svg.Smart2,
+        icon: Images.smartway_2,
         title: Strings.smartWay_title_2,
         text: Strings.smartWay_text_2,
-        knowMore: true,
-        navigate: NavRoutes.OnlineEarning,
+        data: onlineEarning,
       },
       {
-        icon: Svg.Smart3,
+        icon: Images.smartway_3,
         title: Strings.smartWay_title_3,
         text: Strings.smartWay_text_3,
-        knowMore: true,
-        navigate: NavRoutes.LevelUp,
-      },
-    ],
-    passiveIncome: [
-      {
-        icon: Svg.Passive0,
-        title: Strings.passiveIncome_title_0,
-        text: Strings.passiveIncome_text_0,
-        knowMore: true,
-      },
-      {
-        icon: Svg.Passive1,
-        title: Strings.passiveIncome_title_1,
-      },
-      {
-        icon: Svg.Passive2,
-        title: Strings.passiveIncome_title_2,
-      },
-      {
-        icon: Svg.Passive3,
-        title: Strings.passiveIncome_title_3,
-      },
-      {
-        icon: Svg.Passive4,
-        title: Strings.passiveIncome_title_4,
-      },
-      {
-        icon: Svg.Passive5,
-        title: Strings.passiveIncome_title_5,
-      },
-      {
-        icon: Svg.Passive6,
-        title: Strings.passiveIncome_title_6,
-      },
-      {
-        icon: Svg.Passive7,
-        title: Strings.passiveIncome_title_7,
-      },
-      {
-        icon: Svg.Passive8,
-        title: Strings.passiveIncome_title_8,
-      },
-      {
-        icon: Svg.Passive9,
-        title: Strings.passiveIncome_title_9,
-      },
-      {
-        icon: Svg.Passive10,
-        title: Strings.passiveIncome_title_10,
-      },
-      {
-        icon: Svg.Passive11,
-        title: Strings.passiveIncome_title_11,
-      },
-      {
-        icon: Svg.Passive12,
-        title: Strings.passiveIncome_title_12,
-      },
-      {
-        icon: Svg.Passive13,
-        title: Strings.passiveIncome_title_13,
-      },
-      {
-        icon: Svg.Passive14,
-        title: Strings.passiveIncome_title_14,
-      },
-      {
-        icon: Svg.Passive15,
-        title: Strings.passiveIncome_title_15,
-      },
-      {
-        icon: Svg.Passive16,
-        title: Strings.passiveIncome_title_16,
-      },
-      {
-        icon: Svg.Passive17,
-        title: Strings.passiveIncome_title_17,
-      },
-      {
-        icon: Svg.Passive18,
-        title: Strings.passiveIncome_title_18,
-      },
-      {
-        icon: Svg.Passive19,
-        title: Strings.passiveIncome_title_19,
-      },
-      {
-        icon: Svg.Passive20,
-        title: Strings.passiveIncome_title_20,
-      },
-      {
-        icon: Svg.Passive21,
-        title: Strings.passiveIncome_title_21,
-      },
-      {
-        icon: Svg.Passive22,
-        title: Strings.passiveIncome_title_22,
-      },
-      {
-        icon: Svg.Passive23,
-        title: Strings.passiveIncome_title_23,
-      },
-    ],
-    otherPassiveIncome: [
-      {
-        icon: Svg.OtherPassive0,
-        title: Strings.otherPassive_title_0,
-        text: Strings.otherPassive_text_0,
-        knowMore: true,
-      },
-      {
-        icon: Svg.OtherPassive1,
-        title: Strings.otherPassive_title_1,
-      },
-      {
-        icon: Svg.OtherPassive2,
-        title: Strings.otherPassive_title_2,
-      },
-      {
-        icon: Svg.OtherPassive3,
-        title: Strings.otherPassive_title_3,
-      },
-      {
-        icon: Svg.OtherPassive4,
-        title: Strings.otherPassive_title_4,
-      },
-      {
-        icon: Svg.OtherPassive5,
-        title: Strings.otherPassive_title_5,
-      },
-      {
-        icon: Svg.OtherPassive6,
-        title: Strings.otherPassive_title_6,
-      },
-      {
-        icon: Svg.OtherPassive7,
-        title: Strings.otherPassive_title_7,
-      },
-      {
-        icon: Svg.OtherPassive8,
-        title: Strings.otherPassive_title_8,
-      },
-      {
-        icon: Svg.OtherPassive9,
-        title: Strings.otherPassive_title_9,
-      },
-      {
-        icon: Svg.OtherPassive10,
-        title: Strings.otherPassive_title_10,
-      },
-      {
-        icon: Svg.OtherPassive11,
-        title: Strings.otherPassive_title_11,
-      },
-      {
-        icon: Svg.OtherPassive12,
-        title: Strings.otherPassive_title_12,
-      },
-      {
-        icon: Svg.OtherPassive13,
-        title: Strings.otherPassive_title_13,
-      },
-      {
-        icon: Svg.OtherPassive14,
-        title: Strings.otherPassive_title_14,
-      },
-      {
-        icon: Svg.OtherPassive15,
-        title: Strings.otherPassive_title_15,
-      },
-      {
-        icon: Svg.OtherPassive16,
-        title: Strings.otherPassive_title_16,
-      },
-      {
-        icon: Svg.OtherPassive17,
-        title: Strings.otherPassive_title_17,
-      },
-      {
-        icon: Svg.OtherPassive18,
-        title: Strings.otherPassive_title_18,
-      },
-      {
-        icon: Svg.OtherPassive19,
-        title: Strings.otherPassive_title_19,
-      },
-      {
-        icon: Svg.OtherPassive20,
-        title: Strings.otherPassive_title_20,
-      },
-      {
-        icon: Svg.OtherPassive21,
-        title: Strings.otherPassive_title_21,
-      },
-      {
-        icon: Svg.OtherPassive22,
-        title: Strings.otherPassive_title_22,
-      },
-      {
-        icon: Svg.OtherPassive23,
-        title: Strings.otherPassive_title_23,
-      },
-      {
-        icon: Svg.OtherPassive24,
-        title: Strings.otherPassive_title_24,
-      },
-      {
-        icon: Svg.OtherPassive25,
-        title: Strings.otherPassive_title_25,
-      },
-      {
-        icon: Svg.OtherPassive26,
-        title: Strings.otherPassive_title_26,
-      },
-    ],
-    onlineEarning: [
-      {
-        icon: Svg.Online0,
-        title: Strings.online_title_0,
-        text: Strings.online_text_0,
-        knowMore: true,
-      },
-      {
-        icon: Svg.Online1,
-        title: Strings.online_title_1,
-      },
-      {
-        icon: Svg.Online2,
-        title: Strings.online_title_2,
-      },
-      {
-        icon: Svg.Online3,
-        title: Strings.online_title_3,
-      },
-      {
-        icon: Svg.Online4,
-        title: Strings.online_title_4,
-      },
-      {
-        icon: Svg.Online5,
-        title: Strings.online_title_5,
-      },
-      {
-        icon: Svg.Online6,
-        title: Strings.online_title_6,
-      },
-      {
-        icon: Svg.Online7,
-        title: Strings.online_title_7,
-      },
-      {
-        icon: Svg.Online8,
-        title: Strings.online_title_8,
-      },
-      {
-        icon: Svg.Online9,
-        title: Strings.online_title_9,
-      },
-      {
-        icon: Svg.Online10,
-        title: Strings.online_title_10,
-      },
-      {
-        icon: Svg.Online11,
-        title: Strings.online_title_11,
-      },
-      {
-        icon: Svg.Online12,
-        title: Strings.online_title_12,
-      },
-      {
-        icon: Svg.Online13,
-        title: Strings.online_title_13,
-      },
-      {
-        icon: Svg.Online14,
-        title: Strings.online_title_14,
-      },
-      {
-        icon: Svg.Online15,
-        title: Strings.online_title_15,
-      },
-      {
-        icon: Svg.Online16,
-        title: Strings.online_title_16,
-      },
-      {
-        icon: Svg.Online17,
-        title: Strings.online_title_17,
-      },
-      {
-        icon: Svg.Online18,
-        title: Strings.online_title_18,
-      },
-      {
-        icon: Svg.Online19,
-        title: Strings.online_title_19,
-      },
-      {
-        icon: Svg.Online20,
-        title: Strings.online_title_20,
-      },
-      {
-        icon: Svg.Online21,
-        title: Strings.online_title_21,
-      },
-      {
-        icon: Svg.Online22,
-        title: Strings.online_title_22,
-      },
-      {
-        icon: Svg.Online23,
-        title: Strings.online_title_23,
-      },
-      {
-        icon: Svg.Online24,
-        title: Strings.online_title_24,
-      },
-      {
-        icon: Svg.Online25,
-        title: Strings.online_title_25,
-      },
-      {
-        icon: Svg.Online26,
-        title: Strings.online_title_26,
-      },
-      {
-        icon: Svg.Online27,
-        title: Strings.online_title_27,
-      },
-      {
-        icon: Svg.Online28,
-        title: Strings.online_title_28,
-      },
-      {
-        icon: Svg.Online29,
-        title: Strings.online_title_29,
-      },
-      {
-        icon: Svg.Online30,
-        title: Strings.online_title_30,
-      },
-      {
-        icon: Svg.Online31,
-        title: Strings.online_title_31,
-      },
-      {
-        icon: Svg.Online32,
-        title: Strings.online_title_32,
-      },
-      {
-        icon: Svg.Online33,
-        title: Strings.online_title_33,
-      },
-      {
-        icon: Svg.Online34,
-        title: Strings.online_title_34,
-      },
-      {
-        icon: Svg.Online35,
-        title: Strings.online_title_35,
-      },
-      {
-        icon: Svg.Online36,
-        title: Strings.online_title_36,
-      },
-      {
-        icon: Svg.Online37,
-        title: Strings.online_title_37,
-      },
-      {
-        icon: Svg.Online38,
-        title: Strings.online_title_38,
-      },
-      {
-        icon: Svg.Online39,
-        title: Strings.online_title_39,
-      },
-      {
-        icon: Svg.Online40,
-        title: Strings.online_title_40,
-      },
-      {
-        icon: Svg.Online41,
-        title: Strings.online_title_41,
-      },
-      {
-        icon: Svg.Online42,
-        title: Strings.online_title_42,
-      },
-      {
-        icon: Svg.Online43,
-        title: Strings.online_title_43,
-      },
-      {
-        icon: Svg.Online44,
-        title: Strings.online_title_44,
-      },
-      {
-        icon: Svg.Online45,
-        title: Strings.online_title_45,
-      },
-      {
-        icon: Svg.Online46,
-        title: Strings.online_title_46,
-      },
-      {
-        icon: Svg.Online47,
-        title: Strings.online_title_47,
-      },
-      {
-        icon: Svg.Online48,
-        title: Strings.online_title_48,
-      },
-    ],
-    levelUp: [
-      {
-        icon: Svg.Level0,
-        title: Strings.level_title_0,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level1,
-        title: Strings.level_title_1,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level2,
-        title: Strings.level_title_2,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level3,
-        title: Strings.level_title_3,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level4,
-        title: Strings.level_title_4,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level0,
-        title: Strings.level_title_5,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level1,
-        title: Strings.level_title_6,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level2,
-        title: Strings.level_title_7,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level3,
-        title: Strings.level_title_8,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level4,
-        title: Strings.level_title_9,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level0,
-        title: Strings.level_title_10,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level1,
-        title: Strings.level_title_11,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level2,
-        title: Strings.level_title_12,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level3,
-        title: Strings.level_title_13,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level4,
-        title: Strings.level_title_14,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level0,
-        title: Strings.level_title_15,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level1,
-        title: Strings.level_title_16,
-        isLevelUp: true,
-      },
-      {
-        icon: Svg.Level2,
-        title: Strings.level_title_17,
-        isLevelUp: true,
+        data: levelUp,
       },
     ],
     setting: [
@@ -715,5 +208,1018 @@ const useDummyData = () => {
     ],
   };
 };
+
+const passiveIncome = [
+  {
+    icon: Images.passive_0,
+    title: Strings.passive_0_title,
+    text: [
+      Strings.passive_0_text_0,
+      Strings.passive_0_text_1,
+      Strings.passive_0_text_2,
+    ],
+    data: [
+      {
+        icon: Images.passive_0_0,
+        title: Strings.passive_0_0_title,
+        text: [Strings.passive_0_0_text_0, Strings.passive_0_0_text_1],
+      },
+      {
+        icon: Images.passive_0_1,
+        title: Strings.passive_0_1_title,
+        text: [Strings.passive_0_1_text_0, Strings.passive_0_1_text_1],
+      },
+      {
+        icon: Images.passive_0_2,
+        title: Strings.passive_0_2_title,
+        text: [Strings.passive_0_2_text_0, Strings.passive_0_2_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.passive_1,
+    title: Strings.passive_1_title,
+    text: [
+      Strings.passive_1_text_0,
+      Strings.passive_1_text_1,
+      Strings.passive_1_text_2,
+    ],
+    data: [
+      {
+        icon: Images.passive_1_0,
+        title: Strings.passive_1_0_title,
+        text: [Strings.passive_1_0_text_0, Strings.passive_1_0_text_1],
+      },
+      {
+        icon: Images.passive_1_1,
+        title: Strings.passive_1_1_title,
+        text: [Strings.passive_1_1_text_0, Strings.passive_1_1_text_1],
+      },
+      {
+        icon: Images.passive_1_2,
+        title: Strings.passive_1_2_title,
+        text: [Strings.passive_1_2_text_0, Strings.passive_1_2_text_1],
+      },
+      {
+        icon: Images.passive_1_3,
+        title: Strings.passive_1_3_title,
+        text: [Strings.passive_1_3_text_0, Strings.passive_1_3_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.passive_2,
+    title: Strings.passive_2_title,
+    text: [
+      Strings.passive_2_text_0,
+      Strings.passive_2_text_1,
+      Strings.passive_2_text_2,
+    ],
+    data: [
+      {
+        icon: Images.passive_2_0,
+        title: Strings.passive_2_0_title,
+        text: [Strings.passive_2_0_text_0, Strings.passive_2_0_text_1],
+      },
+      {
+        icon: Images.passive_2_1,
+        title: Strings.passive_2_1_title,
+        text: [Strings.passive_2_1_text_0, Strings.passive_2_1_text_1],
+      },
+      {
+        icon: Images.passive_2_2,
+        title: Strings.passive_2_2_title,
+        text: [Strings.passive_2_2_text_0, Strings.passive_2_2_text_1],
+      },
+      {
+        icon: Images.passive_2_3,
+        title: Strings.passive_2_3_title,
+        text: [Strings.passive_2_3_text_0, Strings.passive_2_3_text_1],
+      },
+      {
+        icon: Images.passive_2_4,
+        title: Strings.passive_2_4_title,
+        text: [Strings.passive_2_4_text_0, Strings.passive_2_4_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.passive_3,
+    title: Strings.passive_3_title,
+    text: [
+      Strings.passive_3_text_0,
+      Strings.passive_3_text_1,
+      Strings.passive_3_text_2,
+    ],
+    data: [
+      {
+        icon: Images.passive_3_0,
+        title: Strings.passive_3_0_title,
+        text: [Strings.passive_3_0_text_0, Strings.passive_3_0_text_1],
+      },
+      {
+        icon: Images.passive_3_1,
+        title: Strings.passive_3_1_title,
+        text: [Strings.passive_3_1_text_0, Strings.passive_3_1_text_1],
+      },
+      {
+        icon: Images.passive_3_2,
+        title: Strings.passive_3_2_title,
+        text: [Strings.passive_3_2_text_0, Strings.passive_3_2_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.passive_4,
+    title: Strings.passive_4_title,
+    text: [
+      Strings.passive_4_text_0,
+      Strings.passive_4_text_1,
+      Strings.passive_4_text_2,
+    ],
+    data: [
+      {
+        icon: Images.passive_4_0,
+        title: Strings.passive_4_0_title,
+        text: [Strings.passive_4_0_text_0, Strings.passive_4_0_text_1],
+      },
+      {
+        icon: Images.passive_4_1,
+        title: Strings.passive_4_1_title,
+        text: [Strings.passive_4_1_text_0, Strings.passive_4_1_text_1],
+      },
+      {
+        icon: Images.passive_4_2,
+        title: Strings.passive_4_2_title,
+        text: [Strings.passive_4_2_text_0, Strings.passive_4_2_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.passive_5,
+    title: Strings.passive_5_title,
+    text: [
+      Strings.passive_5_text_0,
+      Strings.passive_5_text_1,
+      Strings.passive_5_text_2,
+    ],
+    data: [
+      {
+        icon: Images.passive_5_0,
+        title: Strings.passive_5_0_title,
+        text: [Strings.passive_5_0_text_0, Strings.passive_5_0_text_1],
+      },
+      {
+        icon: Images.passive_5_1,
+        title: Strings.passive_5_1_title,
+        text: [Strings.passive_5_1_text_0, Strings.passive_5_1_text_1],
+      },
+      {
+        icon: Images.passive_5_2,
+        title: Strings.passive_5_2_title,
+        text: [Strings.passive_5_2_text_0, Strings.passive_5_2_text_1],
+      },
+      {
+        icon: Images.passive_5_3,
+        title: Strings.passive_5_3_title,
+        text: [Strings.passive_5_3_text_0, Strings.passive_5_3_text_1],
+      },
+      {
+        icon: Images.passive_5_4,
+        title: Strings.passive_5_4_title,
+        text: [Strings.passive_5_4_text_0, Strings.passive_5_4_text_1],
+      },
+      {
+        icon: Images.passive_5_5,
+        title: Strings.passive_5_5_title,
+        text: [Strings.passive_5_5_text_0, Strings.passive_5_5_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.passive_6,
+    title: Strings.passive_6_title,
+    text: [
+      Strings.passive_6_text_0,
+      Strings.passive_6_text_1,
+      Strings.passive_6_text_2,
+    ],
+    data: [
+      {
+        icon: Images.passive_6_0,
+        title: Strings.passive_6_0_title,
+        text: [Strings.passive_6_0_text_0, Strings.passive_6_0_text_1],
+      },
+      {
+        icon: Images.passive_6_1,
+        title: Strings.passive_6_1_title,
+        text: [Strings.passive_6_1_text_0, Strings.passive_6_1_text_1],
+      },
+      {
+        icon: Images.passive_6_2,
+        title: Strings.passive_6_2_title,
+        text: [Strings.passive_6_2_text_0, Strings.passive_6_2_text_1],
+      },
+      {
+        icon: Images.passive_6_3,
+        title: Strings.passive_6_3_title,
+        text: [Strings.passive_6_3_text_0, Strings.passive_6_3_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.passive_7,
+    title: Strings.passive_7_title,
+    text: [
+      Strings.passive_7_text_0,
+      Strings.passive_7_text_1,
+      Strings.passive_7_text_2,
+    ],
+    data: [
+      {
+        icon: Images.passive_7_0,
+        title: Strings.passive_7_0_title,
+        text: [Strings.passive_7_0_text_0, Strings.passive_7_0_text_1],
+      },
+      {
+        icon: Images.passive_7_1,
+        title: Strings.passive_7_1_title,
+        text: [Strings.passive_7_1_text_0, Strings.passive_7_1_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.passive_8,
+    title: Strings.passive_8_title,
+    text: [
+      Strings.passive_8_text_0,
+      Strings.passive_8_text_1,
+      Strings.passive_8_text_2,
+    ],
+    data: [
+      {
+        icon: Images.passive_8_0,
+        title: Strings.passive_8_0_title,
+        text: [Strings.passive_8_0_text_0, Strings.passive_8_0_text_1],
+      },
+      {
+        icon: Images.passive_8_1,
+        title: Strings.passive_8_1_title,
+        text: [Strings.passive_8_1_text_0, Strings.passive_8_1_text_1],
+      },
+      {
+        icon: Images.passive_8_2,
+        title: Strings.passive_8_2_title,
+        text: [Strings.passive_8_2_text_0, Strings.passive_8_2_text_1],
+      },
+    ],
+  },
+];
+const otherPassiveIncome = [
+  {
+    icon: Images.otherPassive_0,
+    title: Strings.otherPassive_0_title,
+    text: [
+      Strings.otherPassive_0_text_0,
+      Strings.otherPassive_0_text_1,
+      Strings.otherPassive_0_text_2,
+    ],
+    data: [
+      {
+        icon: Images.otherPassive_0_0,
+        title: Strings.otherPassive_0_0_title,
+        text: [
+          Strings.otherPassive_0_0_text_0,
+          Strings.otherPassive_0_0_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_0_1,
+        title: Strings.otherPassive_0_1_title,
+        text: [
+          Strings.otherPassive_0_1_text_0,
+          Strings.otherPassive_0_1_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_0_2,
+        title: Strings.otherPassive_0_2_title,
+        text: [
+          Strings.otherPassive_0_2_text_0,
+          Strings.otherPassive_0_2_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_0_3,
+        title: Strings.otherPassive_0_3_title,
+        text: [
+          Strings.otherPassive_0_3_text_0,
+          Strings.otherPassive_0_3_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_0_4,
+        title: Strings.otherPassive_0_4_title,
+        text: [
+          Strings.otherPassive_0_4_text_0,
+          Strings.otherPassive_0_4_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_0_5,
+        title: Strings.otherPassive_0_5_title,
+        text: [
+          Strings.otherPassive_0_5_text_0,
+          Strings.otherPassive_0_5_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_0_6,
+        title: Strings.otherPassive_0_6_title,
+        text: [
+          Strings.otherPassive_0_6_text_0,
+          Strings.otherPassive_0_6_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_0_7,
+        title: Strings.otherPassive_0_7_title,
+        text: [
+          Strings.otherPassive_0_7_text_0,
+          Strings.otherPassive_0_7_text_1,
+        ],
+      },
+    ],
+  },
+  {
+    icon: Images.otherPassive_1,
+    title: Strings.otherPassive_1_title,
+    text: [
+      Strings.otherPassive_1_text_0,
+      Strings.otherPassive_1_text_1,
+      Strings.otherPassive_1_text_2,
+    ],
+    data: [
+      {
+        icon: Images.otherPassive_1_0,
+        title: Strings.otherPassive_1_0_title,
+        text: [
+          Strings.otherPassive_1_0_text_0,
+          Strings.otherPassive_1_0_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_1_1,
+        title: Strings.otherPassive_1_1_title,
+        text: [
+          Strings.otherPassive_1_1_text_0,
+          Strings.otherPassive_1_1_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_1_2,
+        title: Strings.otherPassive_1_2_title,
+        text: [
+          Strings.otherPassive_1_2_text_0,
+          Strings.otherPassive_1_2_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_1_3,
+        title: Strings.otherPassive_1_3_title,
+        text: [
+          Strings.otherPassive_1_3_text_0,
+          Strings.otherPassive_1_3_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_1_4,
+        title: Strings.otherPassive_1_4_title,
+        text: [
+          Strings.otherPassive_1_4_text_0,
+          Strings.otherPassive_1_4_text_1,
+        ],
+      },
+    ],
+  },
+  {
+    icon: Images.otherPassive_2,
+    title: Strings.otherPassive_2_title,
+    text: [
+      Strings.otherPassive_2_text_0,
+      Strings.otherPassive_2_text_1,
+      Strings.otherPassive_2_text_2,
+    ],
+    data: [
+      {
+        icon: Images.otherPassive_2_0,
+        title: Strings.otherPassive_2_0_title,
+        text: [
+          Strings.otherPassive_2_0_text_0,
+          Strings.otherPassive_2_0_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_2_1,
+        title: Strings.otherPassive_2_1_title,
+        text: [
+          Strings.otherPassive_2_1_text_0,
+          Strings.otherPassive_2_1_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_2_2,
+        title: Strings.otherPassive_2_2_title,
+        text: [
+          Strings.otherPassive_2_2_text_0,
+          Strings.otherPassive_2_2_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_2_3,
+        title: Strings.otherPassive_2_3_title,
+        text: [
+          Strings.otherPassive_2_3_text_0,
+          Strings.otherPassive_2_3_text_1,
+        ],
+      },
+    ],
+  },
+  {
+    icon: Images.otherPassive_3,
+    title: Strings.otherPassive_3_title,
+    text: [
+      Strings.otherPassive_3_text_0,
+      Strings.otherPassive_3_text_1,
+      Strings.otherPassive_3_text_2,
+    ],
+    data: [
+      {
+        icon: Images.otherPassive_3_0,
+        title: Strings.otherPassive_3_0_title,
+        text: [
+          Strings.otherPassive_3_0_text_0,
+          Strings.otherPassive_3_0_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_3_1,
+        title: Strings.otherPassive_3_1_title,
+        text: [
+          Strings.otherPassive_3_1_text_0,
+          Strings.otherPassive_3_1_text_1,
+        ],
+      },
+    ],
+  },
+  {
+    icon: Images.otherPassive_4,
+    title: Strings.otherPassive_4_title,
+    text: [
+      Strings.otherPassive_4_text_0,
+      Strings.otherPassive_4_text_1,
+      Strings.otherPassive_4_text_2,
+    ],
+    data: [
+      {
+        icon: Images.otherPassive_4_0,
+        title: Strings.otherPassive_4_0_title,
+        text: [
+          Strings.otherPassive_4_0_text_0,
+          Strings.otherPassive_4_0_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_4_1,
+        title: Strings.otherPassive_4_1_title,
+        text: [
+          Strings.otherPassive_4_1_text_0,
+          Strings.otherPassive_4_1_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_4_2,
+        title: Strings.otherPassive_4_2_title,
+        text: [
+          Strings.otherPassive_4_2_text_0,
+          Strings.otherPassive_4_2_text_1,
+        ],
+      },
+    ],
+  },
+  {
+    icon: Images.otherPassive_5,
+    title: Strings.otherPassive_5_title,
+    text: [
+      Strings.otherPassive_5_text_0,
+      Strings.otherPassive_5_text_1,
+      Strings.otherPassive_5_text_2,
+    ],
+    data: [
+      {
+        icon: Images.otherPassive_5_0,
+        title: Strings.otherPassive_5_0_title,
+        text: [
+          Strings.otherPassive_5_0_text_0,
+          Strings.otherPassive_5_0_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_5_1,
+        title: Strings.otherPassive_5_1_title,
+        text: [
+          Strings.otherPassive_5_1_text_0,
+          Strings.otherPassive_5_1_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_5_2,
+        title: Strings.otherPassive_5_2_title,
+        text: [
+          Strings.otherPassive_5_2_text_0,
+          Strings.otherPassive_5_2_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_5_3,
+        title: Strings.otherPassive_5_3_title,
+        text: [
+          Strings.otherPassive_5_3_text_0,
+          Strings.otherPassive_5_3_text_1,
+        ],
+      },
+    ],
+  },
+  {
+    icon: Images.otherPassive_6,
+    title: Strings.otherPassive_6_title,
+    text: [
+      Strings.otherPassive_6_text_0,
+      Strings.otherPassive_6_text_1,
+      Strings.otherPassive_6_text_2,
+    ],
+    data: [
+      {
+        icon: Images.otherPassive_6_0,
+        title: Strings.otherPassive_6_0_title,
+        text: [
+          Strings.otherPassive_6_0_text_0,
+          Strings.otherPassive_6_0_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_6_1,
+        title: Strings.otherPassive_6_1_title,
+        text: [
+          Strings.otherPassive_6_1_text_0,
+          Strings.otherPassive_6_1_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_6_2,
+        title: Strings.otherPassive_6_2_title,
+        text: [
+          Strings.otherPassive_6_2_text_0,
+          Strings.otherPassive_6_2_text_1,
+        ],
+      },
+      {
+        icon: Images.otherPassive_6_3,
+        title: Strings.otherPassive_6_3_title,
+        text: [
+          Strings.otherPassive_6_3_text_0,
+          Strings.otherPassive_6_3_text_1,
+        ],
+      },
+    ],
+  },
+];
+const onlineEarning = [
+  {
+    icon: Images.online_0,
+    title: Strings.online_0_title,
+    text: [
+      Strings.online_0_text_0,
+      Strings.online_0_text_1,
+      Strings.online_0_text_2,
+    ],
+    data: [
+      {
+        icon: Images.online_0_0,
+        title: Strings.online_0_0_title,
+        text: [Strings.online_0_0_text_0, Strings.online_0_0_text_1],
+      },
+      {
+        icon: Images.online_0_1,
+        title: Strings.online_0_1_title,
+        text: [Strings.online_0_1_text_0, Strings.online_0_1_text_1],
+      },
+      {
+        icon: Images.online_0_2,
+        title: Strings.online_0_2_title,
+        text: [Strings.online_0_2_text_0, Strings.online_0_2_text_1],
+      },
+      {
+        icon: Images.online_0_3,
+        title: Strings.online_0_3_title,
+        text: [Strings.online_0_3_text_0, Strings.online_0_3_text_1],
+      },
+      {
+        icon: Images.online_0_4,
+        title: Strings.online_0_4_title,
+        text: [Strings.online_0_4_text_0, Strings.online_0_4_text_1],
+      },
+      {
+        icon: Images.online_0_5,
+        title: Strings.online_0_5_title,
+        text: [Strings.online_0_5_text_0, Strings.online_0_5_text_1],
+      },
+      {
+        icon: Images.online_0_6,
+        title: Strings.online_0_6_title,
+        text: [Strings.online_0_6_text_0, Strings.online_0_6_text_1],
+      },
+      {
+        icon: Images.online_0_7,
+        title: Strings.online_0_7_title,
+        text: [Strings.online_0_7_text_0, Strings.online_0_7_text_1],
+      },
+      {
+        icon: Images.online_0_8,
+        title: Strings.online_0_8_title,
+        text: [Strings.online_0_8_text_0, Strings.online_0_8_text_1],
+      },
+      {
+        icon: Images.online_0_9,
+        title: Strings.online_0_9_title,
+        text: [Strings.online_0_9_text_0, Strings.online_0_9_text_1],
+      },
+      {
+        icon: Images.online_0_10,
+        title: Strings.online_0_10_title,
+        text: [Strings.online_0_10_text_0, Strings.online_0_10_text_1],
+      },
+      {
+        icon: Images.online_0_11,
+        title: Strings.online_0_11_title,
+        text: [Strings.online_0_11_text_0, Strings.online_0_11_text_1],
+      },
+      {
+        icon: Images.online_0_12,
+        title: Strings.online_0_12_title,
+        text: [Strings.online_0_12_text_0, Strings.online_0_12_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.online_1,
+    title: Strings.online_1_title,
+    text: [
+      Strings.online_1_text_0,
+      Strings.online_1_text_1,
+      Strings.online_1_text_2,
+    ],
+    data: [
+      {
+        icon: Images.online_1_0,
+        title: Strings.online_1_0_title,
+        text: [Strings.online_1_0_text_0, Strings.online_1_0_text_1],
+      },
+      {
+        icon: Images.online_1_1,
+        title: Strings.online_1_1_title,
+        text: [Strings.online_1_1_text_0, Strings.online_1_1_text_1],
+      },
+      {
+        icon: Images.online_1_2,
+        title: Strings.online_1_2_title,
+        text: [Strings.online_1_2_text_0, Strings.online_1_2_text_1],
+      },
+      {
+        icon: Images.online_1_3,
+        title: Strings.online_1_3_title,
+        text: [Strings.online_1_3_text_0, Strings.online_1_3_text_1],
+      },
+      {
+        icon: Images.online_1_4,
+        title: Strings.online_1_4_title,
+        text: [Strings.online_1_4_text_0, Strings.online_1_4_text_1],
+      },
+      {
+        icon: Images.online_1_5,
+        title: Strings.online_1_5_title,
+        text: [Strings.online_1_5_text_0, Strings.online_1_5_text_1],
+      },
+      {
+        icon: Images.online_1_6,
+        title: Strings.online_1_6_title,
+        text: [Strings.online_1_6_text_0, Strings.online_1_6_text_1],
+      },
+      {
+        icon: Images.online_1_7,
+        title: Strings.online_1_7_title,
+        text: [Strings.online_1_7_text_0, Strings.online_1_7_text_1],
+      },
+      {
+        icon: Images.online_1_8,
+        title: Strings.online_1_8_title,
+        text: [Strings.online_1_8_text_0, Strings.online_1_8_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.online_2,
+    title: Strings.online_2_title,
+    text: [
+      Strings.online_2_text_0,
+      Strings.online_2_text_1,
+      Strings.online_2_text_2,
+    ],
+    data: [
+      {
+        icon: Images.online_2_0,
+        title: Strings.online_2_0_title,
+        text: [Strings.online_2_0_text_0, Strings.online_2_0_text_1],
+      },
+      {
+        icon: Images.online_2_1,
+        title: Strings.online_2_1_title,
+        text: [Strings.online_2_1_text_0, Strings.online_2_1_text_1],
+      },
+      {
+        icon: Images.online_2_2,
+        title: Strings.online_2_2_title,
+        text: [Strings.online_2_2_text_0, Strings.online_2_2_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.online_3,
+    title: Strings.online_3_title,
+    text: [
+      Strings.online_3_text_0,
+      Strings.online_3_text_1,
+      Strings.online_3_text_2,
+    ],
+    data: [
+      {
+        icon: Images.online_3_0,
+        title: Strings.online_3_0_title,
+        text: [Strings.online_3_0_text_0, Strings.online_3_0_text_1],
+      },
+      {
+        icon: Images.online_3_1,
+        title: Strings.online_3_1_title,
+        text: [Strings.online_3_1_text_0, Strings.online_3_1_text_1],
+      },
+      {
+        icon: Images.online_3_2,
+        title: Strings.online_3_2_title,
+        text: [Strings.online_3_2_text_0, Strings.online_3_2_text_1],
+      },
+      {
+        icon: Images.online_3_3,
+        title: Strings.online_3_3_title,
+        text: [Strings.online_3_3_text_0, Strings.online_3_3_text_1],
+      },
+      {
+        icon: Images.online_3_4,
+        title: Strings.online_3_4_title,
+        text: [Strings.online_3_4_text_0, Strings.online_3_4_text_1],
+      },
+      {
+        icon: Images.online_3_5,
+        title: Strings.online_3_5_title,
+        text: [Strings.online_3_5_text_0, Strings.online_3_5_text_1],
+      },
+      {
+        icon: Images.online_3_6,
+        title: Strings.online_3_6_title,
+        text: [Strings.online_3_6_text_0, Strings.online_3_6_text_1],
+      },
+      {
+        icon: Images.online_3_7,
+        title: Strings.online_3_7_title,
+        text: [Strings.online_3_7_text_0, Strings.online_3_7_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.online_4,
+    title: Strings.online_4_title,
+    text: [
+      Strings.online_4_text_0,
+      Strings.online_4_text_1,
+      Strings.online_4_text_2,
+    ],
+    data: [
+      {
+        icon: Images.online_4_0,
+        title: Strings.online_4_0_title,
+        text: [Strings.online_4_0_text_0, Strings.online_4_0_text_1],
+      },
+      {
+        icon: Images.online_4_1,
+        title: Strings.online_4_1_title,
+        text: [Strings.online_4_1_text_0, Strings.online_4_1_text_1],
+      },
+      {
+        icon: Images.online_4_2,
+        title: Strings.online_4_2_title,
+        text: [Strings.online_4_2_text_0, Strings.online_4_2_text_1],
+      },
+      {
+        icon: Images.online_4_3,
+        title: Strings.online_4_3_title,
+        text: [Strings.online_4_3_text_0, Strings.online_4_3_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.online_5,
+    title: Strings.online_5_title,
+    text: [
+      Strings.online_5_text_0,
+      Strings.online_5_text_1,
+      Strings.online_5_text_2,
+    ],
+    data: [
+      {
+        icon: Images.online_5_0,
+        title: Strings.online_5_0_title,
+        text: [Strings.online_5_0_text_0, Strings.online_5_0_text_1],
+      },
+      {
+        icon: Images.online_5_1,
+        title: Strings.online_5_1_title,
+        text: [Strings.online_5_1_text_0, Strings.online_5_1_text_1],
+      },
+      {
+        icon: Images.online_5_2,
+        title: Strings.online_5_2_title,
+        text: [Strings.online_5_2_text_0, Strings.online_5_2_text_1],
+      },
+      {
+        icon: Images.online_5_3,
+        title: Strings.online_5_3_title,
+        text: [Strings.online_5_3_text_0, Strings.online_5_3_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.online_6,
+    title: Strings.online_6_title,
+    text: [
+      Strings.online_6_text_0,
+      Strings.online_6_text_1,
+      Strings.online_6_text_2,
+    ],
+    data: [
+      {
+        icon: Images.online_6_0,
+        title: Strings.online_6_0_title,
+        text: [Strings.online_6_0_text_0, Strings.online_6_0_text_1],
+      },
+      {
+        icon: Images.online_6_1,
+        title: Strings.online_6_1_title,
+        text: [Strings.online_6_1_text_0, Strings.online_6_1_text_1],
+      },
+      {
+        icon: Images.online_6_2,
+        title: Strings.online_6_2_title,
+        text: [Strings.online_6_2_text_0, Strings.online_6_2_text_1],
+      },
+    ],
+  },
+  {
+    icon: Images.online_7,
+    title: Strings.online_7_title,
+    text: [
+      Strings.online_7_text_0,
+      Strings.online_7_text_1,
+      Strings.online_7_text_2,
+    ],
+    data: [
+      {
+        icon: Images.online_7_0,
+        title: Strings.online_7_0_title,
+        text: [Strings.online_7_0_text_0, Strings.online_7_0_text_1],
+      },
+      {
+        icon: Images.online_7_1,
+        title: Strings.online_7_1_title,
+        text: [Strings.online_7_1_text_0, Strings.online_7_1_text_1],
+      },
+      {
+        icon: Images.online_7_2,
+        title: Strings.online_7_2_title,
+        text: [Strings.online_7_2_text_0, Strings.online_7_2_text_1],
+      },
+      {
+        icon: Images.online_7_3,
+        title: Strings.online_7_3_title,
+        text: [Strings.online_7_3_text_0, Strings.online_7_3_text_1],
+      },
+      {
+        icon: Images.online_7_4,
+        title: Strings.online_7_4_title,
+        text: [Strings.online_7_4_text_0, Strings.online_7_4_text_1],
+      },
+    ],
+  },
+];
+const levelUp = [
+  {
+    icon: Images.level_0,
+    title: Strings.level_0_title,
+    text: [Strings.level_0_text_0, Strings.level_0_text_1],
+  },
+  {
+    icon: Images.level_1,
+    title: Strings.level_1_title,
+    text: [Strings.level_1_text_0, Strings.level_1_text_1],
+  },
+  {
+    icon: Images.level_2,
+    title: Strings.level_2_title,
+    text: [Strings.level_2_text_0, Strings.level_2_text_1],
+  },
+  {
+    icon: Images.level_3,
+    title: Strings.level_3_title,
+    text: [Strings.level_3_text_0, Strings.level_3_text_1],
+  },
+  {
+    icon: Images.level_4,
+    title: Strings.level_4_title,
+    text: [Strings.level_4_text_0, Strings.level_4_text_1],
+  },
+  {
+    icon: Images.level_5,
+    title: Strings.level_5_title,
+    text: [Strings.level_5_text_0, Strings.level_5_text_1],
+  },
+  {
+    icon: Images.level_0,
+    title: Strings.level_6_title,
+    text: [Strings.level_6_text_0, Strings.level_6_text_1],
+  },
+  {
+    icon: Images.level_1,
+    title: Strings.level_7_title,
+    text: [Strings.level_7_text_0, Strings.level_7_text_1],
+  },
+  {
+    icon: Images.level_2,
+    title: Strings.level_8_title,
+    text: [Strings.level_8_text_0, Strings.level_8_text_1],
+  },
+  {
+    icon: Images.level_3,
+    title: Strings.level_9_title,
+    text: [Strings.level_9_text_0, Strings.level_9_text_1],
+  },
+  {
+    icon: Images.level_4,
+    title: Strings.level_10_title,
+    text: [Strings.level_10_text_0, Strings.level_10_text_1],
+  },
+  {
+    icon: Images.level_5,
+    title: Strings.level_11_title,
+    text: [Strings.level_11_text_0, Strings.level_11_text_1],
+  },
+  {
+    icon: Images.level_0,
+    title: Strings.level_12_title,
+    text: [Strings.level_12_text_0, Strings.level_12_text_1],
+  },
+  {
+    icon: Images.level_1,
+    title: Strings.level_13_title,
+    text: [Strings.level_13_text_0, Strings.level_13_text_1],
+  },
+  {
+    icon: Images.level_2,
+    title: Strings.level_14_title,
+    text: [Strings.level_14_text_0, Strings.level_14_text_1],
+  },
+  {
+    icon: Images.level_3,
+    title: Strings.level_15_title,
+    text: [Strings.level_15_text_0, Strings.level_15_text_1],
+  },
+  {
+    icon: Images.level_4,
+    title: Strings.level_16_title,
+    text: [Strings.level_16_text_0, Strings.level_16_text_1],
+  },
+  {
+    icon: Images.level_5,
+    title: Strings.level_17_title,
+    text: [Strings.level_17_text_0, Strings.level_17_text_1],
+  },
+];
 
 export default useDummyData;

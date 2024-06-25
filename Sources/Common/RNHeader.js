@@ -17,6 +17,7 @@ const RNHeader = ({
   noScroll,
   back,
   onSettigPress,
+  onSharePress,
   onNextPress,
 }) => {
   const styles = useStyles();
@@ -43,6 +44,14 @@ const RNHeader = ({
           />
         )}
         <RNText style={[styles.title, titleStyle]}>{title}</RNText>
+        {onSharePress && (
+          <RNIcon
+            Svg={Svg.Share}
+            svgProps={{ width: size.icon, height: size.icon }}
+            onPress={onSharePress}
+            containerStyle={[styles.icon, { marginRight: wp(4) }]}
+          />
+        )}
         {onSettigPress && (
           <RNIcon
             Svg={Svg.SettingIcon}

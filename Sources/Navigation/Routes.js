@@ -6,6 +6,7 @@ import { NavConfigs, NavRoutes } from './index';
 import {
   AboutUs,
   ContactUs,
+  Details,
   HelpAndFeedback,
   Langugage,
   LevelUp,
@@ -39,19 +40,7 @@ const Routes = () => {
         {/* App */}
         <Stack.Screen name={NavRoutes.Welcome} component={Welcome} />
         <Stack.Screen name={NavRoutes.SmartWays} component={SmartWays} />
-        <Stack.Screen
-          name={NavRoutes.PassiveIncome}
-          component={PassiveIncome}
-        />
-        <Stack.Screen
-          name={NavRoutes.OtherPassiveIncome}
-          component={OtherPassiveIncome}
-        />
-        <Stack.Screen
-          name={NavRoutes.OnlineEarning}
-          component={OnlineEarning}
-        />
-        <Stack.Screen name={NavRoutes.LevelUp} component={LevelUp} />
+        <Stack.Screen name={NavRoutes.Details} component={Details} />
         <Stack.Screen name={NavRoutes.Setting} component={Setting} />
         <Stack.Screen
           name={NavRoutes.HelpAndFeedback}
