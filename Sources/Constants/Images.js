@@ -32,6 +32,7 @@ const Images = {
   instagram: require(imagePath + 'instagram' + png),
   facebook: require(imagePath + 'facebook' + png),
   youtube: require(imagePath + 'youtube' + png),
+  cross: require(imagePath + 'cross' + png),
   smartway_0: require(imagePath + 'smartway_0' + png),
   smartway_1: require(imagePath + 'smartway_1' + png),
   smartway_2: require(imagePath + 'smartway_2' + png),
