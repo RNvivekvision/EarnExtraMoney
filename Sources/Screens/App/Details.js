@@ -1,18 +1,34 @@
-import { LOCards } from '../../Components';
+import { View } from 'react-native';
+import { LOCards, LOHtml } from '../../Components';
 import { NavRoutes } from '../../Navigation';
+import { RNStyles } from '../../Common';
+import { useState } from 'react';
 
 const Details = ({ navigation, route }) => {
-  console.log('route -> ', JSON.stringify(route, null, 2));
   const { title, data } = route.params;
+  const [State, setState] = useState({ showHtml: false, html: null });
 
   const onItemPress = item => {
-    console.log('item -> ', JSON.stringify(item, null, 2));
-    navigation.push(NavRoutes.Details, {
-      title: item.title,
-      data: item.data,
-    });
+    if (item?.data?.length > 0) {
+      navigation.push(NavRoutes.Details, {
+        title: item.title,
+        data: item.data,
+      });
+    } else {
+      setState(p => ({ ...p, showHtml: true, html: item.html }));
+    }
   };
-  return <LOCards title={title} data={data} onPress={onItemPress} />;
+
+  return (
+    <View style={RNStyles.container}>
+      <LOCards title={title} data={data} onPress={onItemPress} />
+      <LOHtml
+        visible={State.showHtml}
+        onClose={() => setState(p => ({ ...p, showHtml: false }))}
+        html={State.html}
+      />
+    </View>
+  );
 };
 
 export default Details;

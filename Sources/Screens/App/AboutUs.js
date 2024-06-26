@@ -1,9 +1,10 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import {
   RNButton,
   RNContainer,
   RNGradient,
   RNHeader,
+  RNImage,
   RNStyles,
   RNText,
 } from '../../Common';
@@ -67,15 +68,18 @@ const AboutUs = ({ navigation }) => {
 
         <View style={styles.iconContainer}>
           {FollowOn.map((v, i) => (
-            <View key={i} style={styles.renderContainer}>
-              <v.icon />
+            <TouchableOpacity
+              key={i}
+              activeOpacity={0.6}
+              style={styles.renderContainer}>
+              <RNImage source={v.icon} style={styles.icon} />
               <RNText
                 pTop={hp(0.5)}
                 size={FontSize.font12}
                 family={FontFamily.Medium}>
                 {v.title}
               </RNText>
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
       </RNHeader>
@@ -85,6 +89,7 @@ const AboutUs = ({ navigation }) => {
 
 const size = {
   appIcon: wp(40),
+  logo: wp(10),
 };
 const styles = StyleSheet.create({
   appIconContainer: {
@@ -111,6 +116,10 @@ const styles = StyleSheet.create({
   renderContainer: {
     ...RNStyles.center,
     marginHorizontal: wp(4),
+  },
+  icon: {
+    width: size.logo,
+    height: size.logo,
   },
 });
 

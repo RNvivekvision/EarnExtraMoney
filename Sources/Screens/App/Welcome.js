@@ -1,11 +1,10 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNContainer, RNHeader, RNImage, RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
-import { Strings } from '../../Constants';
+import { Strings, Images } from '../../Constants';
 import { NavRoutes } from '../../Navigation';
 import { NativeAd } from '../../Components';
 import { Functions } from '../../Utils';
-import Images from '../../Constants/Images';
 
 const size = {
   start: wp(15),
