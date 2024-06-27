@@ -70,7 +70,7 @@ const Onboarding = ({ navigation }) => {
   };
 
   return (
-    <RNContainer style={styles.container}>
+    <RNContainer style={styles.container} useSafeArea>
       <View style={styles.flatlistContainer}>
         <Reanimated.FlatList
           ref={flatListRef}
@@ -137,9 +137,6 @@ const useStyles = () => {
   const inset = useInset();
 
   return StyleSheet.create({
-    container: {
-      paddingBottom: inset.bottom,
-    },
     flatlistContainer: {
       flex: 1,
     },

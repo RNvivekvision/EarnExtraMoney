@@ -366,7 +366,6 @@
   "passive_6_text_1": "Gere tráfego através de SEO, mídias sociais e guest posting.",
   "passive_6_text_2": "Monetize com anúncios, marketing de afiliados, conteúdo patrocinado ou vendas de produtos.",
   "passive_7_title": "Serviços Personalizados",
-  "passive_7_title": "Serviços Personalizados",
   "passive_7_text_0": "Ofereça serviços especializados como consultoria, coaching, design ou escrita.",
   "passive_7_text_1": "Promova seus serviços através do seu próprio site, mídias sociais e networking.",
   "passive_7_text_2": "Construa uma base de clientes fornecendo serviços personalizados e de alta qualidade.",
@@ -590,5 +589,10 @@
   "otherPassive_6_2_text_1": "Inclui estadias em fazendas, tours e atividades educativas.",
   "otherPassive_6_3_title": "Cultivo em Estufa",
   "otherPassive_6_3_text_0": "Cultivo de culturas em um ambiente controlado.",
-  "otherPassive_6_3_text_1": "Permite a produção durante todo o ano e proteção contra condições climáticas."
+  "otherPassive_6_3_text_1": "Permite a produção durante todo o ano e proteção contra condições climáticas.",
+  "AD": "Anúncio",
+  "playGames": "Jogar Jogos",
+  "playGamesDesc": "Comece sua aventura com um toque - Jogue Agora!",
+  "playQuiz": "Jogar Quiz",
+  "playQuizDesc": "Mergulhe no conhecimento - Hora do Quiz, Jogue Agora!"
 }

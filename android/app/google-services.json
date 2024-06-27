@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "297760367999",
+    "project_id": "earn-money-be01f",
+    "storage_bucket": "earn-money-be01f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297760367999:android:fcd24e1aaedc3dd410a64a",
+        "android_client_info": {
+          "package_name": "com.earn.money"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQZFoG3DWw6d5Q74m-Z7J7RxAXz9oGVDs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

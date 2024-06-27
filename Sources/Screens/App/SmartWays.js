@@ -1,5 +1,5 @@
 import { RNContainer, RNHeader } from '../../Common';
-import { NativeAd, RenderSmartWays } from '../../Components';
+import { RenderSmartWays, TwoAds } from '../../Components';
 import { Strings } from '../../Constants';
 import { NavRoutes } from '../../Navigation';
 import { useDummyData } from '../../Hooks';
@@ -34,7 +34,7 @@ const SmartWays = ({ navigation }) => {
             isParent={true}
           />
         ))}
-        <NativeAd two />
+        <TwoAds />
       </RNHeader>
     </RNContainer>
   );

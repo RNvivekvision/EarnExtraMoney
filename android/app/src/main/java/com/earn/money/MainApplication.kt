@@ -1,4 +1,4 @@
-package com.earnextramoney
+package com.earn.money
 
 import android.app.Application
 import com.facebook.react.PackageList

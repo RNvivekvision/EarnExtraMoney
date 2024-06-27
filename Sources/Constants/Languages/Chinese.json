@@ -583,5 +583,10 @@
   "otherPassive_6_2_text_1": "包括农场住宿、参观和教育活动。",
   "otherPassive_6_3_title": "温室种植",
   "otherPassive_6_3_text_0": "在受控环境中种植作物。",
-  "otherPassive_6_3_text_1": "允许全年生产并保护作物免受天气影响。"
+  "otherPassive_6_3_text_1": "允许全年生产并保护作物免受天气影响。",
+  "AD": "广告",
+  "playGames": "玩游戏",
+  "playGamesDesc": "点击开始你的冒险 - 立即玩！",
+  "playQuiz": "玩测验",
+  "playQuizDesc": "沉浸在知识中 - 测验时间，立即玩！"
 }

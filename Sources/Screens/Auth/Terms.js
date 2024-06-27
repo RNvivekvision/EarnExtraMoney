@@ -14,7 +14,7 @@ const Terms = ({ navigation }) => {
   };
 
   return (
-    <RNContainer>
+    <RNContainer useSafeArea>
       <RNHeader title={Strings.termsAndCondition}>
         {termsOfUse.map((v, i) => (
           <RenderTerms key={i} item={v} index={i} />

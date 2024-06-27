@@ -589,5 +589,10 @@
   "otherPassive_6_2_text_1": "Comprend les séjours à la ferme, les visites guidées et les activités éducatives.",
   "otherPassive_6_3_title": "Culture sous Serre",
   "otherPassive_6_3_text_0": "Cultiver des cultures dans un environnement contrôlé.",
-  "otherPassive_6_3_text_1": "Permet une production toute l'année et une protection contre les intempéries."
+  "otherPassive_6_3_text_1": "Permet une production toute l'année et une protection contre les intempéries.",
+  "AD": "Publicité",
+  "playGames": "Jouer aux jeux",
+  "playGamesDesc": "Lancez-vous dans votre aventure avec un tap - Jouez maintenant !",
+  "playQuiz": "Jouer au quiz",
+  "playQuizDesc": "Plongez dans la connaissance - C'est l'heure du quiz, Jouez maintenant !"
 }

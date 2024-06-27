@@ -589,5 +589,10 @@
   "otherPassive_6_2_text_1": "Incluye estadías en granjas, tours y actividades educativas.",
   "otherPassive_6_3_title": "Cultivo en Invernaderos",
   "otherPassive_6_3_text_0": "Cultivar cultivos en un ambiente controlado.",
-  "otherPassive_6_3_text_1": "Permite la producción durante todo el año y protección contra el clima."
+  "otherPassive_6_3_text_1": "Permite la producción durante todo el año y protección contra el clima.",
+  "AD": "Anuncio",
+  "playGames": "Jugar Juegos",
+  "playGamesDesc": "Empieza tu aventura con un toque - ¡Juega ahora!",
+  "playQuiz": "Jugar Quiz",
+  "playQuizDesc": "Sumérgete en el conocimiento - Hora del Quiz, ¡Juega ahora!"
 }

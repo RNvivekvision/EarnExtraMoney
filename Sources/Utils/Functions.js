@@ -3,7 +3,7 @@ import Rate, { AndroidMarket } from 'react-native-rate';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const isDev = __DEV__;
-const androidPackage = 'com.earnextramoney';
+const androidPackage = 'com.earn.money';
 const appLink = Platform.select({
   android: `https://play.google.com/store/apps/details?id=${androidPackage}`,
   ios: 'https://apps.apple.com/in/app/id6502944625',

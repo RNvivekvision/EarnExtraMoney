@@ -589,5 +589,10 @@
   "otherPassive_6_2_text_1": "Includes farm stays, tours, and educational activities.",
   "otherPassive_6_3_title": "Greenhouse Farming",
   "otherPassive_6_3_text_0": "Growing crops in a controlled environment.",
-  "otherPassive_6_3_text_1": "Allows for year-round production and protection from weather."
+  "otherPassive_6_3_text_1": "Allows for year-round production and protection from weather.",
+  "AD": "AD",
+  "playGames": "Play Games",
+  "playGamesDesc": "Embark on your adventure with a tap - Play Now!",
+  "playQuiz": "Play Quiz",
+  "playQuizDesc": "Dive into knowledge - Quiz Time, Play Now!"
 }

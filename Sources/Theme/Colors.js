@@ -6,6 +6,7 @@ const Colors = {
   Placeholder: '#D3D3D3',
   skip: '#E5E5E5',
   welcomeDescription: '#7C7676',
+  ads: '#FFCE00',
 };
 
 export default Colors;

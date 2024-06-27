@@ -589,5 +589,10 @@
   "otherPassive_6_2_text_1": "Include soggiorni in fattoria, tour e attività educative.",
   "otherPassive_6_3_title": "Coltivazione in Serra",
   "otherPassive_6_3_text_0": "Coltivazione di colture in un ambiente controllato.",
-  "otherPassive_6_3_text_1": "Consente la produzione durante tutto l'anno e protegge dalle condizioni meteorologiche."
+  "otherPassive_6_3_text_1": "Consente la produzione durante tutto l'anno e protegge dalle condizioni meteorologiche.",
+  "AD": "Annuncio",
+  "playGames": "Gioca ai giochi",
+  "playGamesDesc": "Inizia la tua avventura con un tocco - Gioca ora!",
+  "playQuiz": "Gioca al quiz",
+  "playQuizDesc": "Immergiti nella conoscenza - È tempo di quiz, Gioca ora!"
 }

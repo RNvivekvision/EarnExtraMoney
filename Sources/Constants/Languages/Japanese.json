@@ -589,5 +589,10 @@
   "otherPassive_6_2_text_1": "農場滞在、ツアー、教育活動を含む。",
   "otherPassive_6_3_title": "温室栽培",
   "otherPassive_6_3_text_0": "管理された環境で作物を栽培する。",
-  "otherPassive_6_3_text_1": "年間を通じた生産を可能にし、天候から保護する。"
+  "otherPassive_6_3_text_1": "年間を通じた生産を可能にし、天候から保護する。",
+  "AD": "広告",
+  "playGames": "ゲームをプレイ",
+  "playGamesDesc": "タップで冒険を始めよう - 今すぐプレイ！",
+  "playQuiz": "クイズをプレイ",
+  "playQuizDesc": "知識に飛び込もう - クイズタイム、今すぐプレイ！"
 }

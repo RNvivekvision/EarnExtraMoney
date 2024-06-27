@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.Placeholder,
     marginHorizontal: wp(4),
-    marginVertical: hp(2),
     paddingVertical: hp(4),
     backgroundColor: Colors.White,
     borderRadius: wp(3),
@@ -114,9 +113,9 @@ const styles = StyleSheet.create({
     marginHorizontal: wp(4),
     marginVertical: hp(2),
     height: wp(40),
-    // backgroundColor: '#f00',
   },
   rateUsContainer: {
+    ...RNStyles.center,
     ...RNStyles.shadow,
     backgroundColor: Colors.White,
     width: '44%',
@@ -127,7 +126,6 @@ const styles = StyleSheet.create({
   },
   shareButtonContainer: {
     flex: 1,
-    // height: '100%',
     justifyContent: 'space-between',
     marginLeft: wp(4),
   },
@@ -142,7 +140,6 @@ const styles = StyleSheet.create({
   },
   buttonTitle: {
     fontSize: FontSize.font18,
-    latterSpacing: 0.5,
     fontFamily: FontFamily.Medium,
     width: wp(30),
   },
@@ -159,6 +156,7 @@ const styles = StyleSheet.create({
   rateus: {
     width: size.rateUs,
     height: size.rateUs,
+    alignSelf: 'flex-start',
   },
   share: {
     width: size.share,
