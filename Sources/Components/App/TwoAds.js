@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: FontSize.font10,
-    color: Colors.welcomeDescription,
+    color: Colors.welcome,
     textAlign: 'center',
     paddingHorizontal: wp(4),
   },

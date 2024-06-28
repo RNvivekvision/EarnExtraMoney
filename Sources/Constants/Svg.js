@@ -1,5 +1,4 @@
 import { wp } from '../Theme';
-
 import AppIconSvg from '../Assets/SVG/appIcon.svg';
 import Setting from '../Assets/SVG/setting.svg';
 import SplashScreenSvg from '../Assets/SVG/splashScreen.svg';

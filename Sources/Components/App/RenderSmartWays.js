@@ -29,7 +29,7 @@ const RenderSmartWays = ({ item, index, onPress, isParent }) => {
             <View key={i} style={{ flexDirection: 'row' }}>
               <RNText size={FontSize.font8}>{isParent ? '' : '* '}</RNText>
               <RNText
-                color={Colors.welcomeDescription}
+                color={Colors.welcome}
                 size={FontSize.font8}
                 family={FontFamily.Medium}>
                 {v}

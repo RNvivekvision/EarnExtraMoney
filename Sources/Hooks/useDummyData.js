@@ -1,4 +1,4 @@
-import { Strings, Svg, Images, Htmls } from '../Constants';
+import { Strings, Images, Htmls } from '../Constants';
 import { NavRoutes } from '../Navigation';
 
 const useDummyData = () => {

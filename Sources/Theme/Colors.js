@@ -5,7 +5,7 @@ const Colors = {
   Primary: '#6F58F4',
   Placeholder: '#D3D3D3',
   skip: '#E5E5E5',
-  welcomeDescription: '#7C7676',
+  welcome: '#7C7676',
   ads: '#FFCE00',
   telegram: '#3FB6F0',
 };

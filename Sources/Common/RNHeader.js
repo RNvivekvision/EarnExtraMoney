@@ -3,7 +3,7 @@ import { StatusBar, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { RNIcon, RNStyles, RNText, RNScrollView } from './index';
-import { Images, Svg } from '../Constants';
+import { Images } from '../Constants';
 import { useInset } from '../Hooks';
 
 const RNHeader = ({

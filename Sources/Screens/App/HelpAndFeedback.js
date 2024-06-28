@@ -42,7 +42,7 @@ const HelpAndFeedback = ({ navigation }) => {
           size={FontSize.font14}
           family={FontFamily.Medium}
           pTop={hp(1)}
-          color={Colors.welcomeDescription}>
+          color={Colors.welcome}>
           {Strings.Subjects}
         </RNText>
         <View style={styles.subjectContainer}>
@@ -71,7 +71,7 @@ const HelpAndFeedback = ({ navigation }) => {
           size={FontSize.font14}
           family={FontFamily.Medium}
           pTop={hp(2)}
-          color={Colors.welcomeDescription}>
+          color={Colors.welcome}>
           {Strings.Whattypeoffeaturedoyourequire}
         </RNText>
         <TouchableOpacity

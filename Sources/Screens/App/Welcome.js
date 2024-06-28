@@ -35,7 +35,7 @@ const Welcome = ({ navigation }) => {
               {Strings.LetsStart}
             </RNText>
             <RNText
-              color={Colors.welcomeDescription}
+              color={Colors.welcome}
               pTop={hp(0.5)}
               family={FontFamily.Medium}
               size={FontSize.font10}>
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: FontSize.font8,
     fontFamily: FontFamily.Medium,
-    color: Colors.welcomeDescription,
+    color: Colors.welcome,
     width: wp(30),
   },
   start: {
