@@ -5,6 +5,10 @@ const initialState = {
   clickCount: 0,
   adLoading: false,
   adData: null,
+  clickAds: false,
+  Admob: null,
+  Admanager1: null,
+  Admanager2: null,
 };
 
 const UserReducer = createSlice({
@@ -12,7 +16,11 @@ const UserReducer = createSlice({
   initialState: initialState,
   reducers: {
     increaseCount: (s, a) => {
-      s.clickCount = a.payload;
+      s.clickCount = s.clickCount + 1;
+      s.clickAds = s.clickCount % s.adData?.innerPageAdClickCount === 0;
+    },
+    showAdLoader: (s, a) => {
+      s.adLoading = a.payload;
     },
   },
   extraReducers: b => {
@@ -34,6 +42,6 @@ const UserReducer = createSlice({
   },
 });
 
-export const { increaseCount } = UserReducer.actions;
+export const { showAdLoader, increaseCount } = UserReducer.actions;
 
 export default UserReducer.reducer;

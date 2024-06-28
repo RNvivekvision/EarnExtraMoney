@@ -4,10 +4,10 @@ import { Colors } from '../Theme';
 import RNStyles from './RNStyles';
 import RNLoader from './RNLoader';
 import { useInset } from '../Hooks';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const RNContainer = ({ style, children, isLoading, useSafeArea }) => {
-  // const { adLoading } = useSelector(({ UserReducer }) => UserReducer);
+  const { adLoading } = useSelector(({ UserReducer }) => UserReducer);
   const inset = useInset();
 
   return (
@@ -22,8 +22,7 @@ const RNContainer = ({ style, children, isLoading, useSafeArea }) => {
         translucent={true}
         backgroundColor={Colors.Transparent}
       />
-      {/* <RNLoader visible={isLoading || adLoading} /> */}
-      <RNLoader visible={isLoading} />
+      <RNLoader visible={isLoading || adLoading} />
       {children}
     </View>
   );

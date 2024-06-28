@@ -1,22 +1,30 @@
 import { useState } from 'react';
 import { LOTerms, NativeAd, RenderTerms } from '../../Components';
 import { RNButton, RNContainer, RNHeader } from '../../Common';
-import { useDummyData, useUserClick } from '../../Hooks';
+import { useDummyData, useGoogleAds, useUserClick } from '../../Hooks';
 import { NavRoutes } from '../../Navigation';
 import { Strings } from '../../Constants';
 
 const Terms = ({ navigation }) => {
   const { termsOfUse } = useDummyData();
   const { incrementCount } = useUserClick();
+  const { showInterstitialAd } = useGoogleAds();
   const [State, setState] = useState({ isChecked: false });
 
-  const onTermPress = () => {
+  const onItemPress = async () => {
     incrementCount();
+    await showInterstitialAd();
+  };
+
+  const onTermPress = async () => {
+    incrementCount();
+    await showInterstitialAd();
     setState(p => ({ ...p, isChecked: !p.isChecked }));
   };
 
-  const onAcceptPress = () => {
+  const onAcceptPress = async () => {
     incrementCount();
+    await showInterstitialAd();
     navigation.navigate(NavRoutes.Langugage);
   };
 
@@ -24,7 +32,7 @@ const Terms = ({ navigation }) => {
     <RNContainer useSafeArea>
       <RNHeader title={Strings.termsAndCondition}>
         {termsOfUse.map((v, i) => (
-          <RenderTerms key={i} item={v} index={i} onPress={incrementCount} />
+          <RenderTerms key={i} item={v} index={i} onPress={onItemPress} />
         ))}
         <LOTerms
           isChecked={State.isChecked}

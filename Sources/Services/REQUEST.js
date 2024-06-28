@@ -18,7 +18,7 @@ const REQUEST = async ({
     data: Params,
     url: URL.AppUrl + EndPoint,
   };
-  console.log('options -> ', JSON.stringify(options, null, 2));
+  // console.log('Payload -> ', JSON.stringify(options, null, 2));
   // const response = await Axios(options);
   // return response.data;
 
@@ -29,7 +29,7 @@ const REQUEST = async ({
     headers: Headers,
   });
   const response = await responseJson?.json();
-  console.log('response -> ', JSON.stringify(response, null, 2));
+  // console.log('Response -> ', JSON.stringify(response, null, 2));
   return response;
 };
 const Header = (NeedToken, Token, IsformData) => {

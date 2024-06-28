@@ -1,7 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RNButton, RNContainer, RNStyles } from '../../Common';
-import { useDummyData, useInset, useUserClick } from '../../Hooks';
+import {
+  useDummyData,
+  useGoogleAds,
+  useInset,
+  useUserClick,
+} from '../../Hooks';
 import {
   LOPagginationDots,
   NativeAd,
@@ -17,6 +22,7 @@ import { Strings } from '../../Constants';
 
 const Onboarding = ({ navigation }) => {
   const { incrementCount } = useUserClick();
+  const { showInterstitialAd } = useGoogleAds();
   const { onboarding } = useDummyData();
   const [State, setState] = useState({ currentSlider: 0 });
   const flatListRef = useRef();
@@ -40,32 +46,36 @@ const Onboarding = ({ navigation }) => {
     setState(p => ({ ...p, currentSlider }));
   };
 
-  const onNext = () => {
+  const onNext = async () => {
     incrementCount();
+    await showInterstitialAd();
     flatListRef.current.scrollToIndex({
       animated: true,
       index: State.currentSlider + 1,
     });
   };
 
-  const onBack = () => {
+  const onBack = async () => {
     incrementCount();
+    await showInterstitialAd();
     flatListRef.current.scrollToIndex({
       animated: true,
       index: State.currentSlider - 1,
     });
   };
 
-  const onSkip = () => {
+  const onSkip = async () => {
     incrementCount();
+    await showInterstitialAd();
     flatListRef.current.scrollToIndex({
       animated: true,
       index: onboarding.length - 1,
     });
   };
 
-  const onGetStarted = () => {
+  const onGetStarted = async () => {
     incrementCount();
+    await showInterstitialAd();
     navigation.navigate(NavRoutes.Terms);
   };
 

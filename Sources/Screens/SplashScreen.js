@@ -1,14 +1,37 @@
+import { useSelector } from 'react-redux';
 import { StatusBar, StyleSheet, View } from 'react-native';
+import { useGoogleAds, useLocalStorage } from '../Hooks';
 import { RNProgress, RNStyles, RNText } from '../Common';
 import { Colors, FontFamily, hp, wp } from '../Theme';
 import { Strings, Svg } from '../Constants';
 import { NavRoutes } from '../Navigation';
-import { useLocalStorage } from '../Hooks';
+import { useSharedValue, withTiming } from 'react-native-reanimated';
+import { useEffect } from 'react';
 
 const SplashScreen = ({ navigation }) => {
+  const progress = useSharedValue(0);
+  const duration = 2 * 1000;
+  const { adData } = useSelector(({ UserReducer }) => UserReducer);
   const { localdata } = useLocalStorage();
+  const { showAppOpenAd } = useGoogleAds();
 
-  const onProgressFinish = () => {
+  useEffect(() => {
+    onProgressStart();
+  }, [adData]);
+
+  const onProgressStart = async () => {
+    showAppOpenAd();
+    progress.value = withTiming(100, {
+      duration: duration,
+    });
+  };
+
+  useEffect(() => {
+    const id = setInterval(onProgressFinish, duration);
+    return () => clearInterval(id);
+  }, [localdata?.hasUser, adData]);
+
+  const onProgressFinish = async () => {
     localdata?.lang && Strings.setLanguage(localdata?.lang);
     const screenName = localdata?.hasUser
       ? NavRoutes.Welcome
@@ -22,7 +45,7 @@ const SplashScreen = ({ navigation }) => {
       <Svg.SplashScreenSvg width={wp(100)} height={hp(100)} />
 
       <View style={styles.loaderContainer}>
-        <RNProgress onFinish={onProgressFinish} dep={localdata?.hasUser} />
+        <RNProgress progress={progress} />
         <RNText
           align={'right'}
           color={Colors.Primary}

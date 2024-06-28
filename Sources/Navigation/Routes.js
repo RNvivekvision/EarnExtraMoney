@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Splash from 'react-native-splash-screen';
+import { AppState } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavConfigs, NavRoutes } from './index';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getAdData } from '../Redux/ExtraReducers';
 import {
   AboutUs,
@@ -19,11 +20,28 @@ import {
   Terms,
   Welcome,
 } from '../Screens';
+import { useGoogleAds } from '../Hooks';
 
 const Stack = createStackNavigator();
 
 const Routes = () => {
+  const { adData } = useSelector(({ UserReducer }) => UserReducer);
   const dispatch = useDispatch();
+  const { showAppOpenAd } = useGoogleAds();
+  const appState = useRef(AppState.currentState);
+
+  useEffect(() => {
+    const subscription = AppState.addEventListener('change', nextAppState => {
+      if (
+        appState.current.match(/inactive|background/) &&
+        nextAppState === 'active'
+      ) {
+        showAppOpenAd();
+      }
+      appState.current = nextAppState;
+    });
+    return () => subscription.remove();
+  }, [adData]);
 
   useEffect(() => {
     dispatch(getAdData());

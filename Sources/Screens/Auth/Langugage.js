@@ -7,23 +7,26 @@ import { NavRoutes } from '../../Navigation';
 import { Strings } from '../../Constants';
 import { I18nManager } from 'react-native';
 import RNRestart from 'react-native-restart';
-import { useDummyData, useUserClick } from '../../Hooks';
+import { useDummyData, useGoogleAds, useUserClick } from '../../Hooks';
 
 const Langugage = ({ navigation }) => {
   const { languages } = useDummyData();
   const { incrementCount } = useUserClick();
+  const { showInterstitialAd } = useGoogleAds();
 
   const [State, setState] = useState({
     selectedLanguage: languages[0],
   });
 
-  const onChangeLanguage = langugage => {
+  const onChangeLanguage = async langugage => {
     incrementCount();
+    await showInterstitialAd();
     setState(p => ({ ...p, selectedLanguage: langugage }));
   };
 
   const onNextPress = async () => {
     try {
+      await showInterstitialAd();
       const isRtl = State.selectedLanguage.value === 'ar';
       Strings.setLanguage(State.selectedLanguage.value);
       I18nManager.forceRTL(isRtl);

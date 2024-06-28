@@ -1,1 +1,1 @@
-export { increaseCount } from '../Reducers/UserReducer';
+export { showAdLoader, increaseCount } from '../Reducers/UserReducer';

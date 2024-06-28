@@ -1,30 +1,8 @@
-import React, { useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withTiming,
-} from 'react-native-reanimated';
+import Animated, { useAnimatedStyle } from 'react-native-reanimated';
 import { Colors, wp } from '../Theme';
 
-const RNProgress = ({ onFinish, dep, second = 3 }) => {
-  const progress = useSharedValue(0);
-  const duration = second * 1000;
-
-  useEffect(() => {
-    progress.value = withTiming(100, {
-      duration: duration,
-    });
-
-    setTimeout(() => {
-      finish();
-    }, duration);
-  }, [dep]);
-
-  const finish = () => {
-    onFinish?.();
-  };
-
+const RNProgress = ({ progress }) => {
   const animatedStyle = useAnimatedStyle(
     () => ({
       width: `${progress.value}%`,
