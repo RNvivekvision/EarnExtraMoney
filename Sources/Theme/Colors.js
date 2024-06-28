@@ -7,6 +7,7 @@ const Colors = {
   skip: '#E5E5E5',
   welcomeDescription: '#7C7676',
   ads: '#FFCE00',
+  telegram: '#3FB6F0',
 };
 
 export default Colors;

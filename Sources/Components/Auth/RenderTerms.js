@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { Colors, FontFamily, FontSize, hp, isAndroid, wp } from '../../Theme';
 import { RNImage, RNStyles, RNText } from '../../Common';
-import { Svg } from '../../Constants';
+import { Images } from '../../Constants';
 import Reanimated, { FadeInDown } from 'react-native-reanimated';
 
 if (isAndroid) {
@@ -34,13 +34,13 @@ const RenderTerms = ({ item, index }) => {
           <RNImage source={item.icon} style={styles.icons} />
           <RNText style={styles.title}>{item.title}</RNText>
         </View>
-        <Svg.Back
-          width={size.back}
-          height={size.back}
-          fill={Colors.Black}
-          style={{
-            transform: [{ rotate: State.showText ? '90deg' : '-90deg' }],
-          }}
+
+        <RNImage
+          source={Images.back}
+          style={[
+            styles.back,
+            { transform: [{ rotate: State.showText ? '90deg' : '-90deg' }] },
+          ]}
         />
       </TouchableOpacity>
 
@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     width: wp(4),
     height: wp(4),
     tintColor: Colors.Black,
-    transform: [{ rotate: '-90deg' }],
   },
   textContainer: {
     paddingVertical: hp(1.5),

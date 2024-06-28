@@ -10,6 +10,7 @@ const NavRoutes = {
   ContactUs: 'Contact Us',
   AboutUs: 'About Us',
   Details: 'Details',
+  Html: 'Html',
 };
 
 export default NavRoutes;

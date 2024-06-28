@@ -3,7 +3,7 @@ import { StatusBar, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { RNIcon, RNStyles, RNText, RNScrollView } from './index';
-import { Svg } from '../Constants';
+import { Images, Svg } from '../Constants';
 import { useInset } from '../Hooks';
 
 const RNHeader = ({
@@ -33,12 +33,7 @@ const RNHeader = ({
       <View style={[styles.Container, containerStyle]}>
         {back && (
           <RNIcon
-            Svg={Svg.Back}
-            svgProps={{
-              width: size.icon,
-              height: size.icon,
-              fill: Colors.White,
-            }}
+            icon={Images.back}
             onPress={onBackPress}
             containerStyle={styles.icon}
           />
@@ -46,16 +41,15 @@ const RNHeader = ({
         <RNText style={[styles.title, titleStyle]}>{title}</RNText>
         {onSharePress && (
           <RNIcon
-            Svg={Svg.Share}
-            svgProps={{ width: size.icon, height: size.icon }}
+            icon={Images.setting_8}
+            iconStyle={{ tintColor: Colors.White }}
             onPress={onSharePress}
             containerStyle={[styles.icon, { marginRight: wp(4) }]}
           />
         )}
         {onSettigPress && (
           <RNIcon
-            Svg={Svg.SettingIcon}
-            svgProps={{ width: size.icon, height: size.icon }}
+            icon={Images.settingHeader}
             onPress={onSettigPress}
             containerStyle={styles.icon}
           />

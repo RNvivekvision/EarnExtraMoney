@@ -35,23 +35,18 @@ const useDummyData = () => {
       },
       {
         icon: Images.terms_1,
-        title: Strings.Security,
+        title: Strings.ContentLiability,
         text: Strings.terms_text_1,
       },
       {
         icon: Images.terms_2,
-        title: Strings.ChildrensPrivacy,
+        title: Strings.ReservationofRights,
         text: Strings.terms_text_2,
       },
       {
         icon: Images.terms_3,
-        title: Strings.ChangestoThisPrivacyPolicy,
+        title: Strings.Disclaimer,
         text: Strings.terms_text_3,
-      },
-      {
-        icon: Images.terms_4,
-        title: Strings.Notice,
-        text: Strings.terms_text_4,
       },
     ],
     languages: [
@@ -1292,41 +1287,46 @@ const useDummyData = () => {
     ],
     setting: [
       {
-        icon: Svg.Games,
+        icon: Images.setting_0,
         title: Strings.Games,
       },
       {
-        icon: Svg.Quiz,
+        icon: Images.setting_1,
         title: Strings.Quiz,
       },
       {
-        icon: Svg.RateUsSetting,
+        icon: Images.setting_2,
         title: Strings.RateUs,
         rateUs: true,
       },
       {
-        icon: Svg.ShareSetting,
+        icon: Images.setting_3,
         title: Strings.Shareapp,
         shareApp: true,
       },
       {
-        icon: Svg.ContactUs,
+        icon: Images.setting_4,
         title: Strings.Contactus,
         navigate: NavRoutes.ContactUs,
       },
       {
-        icon: Svg.HelpAndFeedback,
+        icon: Images.setting_5,
         title: Strings.HelpAndFeedback,
         navigate: NavRoutes.HelpAndFeedback,
       },
       {
-        icon: Svg.PrivacyPolicy,
+        icon: Images.setting_6,
         title: Strings.Privacypolicy,
       },
       {
-        icon: Svg.AboutUs,
+        icon: Images.setting_7,
         title: Strings.Aboutus,
         navigate: NavRoutes.AboutUs,
+      },
+      {
+        icon: Images.setting_8,
+        title: Strings.ContactOfficial,
+        telegram: true,
       },
     ],
     FollowOn: [

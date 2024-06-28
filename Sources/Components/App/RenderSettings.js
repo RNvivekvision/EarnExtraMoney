@@ -1,5 +1,5 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { RNStyles, RNText } from '../../Common';
+import { RNImage, RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import Reanimated, { FadeInDown } from 'react-native-reanimated';
 
@@ -13,7 +13,7 @@ const RenderSettings = ({ item, index, onPress }) => {
         onPress={() => onPress?.(item)}
         style={RNStyles.flexRow}>
         <View style={styles.iconContainer}>
-          <item.icon width={wp(4)} height={wp(4)} />
+          <RNImage source={item.icon} style={RNStyles.icon} />
         </View>
         <RNText style={styles.title}>{item.title}</RNText>
       </TouchableOpacity>

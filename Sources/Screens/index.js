@@ -8,4 +8,5 @@ export {
   ContactUs,
   AboutUs,
   Details,
+  Html,
 } from './App';

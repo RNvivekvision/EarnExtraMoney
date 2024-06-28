@@ -1,4 +1,5 @@
 import RenderSmartWays from './RenderSmartWays';
 import RenderSettings from './RenderSettings';
 import TwoAds from './TwoAds';
-export { RenderSmartWays, RenderSettings, TwoAds };
+import Telegram from './Telegram';
+export { RenderSmartWays, RenderSettings, TwoAds, Telegram };

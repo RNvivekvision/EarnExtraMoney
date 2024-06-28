@@ -4817,9 +4817,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.796":
-  version: 1.4.812
-  resolution: "electron-to-chromium@npm:1.4.812"
-  checksum: 0205fcb6db3a719873398f46cd3341188d4a54e056567453819532c5fd1fadda43f501c252bc8d05eeaaeb1497f58d9875c46c4f9ecfbe713b9efe71cd879b13
+  version: 1.4.814
+  resolution: "electron-to-chromium@npm:1.4.814"
+  checksum: 9f46e9192160c0a9b3d055573938c5cc7e76f3bf545af7ea7a0cc7ccf9e043e0c3c8bc16f4cb296f4be9606b2e7f1414c11f0fb6283f02071041f2380bbfee81
   languageName: node
   linkType: hard
 
@@ -5594,9 +5594,9 @@ __metadata:
   linkType: hard
 
 "flow-parser@npm:0.*":
-  version: 0.238.2
-  resolution: "flow-parser@npm:0.238.2"
-  checksum: ff8cdcec5f91573478f017db3b33ad38f4f5b80c331bf07da6b10348e73a806fb66a4d5f57a4392514dc5f94df2c65ad1f0c4ed5a9383733d0d8478bd0a41b34
+  version: 0.238.3
+  resolution: "flow-parser@npm:0.238.3"
+  checksum: a8a3cbb3b1a32e5f655391410feedcf4842a4818496c6fe115eb5fe25dbf57a1a705f31892190500774a06e4b39a05a088f8d6e594d773e27a70191cb6462a20
   languageName: node
   linkType: hard
 
@@ -7519,9 +7519,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^10.0.1, lru-cache@npm:^10.2.0":
-  version: 10.2.2
-  resolution: "lru-cache@npm:10.2.2"
-  checksum: 98e8fc93691c546f719a76103ef2bee5a3ac823955c755a47641ec41f8c7fafa1baeaba466937cc1cbfa9cfd47e03536d10e2db3158a64ad91ff3a58a32c893e
+  version: 10.3.0
+  resolution: "lru-cache@npm:10.3.0"
+  checksum: f2289639bd94cf3c87bfd8a77ac991f9afe3af004ddca3548c3dae63ead1c73bba449a60a4e270992e16cf3261b3d4130943234d52ca3a4d4de2fc074a3cc7b5
   languageName: node
   linkType: hard
 

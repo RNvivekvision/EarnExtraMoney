@@ -5,6 +5,7 @@ import HelpAndFeedback from './HelpAndFeedback';
 import ContactUs from './ContactUs';
 import AboutUs from './AboutUs';
 import Details from './Details';
+import Html from './Html';
 export {
   Welcome,
   SmartWays,
@@ -13,4 +14,5 @@ export {
   ContactUs,
   AboutUs,
   Details,
+  Html,
 };
