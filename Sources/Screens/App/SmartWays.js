@@ -1,18 +1,20 @@
 import { RNContainer, RNHeader } from '../../Common';
 import { RenderSmartWays, TwoAds } from '../../Components';
-import { Strings } from '../../Constants';
+import { useDummyData, useUserClick } from '../../Hooks';
 import { NavRoutes } from '../../Navigation';
-import { useDummyData } from '../../Hooks';
+import { Strings } from '../../Constants';
 import { Functions } from '../../Utils';
 
 const SmartWays = ({ navigation }) => {
   const { smartWays } = useDummyData();
+  const { incrementCount } = useUserClick();
 
   const onSettigPress = () => {
     navigation.navigate(NavRoutes.Setting);
   };
 
   const onItemPress = item => {
+    incrementCount();
     navigation.navigate(NavRoutes.Details, {
       title: item.title,
       data: item.data,

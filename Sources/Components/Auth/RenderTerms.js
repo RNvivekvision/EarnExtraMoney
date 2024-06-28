@@ -10,26 +10,25 @@ import { Colors, FontFamily, FontSize, hp, isAndroid, wp } from '../../Theme';
 import { RNImage, RNStyles, RNText } from '../../Common';
 import { Images } from '../../Constants';
 import Reanimated, { FadeInDown } from 'react-native-reanimated';
-
 if (isAndroid) {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
     UIManager.setLayoutAnimationEnabledExperimental(true);
   }
 }
-
 const size = { icon: wp(7), back: wp(4) };
-const RenderTerms = ({ item, index }) => {
+const RenderTerms = ({ item, index, onPress }) => {
   const [State, setState] = useState({ showText: index === 0 });
-  const onPress = () => {
+  const onItemPress = () => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setState(p => ({ ...p, showText: !p.showText }));
+    onPress?.();
   };
 
   return (
     <Reanimated.View
       entering={FadeInDown.delay(index * 100)}
       style={styles.container}>
-      <TouchableOpacity onPress={onPress} style={styles.titleContainer}>
+      <TouchableOpacity onPress={onItemPress} style={styles.titleContainer}>
         <View style={RNStyles.flexRow}>
           <RNImage source={item.icon} style={styles.icons} />
           <RNText style={styles.title}>{item.title}</RNText>

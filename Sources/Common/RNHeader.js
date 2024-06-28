@@ -3,8 +3,8 @@ import { StatusBar, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { RNIcon, RNStyles, RNText, RNScrollView } from './index';
-import { Images } from '../Constants';
-import { useInset } from '../Hooks';
+import { Images, Strings } from '../Constants';
+import { useInset, useUserClick } from '../Hooks';
 
 const RNHeader = ({
   title,
@@ -20,11 +20,28 @@ const RNHeader = ({
   onSharePress,
   onNextPress,
 }) => {
-  const styles = useStyles();
+  const { incrementCount } = useUserClick();
   const navigation = useNavigation();
+  const styles = useStyles();
 
-  const onBackPress = async () => {
+  const onBackPress = () => {
+    incrementCount();
     navigation.goBack();
+  };
+
+  const share = () => {
+    incrementCount();
+    onSharePress?.();
+  };
+
+  const setting = () => {
+    incrementCount();
+    onSettigPress?.();
+  };
+
+  const next = () => {
+    incrementCount();
+    onNextPress?.();
   };
 
   return (
@@ -43,24 +60,24 @@ const RNHeader = ({
           <RNIcon
             icon={Images.setting_8}
             iconStyle={{ tintColor: Colors.White }}
-            onPress={onSharePress}
+            onPress={share}
             containerStyle={[styles.icon, { marginRight: wp(4) }]}
           />
         )}
         {onSettigPress && (
           <RNIcon
             icon={Images.settingHeader}
-            onPress={onSettigPress}
+            onPress={setting}
             containerStyle={styles.icon}
           />
         )}
         {onNextPress && (
-          <TouchableOpacity onPress={onNextPress} style={styles.next}>
+          <TouchableOpacity onPress={next} style={styles.next}>
             <RNText
               color={Colors.White}
               family={FontFamily.SemiBold}
               size={FontSize.font12}>
-              {'Next'}
+              {Strings.Next}
             </RNText>
           </TouchableOpacity>
         )}

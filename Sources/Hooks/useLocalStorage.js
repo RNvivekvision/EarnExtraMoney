@@ -21,7 +21,7 @@ const useLocalStorage = () => {
         // dispatch(setLocalData(appdata));
       }
     } catch (e) {
-      console.log('Error getDataFromLocalStorage -> ', e);
+      console.error('Error getDataFromLocalStorage -> ', e);
     }
   };
 

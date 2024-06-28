@@ -38,7 +38,7 @@ const GoogleNativeBigAd = () => {
   }, []);
 
   const onAdFailedToLoad = e => {
-    console.log('Error NativeAd -> ', e);
+    console.error('Error NativeAd -> ', e);
     setState(p => ({ ...p, adError: true }));
   };
 

@@ -3,11 +3,25 @@ import Reanimated, { FadeInDown } from 'react-native-reanimated';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { RNImage, RNStyles, RNText } from '../../Common';
 import { Images, Strings } from '../../Constants';
+import { useUserClick } from '../../Hooks';
 
 const TwoAds = () => {
+  const { incrementCount } = useUserClick();
+
+  const onPlayGamesPress = () => {
+    incrementCount();
+  };
+
+  const onPlayQuizPress = () => {
+    incrementCount();
+  };
+
   return (
     <Reanimated.View entering={FadeInDown.delay(500)} style={styles.container}>
-      <TouchableOpacity activeOpacity={0.6} style={styles.content}>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        onPress={onPlayGamesPress}
+        style={styles.content}>
         <View style={styles.adsContainer}>
           <RNText style={styles.adText}>{Strings.AD}</RNText>
         </View>
@@ -15,7 +29,11 @@ const TwoAds = () => {
         <RNText style={styles.title}>{Strings.playGames}</RNText>
         <RNText style={styles.text}>{Strings.playGamesDesc}</RNText>
       </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.6} style={styles.content}>
+
+      <TouchableOpacity
+        activeOpacity={0.6}
+        onPress={onPlayQuizPress}
+        style={styles.content}>
         <View style={styles.adsContainer}>
           <RNText style={styles.adText}>{Strings.AD}</RNText>
         </View>

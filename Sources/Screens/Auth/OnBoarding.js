@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RNButton, RNContainer, RNStyles } from '../../Common';
-import { useDummyData, useInset } from '../../Hooks';
+import { useDummyData, useInset, useUserClick } from '../../Hooks';
 import {
   LOPagginationDots,
   NativeAd,
@@ -16,6 +16,7 @@ import { NavRoutes } from '../../Navigation';
 import { Strings } from '../../Constants';
 
 const Onboarding = ({ navigation }) => {
+  const { incrementCount } = useUserClick();
   const { onboarding } = useDummyData();
   const [State, setState] = useState({ currentSlider: 0 });
   const flatListRef = useRef();
@@ -30,12 +31,7 @@ const Onboarding = ({ navigation }) => {
   };
 
   const onScroll = useAnimatedScrollHandler(
-    ({ contentOffset, layoutMeasurement }) => {
-      scroll.value = contentOffset.x;
-      const currentSlider = Math.floor(
-        contentOffset.x / layoutMeasurement.width,
-      );
-    },
+    ({ contentOffset }) => (scroll.value = contentOffset.x),
     [],
   );
 
@@ -45,6 +41,7 @@ const Onboarding = ({ navigation }) => {
   };
 
   const onNext = () => {
+    incrementCount();
     flatListRef.current.scrollToIndex({
       animated: true,
       index: State.currentSlider + 1,
@@ -52,6 +49,7 @@ const Onboarding = ({ navigation }) => {
   };
 
   const onBack = () => {
+    incrementCount();
     flatListRef.current.scrollToIndex({
       animated: true,
       index: State.currentSlider - 1,
@@ -59,6 +57,7 @@ const Onboarding = ({ navigation }) => {
   };
 
   const onSkip = () => {
+    incrementCount();
     flatListRef.current.scrollToIndex({
       animated: true,
       index: onboarding.length - 1,
@@ -66,6 +65,7 @@ const Onboarding = ({ navigation }) => {
   };
 
   const onGetStarted = () => {
+    incrementCount();
     navigation.navigate(NavRoutes.Terms);
   };
 

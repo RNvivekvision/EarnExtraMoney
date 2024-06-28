@@ -7,16 +7,18 @@ import { NavRoutes } from '../../Navigation';
 import { Strings } from '../../Constants';
 import { I18nManager } from 'react-native';
 import RNRestart from 'react-native-restart';
-import { useDummyData } from '../../Hooks';
+import { useDummyData, useUserClick } from '../../Hooks';
 
 const Langugage = ({ navigation }) => {
   const { languages } = useDummyData();
+  const { incrementCount } = useUserClick();
 
   const [State, setState] = useState({
     selectedLanguage: languages[0],
   });
 
   const onChangeLanguage = langugage => {
+    incrementCount();
     setState(p => ({ ...p, selectedLanguage: langugage }));
   };
 

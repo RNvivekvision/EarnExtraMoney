@@ -19,7 +19,7 @@ const RNProgress = ({ onFinish, dep, second = 3 }) => {
     setTimeout(() => {
       finish();
     }, duration);
-  }, dep);
+  }, [dep]);
 
   const finish = () => {
     onFinish?.();

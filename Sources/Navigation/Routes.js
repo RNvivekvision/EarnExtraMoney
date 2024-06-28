@@ -3,6 +3,8 @@ import Splash from 'react-native-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavConfigs, NavRoutes } from './index';
+import { useDispatch } from 'react-redux';
+import { getAdData } from '../Redux/ExtraReducers';
 import {
   AboutUs,
   ContactUs,
@@ -21,7 +23,10 @@ import {
 const Stack = createStackNavigator();
 
 const Routes = () => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
+    dispatch(getAdData());
     Splash.hide();
   }, []);
 

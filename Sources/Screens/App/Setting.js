@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { RNContainer, RNHeader } from '../../Common';
 import { RenderSettings, Telegram } from '../../Components';
 import { Strings, Svg } from '../../Constants';
-import { useDummyData } from '../../Hooks';
+import { useDummyData, useUserClick } from '../../Hooks';
 import { Functions } from '../../Utils';
 import { wp } from '../../Theme';
 
@@ -13,8 +13,10 @@ const size = {
 const Setting = ({ navigation }) => {
   const [State, setState] = useState({ showTelegram: false });
   const { setting } = useDummyData();
+  const { incrementCount } = useUserClick();
 
-  const onItemPress = useCallback(async item => {
+  const onItemPress = async item => {
+    incrementCount();
     if (item?.navigate) {
       return navigation.navigate(item.navigate);
     }
@@ -29,7 +31,16 @@ const Setting = ({ navigation }) => {
     if (item?.telegram) {
       return setState(p => ({ ...p, showTelegram: true }));
     }
-  }, []);
+  };
+
+  const onTelegramClose = () => {
+    incrementCount();
+    setState(p => ({ ...p, showTelegram: false }));
+  };
+
+  const onTelegramPress = () => {
+    onTelegramClose();
+  };
 
   return (
     <RNContainer>
@@ -39,14 +50,13 @@ const Setting = ({ navigation }) => {
           height={size.setting * 0.7}
           style={{ alignSelf: 'center' }}
         />
-
         {setting.map((v, i) => (
           <RenderSettings key={i} item={v} index={i} onPress={onItemPress} />
         ))}
-
         <Telegram
           visible={State.showTelegram}
-          onClose={() => setState(p => ({ ...p, showTelegram: false }))}
+          onClose={onTelegramClose}
+          onPress={onTelegramPress}
         />
       </RNHeader>
     </RNContainer>

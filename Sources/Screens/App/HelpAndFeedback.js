@@ -10,12 +10,20 @@ import {
 } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { Strings } from '../../Constants';
+import { useUserClick } from '../../Hooks';
 
 const HelpAndFeedback = ({ navigation }) => {
-  const [State, setState] = useState({ selectedSubject: Strings.Features });
+  const { incrementCount } = useUserClick();
   const InputRef = useRef();
+  const [State, setState] = useState({ selectedSubject: Strings.Features });
+
+  const onItemPress = () => {
+    incrementCount();
+    setState(p => ({ ...p, selectedSubject: v }));
+  };
 
   const onSubmitPress = () => {
+    incrementCount();
     navigation.goBack();
   };
 
@@ -56,7 +64,7 @@ const HelpAndFeedback = ({ navigation }) => {
               key={i}
               style={styles.renderContainer}
               activeOpacity={0.6}
-              onPress={() => setState(p => ({ ...p, selectedSubject: v }))}>
+              onPress={onItemPress}>
               <View style={styles.radioContainer}>
                 {State.selectedSubject === v && <View style={styles.radio} />}
               </View>

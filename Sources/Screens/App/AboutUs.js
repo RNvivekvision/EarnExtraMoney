@@ -10,10 +10,20 @@ import {
 } from '../../Common';
 import { Strings, Svg } from '../../Constants';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
-import { useDummyData } from '../../Hooks';
+import { useDummyData, useUserClick } from '../../Hooks';
 
 const AboutUs = ({ navigation }) => {
   const { FollowOn } = useDummyData();
+  const { incrementCount } = useUserClick();
+
+  const onTermsPress = () => {
+    incrementCount();
+    navigation.goBack();
+  };
+
+  const onSocialPress = () => {
+    incrementCount();
+  };
 
   return (
     <RNContainer>
@@ -40,6 +50,7 @@ const AboutUs = ({ navigation }) => {
         <RNButton
           title={Strings.termsAndCondition}
           style={{ borderRadius: wp(3) }}
+          onPress={onTermsPress}
         />
 
         <RNText
@@ -71,6 +82,7 @@ const AboutUs = ({ navigation }) => {
             <TouchableOpacity
               key={i}
               activeOpacity={0.6}
+              onPress={onSocialPress}
               style={styles.renderContainer}>
               <RNImage source={v.icon} style={styles.icon} />
               <RNText

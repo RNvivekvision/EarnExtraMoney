@@ -3,7 +3,7 @@ import { RNButton, RNImage, RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { Images, Strings } from '../../Constants';
 
-const Telegram = ({ visible, onClose }) => {
+const Telegram = ({ visible, onClose, onPress }) => {
   return (
     <Modal
       visible={visible}
@@ -21,7 +21,11 @@ const Telegram = ({ visible, onClose }) => {
           <RNImage source={Images.telegram} style={styles.icon} />
           <RNText style={styles.title}>{Strings.joinTelegram}</RNText>
           <RNText style={styles.text}>{Strings.joinTelegramDesc}</RNText>
-          <RNButton title={Strings.JoinNow} style={styles.joinNow} />
+          <RNButton
+            title={Strings.JoinNow}
+            style={styles.joinNow}
+            onPress={onPress}
+          />
         </View>
       </View>
     </Modal>

@@ -1,15 +1,22 @@
 import { useState } from 'react';
-import { NavRoutes } from '../../Navigation';
 import { LOTerms, NativeAd, RenderTerms } from '../../Components';
 import { RNButton, RNContainer, RNHeader } from '../../Common';
+import { useDummyData, useUserClick } from '../../Hooks';
+import { NavRoutes } from '../../Navigation';
 import { Strings } from '../../Constants';
-import { useDummyData } from '../../Hooks';
 
 const Terms = ({ navigation }) => {
   const { termsOfUse } = useDummyData();
+  const { incrementCount } = useUserClick();
   const [State, setState] = useState({ isChecked: false });
 
+  const onTermPress = () => {
+    incrementCount();
+    setState(p => ({ ...p, isChecked: !p.isChecked }));
+  };
+
   const onAcceptPress = () => {
+    incrementCount();
     navigation.navigate(NavRoutes.Langugage);
   };
 
@@ -17,11 +24,11 @@ const Terms = ({ navigation }) => {
     <RNContainer useSafeArea>
       <RNHeader title={Strings.termsAndCondition}>
         {termsOfUse.map((v, i) => (
-          <RenderTerms key={i} item={v} index={i} />
+          <RenderTerms key={i} item={v} index={i} onPress={incrementCount} />
         ))}
         <LOTerms
           isChecked={State.isChecked}
-          onPress={() => setState(p => ({ ...p, isChecked: !p.isChecked }))}
+          onPress={onTermPress}
           title={Strings.Pleasecheckforaccept}
         />
         <RNButton

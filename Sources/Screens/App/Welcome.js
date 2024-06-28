@@ -5,14 +5,34 @@ import { Strings, Images } from '../../Constants';
 import { NavRoutes } from '../../Navigation';
 import { NativeAd } from '../../Components';
 import { Functions } from '../../Utils';
-
-const size = {
-  start: wp(15),
-  rateUs: wp(18),
-  share: wp(8),
-};
+import { useUserClick } from '../../Hooks';
 
 const Welcome = ({ navigation }) => {
+  const { incrementCount } = useUserClick();
+
+  const onStartPress = () => {
+    incrementCount();
+    navigation.replace(NavRoutes.SmartWays);
+  };
+
+  const onRateUsPress = () => {
+    incrementCount();
+    Functions.RateUs();
+  };
+
+  const onSharePress = async () => {
+    try {
+      incrementCount();
+      await Functions.ShareApp();
+    } catch (e) {
+      console.error('Error onSharePress -> ', e);
+    }
+  };
+
+  const onPrivacyPress = () => {
+    incrementCount();
+  };
+
   return (
     <RNContainer>
       <RNHeader title={Strings.WelcometoEasyEarnings}>
@@ -27,7 +47,7 @@ const Welcome = ({ navigation }) => {
 
         <TouchableOpacity
           activeOpacity={0.6}
-          onPress={() => navigation.replace(NavRoutes.SmartWays)}
+          onPress={onStartPress}
           style={styles.StartContainer}>
           <RNImage source={Images.start} style={styles.start} />
           <View>
@@ -47,7 +67,7 @@ const Welcome = ({ navigation }) => {
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             activeOpacity={0.6}
-            onPress={Functions.RateUs}
+            onPress={onRateUsPress}
             style={styles.rateUsContainer}>
             <RNImage source={Images.rateus} style={styles.rateus} />
             <RNText style={styles.buttonTitle} pTop={hp(1)}>
@@ -59,7 +79,7 @@ const Welcome = ({ navigation }) => {
           <View style={styles.shareButtonContainer}>
             <TouchableOpacity
               activeOpacity={0.6}
-              onPress={Functions.ShareApp}
+              onPress={onSharePress}
               style={styles.shareContainer}>
               <RNImage source={Images.share} style={styles.share} />
               <View style={{ paddingLeft: wp(4) }}>
@@ -68,7 +88,10 @@ const Welcome = ({ navigation }) => {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity activeOpacity={0.6} style={styles.shareContainer}>
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={onPrivacyPress}
+              style={styles.shareContainer}>
               <RNImage source={Images.privacy} style={styles.share} />
               <View style={{ paddingLeft: wp(4) }}>
                 <RNText style={styles.buttonTitle}>{Strings.Privacy}</RNText>
@@ -80,6 +103,12 @@ const Welcome = ({ navigation }) => {
       </RNHeader>
     </RNContainer>
   );
+};
+
+const size = {
+  start: wp(15),
+  rateUs: wp(18),
+  share: wp(8),
 };
 
 const styles = StyleSheet.create({

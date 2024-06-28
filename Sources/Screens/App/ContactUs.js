@@ -1,13 +1,16 @@
 import { useRef } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { RNButton, RNContainer, RNHeader, RNInput, RNText } from '../../Common';
-import { Strings } from '../../Constants';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
+import { Strings } from '../../Constants';
+import { useUserClick } from '../../Hooks';
 
 const ContactUs = ({ navigation }) => {
   const InputRef = useRef();
+  const { incrementCount } = useUserClick();
 
   const onSubmitPress = () => {
+    incrementCount();
     navigation.goBack();
   };
 
