@@ -11,40 +11,45 @@ import NativeAdView, {
 import { Colors, FontFamily, FontSize, hp, wp } from '../../../Theme';
 import { RNStyles } from '../../../Common';
 import { Functions } from '../../../Utils';
+import { useAdStyles } from '../../../Hooks';
+import { useSelector } from 'react-redux';
 
 const GoogleNativeBigAd = () => {
   const NativeAdRef = useRef();
+  const { Admob, Admanager1, Admanager2 } = useSelector(
+    ({ UserReducer }) => UserReducer,
+  );
   const [State, setState] = useState({
     showButton: false,
-    adUnitID: null,
-    adError: false,
+    adUnitID: Admob?.nativeAdvanced,
+    index: 0,
   });
+  const { containerBgColor, textColor, buttonBgColor, buttonTextColor } =
+    useAdStyles();
   const adUnitID = Functions.isDev ? TestIds.Image : State.adUnitID;
-
-  // styles...
-  const containerBgColor = {
-    backgroundColor: Colors.Black,
-  };
-  const textColor = { color: Colors.Black };
-  const buttonBgColor = {
-    backgroundColor: Colors.Primary,
-  };
-  const buttonTextColor = {
-    color: Colors.White,
-  };
 
   useEffect(() => {
     NativeAdRef.current?.loadAd();
-  }, []);
+  }, [adUnitID]);
 
   const onAdFailedToLoad = e => {
-    console.error('Error NativeAd -> ', e);
-    setState(p => ({ ...p, adError: true }));
+    console.log('Error GoogleNativeBigAd -> ', e);
+    setState(p => ({ ...p, showButton: false }));
+    const newIndex = State.index + 1;
+    if (newIndex == 1) {
+      setState(p => ({
+        ...p,
+        adUnitID: Admanager1?.nativeAdvanced,
+        index: newIndex,
+      }));
+    } else if (newIndex == 2) {
+      setState(p => ({
+        ...p,
+        adUnitID: Admanager2?.nativeAdvanced,
+        index: newIndex,
+      }));
+    }
   };
-
-  if (State.adError) {
-    return null;
-  }
 
   return (
     adUnitID && (

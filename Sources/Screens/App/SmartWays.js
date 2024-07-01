@@ -9,12 +9,8 @@ const SmartWays = ({ navigation }) => {
   const { smartWays } = useDummyData();
   const { incrementCount } = useUserClick();
 
-  const onSettigPress = () => {
-    navigation.navigate(NavRoutes.Setting);
-  };
-
-  const onItemPress = item => {
-    incrementCount();
+  const onItemPress = async item => {
+    await incrementCount();
     navigation.navigate(NavRoutes.Details, {
       title: item.title,
       data: item.data,
@@ -25,7 +21,7 @@ const SmartWays = ({ navigation }) => {
     <RNContainer>
       <RNHeader
         title={Strings.SmartWaytoEarnMoney}
-        onSettigPress={onSettigPress}
+        onSettigPress={() => navigation.navigate(NavRoutes.Setting)}
         onSharePress={Functions.ShareApp}>
         {smartWays.map((v, i) => (
           <RenderSmartWays

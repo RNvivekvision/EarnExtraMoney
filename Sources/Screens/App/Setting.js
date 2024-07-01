@@ -1,10 +1,11 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { RNContainer, RNHeader } from '../../Common';
 import { RenderSettings, Telegram } from '../../Components';
 import { Strings, Svg } from '../../Constants';
 import { useDummyData, useUserClick } from '../../Hooks';
-import { Functions } from '../../Utils';
+import { DummyData, Functions } from '../../Utils';
 import { wp } from '../../Theme';
+import { useSelector } from 'react-redux';
 
 const size = {
   setting: wp(75),
@@ -13,10 +14,24 @@ const size = {
 const Setting = ({ navigation }) => {
   const [State, setState] = useState({ showTelegram: false });
   const { setting } = useDummyData();
+  const { adData } = useSelector(({ UserReducer }) => UserReducer);
   const { incrementCount } = useUserClick();
 
+  const url = adData?.appExtraData?.url;
+
   const onItemPress = async item => {
-    incrementCount();
+    if (item?.link) {
+      return await Functions.OpenUrl(url);
+    }
+    if (item?.policy) {
+      return await Functions.OpenUrl(DummyData.privacyPolicy);
+    }
+    if (item?.telegram) {
+      return setState(p => ({ ...p, showTelegram: true }));
+    }
+
+    await incrementCount();
+
     if (item?.navigate) {
       return navigation.navigate(item.navigate);
     }
@@ -28,18 +43,15 @@ const Setting = ({ navigation }) => {
     if (item?.shareApp) {
       return await Functions.ShareApp();
     }
-    if (item?.telegram) {
-      return setState(p => ({ ...p, showTelegram: true }));
-    }
   };
 
-  const onTelegramClose = () => {
-    incrementCount();
+  const onTelegramClose = async () => {
     setState(p => ({ ...p, showTelegram: false }));
   };
 
-  const onTelegramPress = () => {
+  const onTelegramPress = async () => {
     onTelegramClose();
+    await Functions.OpenUrl(DummyData.telegram);
   };
 
   return (

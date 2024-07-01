@@ -7,8 +7,8 @@ const Details = ({ navigation, route }) => {
   const { incrementCount } = useUserClick();
   const { title, data } = route.params;
 
-  const onItemPress = item => {
-    incrementCount();
+  const onItemPress = async item => {
+    await incrementCount();
     const screenName =
       item?.data?.length > 0 ? NavRoutes.Details : NavRoutes.Html;
     navigation.push(screenName, {

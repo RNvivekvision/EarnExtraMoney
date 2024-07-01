@@ -1,10 +1,9 @@
-import React from 'react';
 import { StatusBar, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { RNIcon, RNStyles, RNText, RNScrollView } from './index';
-import { Images, Strings } from '../Constants';
 import { useInset, useUserClick } from '../Hooks';
+import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
+import { Images, Strings } from '../Constants';
 
 const RNHeader = ({
   title,
@@ -24,23 +23,23 @@ const RNHeader = ({
   const navigation = useNavigation();
   const styles = useStyles();
 
-  const onBackPress = () => {
-    incrementCount();
+  const onBackPress = async () => {
+    await incrementCount();
     navigation.goBack();
   };
 
-  const share = () => {
-    incrementCount();
+  const share = async () => {
+    await incrementCount();
     onSharePress?.();
   };
 
-  const setting = () => {
-    incrementCount();
+  const setting = async () => {
+    await incrementCount();
     onSettigPress?.();
   };
 
-  const next = () => {
-    incrementCount();
+  const next = async () => {
+    await incrementCount();
     onNextPress?.();
   };
 

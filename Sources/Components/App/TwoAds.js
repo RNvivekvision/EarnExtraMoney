@@ -3,17 +3,19 @@ import Reanimated, { FadeInDown } from 'react-native-reanimated';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { RNImage, RNStyles, RNText } from '../../Common';
 import { Images, Strings } from '../../Constants';
-import { useUserClick } from '../../Hooks';
+import { useSelector } from 'react-redux';
+import { Functions } from '../../Utils';
 
 const TwoAds = () => {
-  const { incrementCount } = useUserClick();
+  const { adData } = useSelector(({ UserReducer }) => UserReducer);
+  const url = adData?.appExtraData?.url;
 
-  const onPlayGamesPress = () => {
-    incrementCount();
+  const onPlayGamesPress = async () => {
+    await Functions.OpenUrl(url);
   };
 
-  const onPlayQuizPress = () => {
-    incrementCount();
+  const onPlayQuizPress = async () => {
+    await Functions.OpenUrl(url);
   };
 
   return (

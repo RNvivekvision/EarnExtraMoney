@@ -11,20 +11,47 @@ import {
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { Strings } from '../../Constants';
 import { useUserClick } from '../../Hooks';
+import { DummyData, Functions } from '../../Utils';
+
+const Subjects = [
+  Strings.Features,
+  Strings.Issues,
+  Strings.Performance,
+  Strings.Others,
+];
 
 const HelpAndFeedback = ({ navigation }) => {
   const { incrementCount } = useUserClick();
   const InputRef = useRef();
-  const [State, setState] = useState({ selectedSubject: Strings.Features });
+  const [State, setState] = useState({
+    selectedSubject: 0,
+    isSubmitPressed: false,
+    input: '',
+  });
+  const error = State.isSubmitPressed && State.input.length < 4;
+  const noError = State.input.length >= 4;
 
-  const onItemPress = () => {
-    incrementCount();
-    setState(p => ({ ...p, selectedSubject: v }));
-  };
+  const onSubmitPress = async () => {
+    setState(p => ({ ...p, isSubmitPressed: true }));
+    if (!noError) return;
 
-  const onSubmitPress = () => {
-    incrementCount();
-    navigation.goBack();
+    // await incrementCount();
+    const email = DummyData.mail;
+    const subject = `${DummyData.appInfo.appName} - ${
+      Strings.HelpAndFeedback
+    } - ${Subjects[State.selectedSubject]}`;
+    const body = State.input;
+
+    const url = `mailto:${email}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+    await Functions.OpenUrl(url);
+    setState(p => ({
+      ...p,
+      input: '',
+      isSubmitPressed: false,
+      selectedSubject: 0,
+    }));
   };
 
   return (
@@ -54,19 +81,14 @@ const HelpAndFeedback = ({ navigation }) => {
           {Strings.Subjects}
         </RNText>
         <View style={styles.subjectContainer}>
-          {[
-            Strings.Features,
-            Strings.Issues,
-            Strings.Performance,
-            Strings.Others,
-          ].map((v, i) => (
+          {Subjects.map((v, i) => (
             <TouchableOpacity
               key={i}
               style={styles.renderContainer}
               activeOpacity={0.6}
-              onPress={onItemPress}>
+              onPress={v => setState(p => ({ ...p, selectedSubject: i }))}>
               <View style={styles.radioContainer}>
-                {State.selectedSubject === v && <View style={styles.radio} />}
+                {State.selectedSubject === i && <View style={styles.radio} />}
               </View>
               <RNText size={FontSize.font12} family={FontFamily.Medium}>
                 {v}
@@ -85,12 +107,21 @@ const HelpAndFeedback = ({ navigation }) => {
         <TouchableOpacity
           activeOpacity={1}
           onPress={() => InputRef.current?.focus()}
-          style={styles.inputContainer}>
+          style={[
+            styles.inputContainer,
+            { borderColor: error ? Colors.error : Colors.Black },
+          ]}>
           <RNInput
             ref={InputRef}
             placeholder={Strings.TypingSomethinghere}
-            style={styles.input}
+            placeholderTextColor={error ? Colors.error : Colors.Placeholder}
+            style={[
+              styles.input,
+              { color: error ? Colors.error : Colors.Black },
+            ]}
             multiline={true}
+            value={State.input}
+            onChangeText={v => setState(p => ({ ...p, input: v }))}
           />
         </TouchableOpacity>
 

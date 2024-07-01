@@ -1289,10 +1289,12 @@ const useDummyData = () => {
       {
         icon: Images.setting_0,
         title: Strings.Games,
+        link: true,
       },
       {
         icon: Images.setting_1,
         title: Strings.Quiz,
+        link: true,
       },
       {
         icon: Images.setting_2,
@@ -1317,6 +1319,7 @@ const useDummyData = () => {
       {
         icon: Images.setting_6,
         title: Strings.Privacypolicy,
+        policy: true,
       },
       {
         icon: Images.setting_7,
@@ -1327,20 +1330,6 @@ const useDummyData = () => {
         icon: Images.setting_8,
         title: Strings.ContactOfficial,
         telegram: true,
-      },
-    ],
-    FollowOn: [
-      {
-        icon: Images.instagram,
-        title: Strings.Instagram,
-      },
-      {
-        icon: Images.facebook,
-        title: Strings.Facebook,
-      },
-      {
-        icon: Images.youtube,
-        title: Strings.YouTube,
       },
     ],
   };

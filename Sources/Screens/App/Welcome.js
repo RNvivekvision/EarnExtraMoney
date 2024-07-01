@@ -4,33 +4,33 @@ import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { Strings, Images } from '../../Constants';
 import { NavRoutes } from '../../Navigation';
 import { NativeAd } from '../../Components';
-import { Functions } from '../../Utils';
+import { DummyData, Functions } from '../../Utils';
 import { useUserClick } from '../../Hooks';
 
 const Welcome = ({ navigation }) => {
   const { incrementCount } = useUserClick();
 
-  const onStartPress = () => {
-    incrementCount();
+  const onStartPress = async () => {
+    await incrementCount();
     navigation.replace(NavRoutes.SmartWays);
   };
 
-  const onRateUsPress = () => {
-    incrementCount();
+  const onRateUsPress = async () => {
+    await incrementCount();
     Functions.RateUs();
   };
 
   const onSharePress = async () => {
     try {
-      incrementCount();
+      await incrementCount();
       await Functions.ShareApp();
     } catch (e) {
       console.error('Error onSharePress -> ', e);
     }
   };
 
-  const onPrivacyPress = () => {
-    incrementCount();
+  const onPrivacyPress = async () => {
+    await Functions.OpenUrl(DummyData.privacyPolicy);
   };
 
   return (

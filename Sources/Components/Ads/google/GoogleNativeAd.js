@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import NativeAdView, {
   CallToActionView,
@@ -9,45 +9,50 @@ import NativeAdView, {
 import { Colors, FontFamily, FontSize, hp, wp } from '../../../Theme';
 import { RNStyles } from '../../../Common';
 import { Functions } from '../../../Utils';
+import { useSelector } from 'react-redux';
 import GoogleNativeBigAd from './GoogleNativeBigAd';
+import { useAdStyles } from '../../../Hooks';
 
 const GoogleNativeAd = ({ big }) => {
   const NativeAdRef = useRef();
+  const { adData, Admob, Admanager1, Admanager2 } = useSelector(
+    ({ UserReducer }) => UserReducer,
+  );
   const [State, setState] = useState({
     showButton: false,
-    adUnitID: null,
-    adError: false,
+    adUnitID: Admob?.nativeAdvanced,
+    index: 0,
   });
+  const { containerBgColor, textColor, buttonBgColor, buttonTextColor } =
+    useAdStyles();
+  const showAd = adData?.showAdInApp ?? false;
   const adUnitID = Functions.isDev ? TestIds.Image : State.adUnitID;
-
-  // styles...
-  const containerBgColor = {
-    backgroundColor: Colors.Black,
-  };
-  const textColor = { color: Colors.Black };
-  const buttonBgColor = {
-    backgroundColor: Colors.Primary,
-  };
-  const buttonTextColor = {
-    color: Colors.White,
-  };
 
   useEffect(() => {
     NativeAdRef.current?.loadAd();
-  }, []);
+  }, [adUnitID]);
 
   const onAdFailedToLoad = e => {
-    console.error('Error NativeAd -> ', e);
-    setState(p => ({ ...p, adError: true }));
+    console.log('Error GoogleNativeAd -> ', e);
+    setState(p => ({ ...p, showButton: false }));
+    const newIndex = State.index + 1;
+    if (newIndex == 1) {
+      setState(p => ({
+        ...p,
+        adUnitID: Admanager1?.nativeAdvanced,
+        index: newIndex,
+      }));
+    } else if (newIndex == 2) {
+      setState(p => ({
+        ...p,
+        adUnitID: Admanager2?.nativeAdvanced,
+        index: newIndex,
+      }));
+    }
   };
 
-  if (big) {
-    return <GoogleNativeBigAd />;
-  }
-
-  if (State.adError) {
-    return null;
-  }
+  if (!showAd) return;
+  if (big) return <GoogleNativeBigAd />;
 
   return (
     adUnitID && (

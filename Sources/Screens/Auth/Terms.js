@@ -1,30 +1,21 @@
 import { useState } from 'react';
 import { LOTerms, NativeAd, RenderTerms } from '../../Components';
 import { RNButton, RNContainer, RNHeader } from '../../Common';
-import { useDummyData, useGoogleAds, useUserClick } from '../../Hooks';
+import { useDummyData, useUserClick } from '../../Hooks';
 import { NavRoutes } from '../../Navigation';
 import { Strings } from '../../Constants';
 
 const Terms = ({ navigation }) => {
   const { termsOfUse } = useDummyData();
   const { incrementCount } = useUserClick();
-  const { showInterstitialAd } = useGoogleAds();
   const [State, setState] = useState({ isChecked: false });
 
   const onItemPress = async () => {
-    incrementCount();
-    await showInterstitialAd();
-  };
-
-  const onTermPress = async () => {
-    incrementCount();
-    await showInterstitialAd();
-    setState(p => ({ ...p, isChecked: !p.isChecked }));
+    await incrementCount();
   };
 
   const onAcceptPress = async () => {
-    incrementCount();
-    await showInterstitialAd();
+    await incrementCount();
     navigation.navigate(NavRoutes.Langugage);
   };
 
@@ -36,7 +27,7 @@ const Terms = ({ navigation }) => {
         ))}
         <LOTerms
           isChecked={State.isChecked}
-          onPress={onTermPress}
+          onPress={() => setState(p => ({ ...p, isChecked: !p.isChecked }))}
           title={Strings.Pleasecheckforaccept}
         />
         <RNButton

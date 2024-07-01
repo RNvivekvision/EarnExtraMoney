@@ -8,6 +8,7 @@ const Colors = {
   welcome: '#7C7676',
   ads: '#FFCE00',
   telegram: '#3FB6F0',
+  error: '#FF3333',
 };
 
 export default Colors;

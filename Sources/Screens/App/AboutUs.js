@@ -1,28 +1,22 @@
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import {
   RNButton,
   RNContainer,
-  RNGradient,
   RNHeader,
-  RNImage,
   RNStyles,
   RNText,
 } from '../../Common';
 import { Strings, Svg } from '../../Constants';
-import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
-import { useDummyData, useUserClick } from '../../Hooks';
+import { FontFamily, FontSize, hp, wp } from '../../Theme';
+import { useUserClick } from '../../Hooks';
+import { DummyData, Functions } from '../../Utils';
 
 const AboutUs = ({ navigation }) => {
-  const { FollowOn } = useDummyData();
   const { incrementCount } = useUserClick();
 
-  const onTermsPress = () => {
-    incrementCount();
-    navigation.goBack();
-  };
-
-  const onSocialPress = () => {
-    incrementCount();
+  const onTermsPress = async () => {
+    await incrementCount();
+    await Functions.OpenUrl(DummyData.termsAndCondition);
   };
 
   return (
@@ -52,48 +46,6 @@ const AboutUs = ({ navigation }) => {
           style={{ borderRadius: wp(3) }}
           onPress={onTermsPress}
         />
-
-        <RNText
-          align={'center'}
-          family={FontFamily.Medium}
-          pVertical={hp(1)}
-          size={FontSize.font14}>
-          {Strings.Followon}
-        </RNText>
-
-        <View style={styles.deviderContainer}>
-          <RNGradient
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-            colors={[Colors.White, Colors.White + '10']}
-            style={styles.left}
-          />
-          <View style={RNStyles.devider} />
-          <RNGradient
-            start={{ x: 1, y: 0 }}
-            end={{ x: 0, y: 0 }}
-            colors={[Colors.White, Colors.White + '10']}
-            style={[styles.left, styles.right]}
-          />
-        </View>
-
-        <View style={styles.iconContainer}>
-          {FollowOn.map((v, i) => (
-            <TouchableOpacity
-              key={i}
-              activeOpacity={0.6}
-              onPress={onSocialPress}
-              style={styles.renderContainer}>
-              <RNImage source={v.icon} style={styles.icon} />
-              <RNText
-                pTop={hp(0.5)}
-                size={FontSize.font12}
-                family={FontFamily.Medium}>
-                {v.title}
-              </RNText>
-            </TouchableOpacity>
-          ))}
-        </View>
       </RNHeader>
     </RNContainer>
   );
