@@ -4,11 +4,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const isDev = __DEV__;
 const androidPackage = 'com.earn.money';
+const iosAppId = '6505100117';
 const appLink = Platform.select({
   android: `https://play.google.com/store/apps/details?id=${androidPackage}`,
-  ios: 'https://apps.apple.com/in/app/id6502944625',
+  ios: `https://apps.apple.com/in/app/id${iosAppId}`,
 });
-const splited = appLink.split('/'); //.substring(2);
+const splited = appLink.split('/');
 const AppleAppID = splited[splited.length - 1].substring(2);
 
 const ALERT = ({ Title, Text, Buttons }) => Alert.alert(Title, Text, Buttons);
@@ -44,12 +45,8 @@ const RateUs = ({ onSuccess, onError } = {}) => {
     inAppDelay: 1000,
   };
   Rate.rate(options, (success, error) => {
-    if (success) {
-      onSuccess?.(success);
-    }
-    if (error) {
-      onError?.(error);
-    }
+    if (error) return onError?.(error);
+    return onSuccess?.(success);
   });
 };
 

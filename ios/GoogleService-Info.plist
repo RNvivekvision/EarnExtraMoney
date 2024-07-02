@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.earn.money</string>
+	<string>com.easy.earn.money</string>
 	<key>PROJECT_ID</key>
 	<string>earn-money-be01f</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:297760367999:ios:973e0a3191daffb410a64a</string>
+	<string>1:297760367999:ios:1ffd1a37374c0cc110a64a</string>
 </dict>
 </plist>

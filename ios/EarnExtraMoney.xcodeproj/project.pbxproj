@@ -15,7 +15,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9F5025DD79E3F6D838D10426 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EF4EEC94A4742F276839C523 /* PrivacyInfo.xcprivacy */; };
 		DC44832E89B0960BF3CD0DE6 /* libPods-EarnExtraMoney-EarnExtraMoneyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD62EF927575B7B948A37D56 /* libPods-EarnExtraMoney-EarnExtraMoneyTests.a */; };
-		E2E6079E2C2D404100346AC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2E6079D2C2D404100346AC0 /* GoogleService-Info.plist */; };
+		E2A9F8FB2C34066F00322E0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2A9F8FA2C34066F00322E0D /* GoogleService-Info.plist */; };
 		E2F645C62C19CCED00D08E2D /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645BD2C19CCED00D08E2D /* Inter-ExtraLight.ttf */; };
 		E2F645C72C19CCED00D08E2D /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645BE2C19CCED00D08E2D /* Inter-Bold.ttf */; };
 		E2F645C82C19CCED00D08E2D /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F645BF2C19CCED00D08E2D /* Inter-Light.ttf */; };
@@ -55,7 +55,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EarnExtraMoney/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-EarnExtraMoney-EarnExtraMoneyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarnExtraMoney-EarnExtraMoneyTests.release.xcconfig"; path = "Target Support Files/Pods-EarnExtraMoney-EarnExtraMoneyTests/Pods-EarnExtraMoney-EarnExtraMoneyTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD62EF927575B7B948A37D56 /* libPods-EarnExtraMoney-EarnExtraMoneyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EarnExtraMoney-EarnExtraMoneyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2E6079D2C2D404100346AC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2A9F8FA2C34066F00322E0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2F645BD2C19CCED00D08E2D /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-ExtraLight.ttf"; path = "../../Sources/Assets/Fonts/Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		E2F645BE2C19CCED00D08E2D /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Bold.ttf"; path = "../../Sources/Assets/Fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
 		E2F645BF2C19CCED00D08E2D /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Light.ttf"; path = "../../Sources/Assets/Fonts/Inter-Light.ttf"; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		13B07FAE1A68108700A75B9A /* EarnExtraMoney */ = {
 			isa = PBXGroup;
 			children = (
-				E2E6079D2C2D404100346AC0 /* GoogleService-Info.plist */,
+				E2A9F8FA2C34066F00322E0D /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -287,7 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2E6079E2C2D404100346AC0 /* GoogleService-Info.plist in Resources */,
+				E2A9F8FB2C34066F00322E0D /* GoogleService-Info.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				E2F645CB2C19CCED00D08E2D /* Inter-Black.ttf in Resources */,
 				E2F645C72C19CCED00D08E2D /* Inter-Bold.ttf in Resources */,
@@ -563,6 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5TC9DUZ5V6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = EarnExtraMoney/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -575,7 +576,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.earn.money;
+				PRODUCT_BUNDLE_IDENTIFIER = com.easy.earn.money;
 				PRODUCT_NAME = EarnExtraMoney;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -593,6 +594,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5TC9DUZ5V6;
 				INFOPLIST_FILE = EarnExtraMoney/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -604,7 +606,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.earn.money;
+				PRODUCT_BUNDLE_IDENTIFIER = com.easy.earn.money;
 				PRODUCT_NAME = EarnExtraMoney;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
