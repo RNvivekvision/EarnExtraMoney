@@ -8,13 +8,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAdData } from '../Redux/ExtraReducers';
 import {
   AboutUs,
+  CompareLoans,
   ContactUs,
   Details,
+  EMI,
   HelpAndFeedback,
-  Html,
   Langugage,
+  LoanEligibility,
   Onboarding,
   SplashScreen,
+  TaxCalculation,
   Terms,
   Welcome,
 } from '../Screens';
@@ -59,6 +62,16 @@ const Routes = () => {
         {/* App */}
         <Stack.Screen name={NavRoutes.Welcome} component={Welcome} />
         <Stack.Screen name={NavRoutes.SmartWays} component={Drawer} />
+        <Stack.Screen name={NavRoutes.EMI} component={EMI} />
+        <Stack.Screen
+          name={NavRoutes.LoanEligibility}
+          component={LoanEligibility}
+        />
+        <Stack.Screen name={NavRoutes.CompareLoans} component={CompareLoans} />
+        <Stack.Screen
+          name={NavRoutes.TaxCalculation}
+          component={TaxCalculation}
+        />
         <Stack.Screen name={NavRoutes.Details} component={Details} />
         <Stack.Screen
           name={NavRoutes.HelpAndFeedback}

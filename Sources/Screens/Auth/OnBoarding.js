@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { RNButton, RNContainer, RNStyles } from '../../Common';
 import { useDummyData, useInset, useUserClick } from '../../Hooks';
 import {
-  LOPagginationDots,
+  EAPagginationDots,
   NativeAd,
   RenderOnboarding,
 } from '../../Components';
@@ -94,7 +94,7 @@ const Onboarding = ({ navigation }) => {
             />
           )}
         />
-        <LOPagginationDots scroll={scroll} length={onboarding.length} />
+        <EAPagginationDots scroll={scroll} length={onboarding.length} />
         {show.skip && (
           <RNButton
             title={Strings.SKIP}

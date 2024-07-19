@@ -7,4 +7,8 @@ export {
   ContactUs,
   AboutUs,
   Details,
+  EMI,
+  LoanEligibility,
+  CompareLoans,
+  TaxCalculation,
 } from './App';

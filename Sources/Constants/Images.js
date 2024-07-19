@@ -34,6 +34,7 @@ const Images = {
   back: require(imagePath + 'back' + png),
   drawer: require(imagePath + 'drawer' + png),
   telegram: require(imagePath + 'telegram' + png),
+  EmiCalculator: require(imagePath + 'EmiCalculator' + png),
   settingHeader: require(imagePath + 'settingHeader' + png),
   setting_0: require(imagePath + 'setting_0' + png),
   setting_1: require(imagePath + 'setting_1' + png),
@@ -190,6 +191,9 @@ const Images = {
   level_3: require(imagePath + 'level_3' + png),
   level_4: require(imagePath + 'level_4' + png),
   level_5: require(imagePath + 'level_5' + png),
+  emi_0: require(imagePath + 'emi_0' + png),
+  emi_1: require(imagePath + 'emi_1' + png),
+  emi_2: require(imagePath + 'emi_2' + png),
 };
 
 export default Images;

@@ -13,6 +13,10 @@ const NavRoutes = {
   ContactUs: 'Contact Us',
   HelpAndFeedback: 'Help & Feedback',
   AboutUs: 'About Us',
+  EMI: 'EMI',
+  LoanEligibility: 'Loan Eligibility',
+  CompareLoans: 'Compare Loans',
+  TaxCalculation: 'Tax Calculation',
 };
 
 export default NavRoutes;

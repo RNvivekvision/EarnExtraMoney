@@ -1,7 +1,7 @@
 import { RNContainer, RNHeader } from '../../Common';
 import { RenderSmartWays } from '../App';
 
-const LOCards = ({ title, data, onPress }) => {
+const EACards = ({ title, data, onPress }) => {
   return (
     <RNContainer>
       <RNHeader title={title} back>
@@ -14,4 +14,4 @@ const LOCards = ({ title, data, onPress }) => {
   );
 };
 
-export default LOCards;
+export default EACards;

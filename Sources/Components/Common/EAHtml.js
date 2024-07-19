@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { RNLoader, RNStyles } from '../../Common';
 import WebView from 'react-native-webview';
 import { NativeAd } from '../Ads';
-import LOClose from './LOClose';
+import EAClose from './EAClose';
 
-const LOHtml = ({ visible, onClose, html }) => {
+const EAHtml = ({ visible, onClose, html }) => {
   const [State, setState] = useState({ isLoading: false });
 
   return (
@@ -14,7 +14,7 @@ const LOHtml = ({ visible, onClose, html }) => {
       animationType={'slide'}
       presentationStyle={'pageSheet'}
       onRequestClose={onClose}>
-      <LOClose onPress={onClose} />
+      <EAClose onPress={onClose} />
       <RNLoader visible={State.isLoading} />
       <WebView
         source={html}
@@ -27,4 +27,4 @@ const LOHtml = ({ visible, onClose, html }) => {
   );
 };
 
-export default LOHtml;
+export default EAHtml;

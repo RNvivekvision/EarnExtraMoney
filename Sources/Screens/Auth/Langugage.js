@@ -66,7 +66,7 @@ const Langugage = ({ navigation }) => {
       </RNHeader>
       <RNButton title={Strings.Next} onPress={onNextPress} />
 
-      <NativeAd big />
+      <NativeAd />
     </RNContainer>
   );
 };

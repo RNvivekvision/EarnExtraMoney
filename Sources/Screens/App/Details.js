@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LOCards, LOHtml } from '../../Components';
+import { EACards, EAHtml } from '../../Components';
 import { NavRoutes } from '../../Navigation';
 import { useUserClick } from '../../Hooks';
 
@@ -9,8 +9,8 @@ const Details = ({ navigation, route }) => {
   const { title, data } = route.params;
 
   const onItemPress = async item => {
-    await incrementCount();
     if (item?.data?.length > 0) {
+      await incrementCount();
       return navigation.push(NavRoutes.Details, {
         title: item.title,
         data: item.data,
@@ -22,8 +22,8 @@ const Details = ({ navigation, route }) => {
 
   return (
     <>
-      <LOCards title={title} data={data} onPress={onItemPress} />
-      <LOHtml
+      <EACards title={title} data={data} onPress={onItemPress} />
+      <EAHtml
         visible={State.showHtml}
         html={State.html}
         onClose={() => setState(p => ({ ...p, showHtml: false }))}

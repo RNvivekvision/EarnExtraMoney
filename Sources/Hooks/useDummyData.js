@@ -1332,6 +1332,23 @@ const useDummyData = () => {
         telegram: true,
       },
     ],
+    emi: [
+      {
+        image: Images.emi_0,
+        title: Strings.LoanEligibility,
+        navigate: NavRoutes.LoanEligibility,
+      },
+      {
+        image: Images.emi_1,
+        title: Strings.CompareLoans,
+        navigate: NavRoutes.CompareLoans,
+      },
+      {
+        image: Images.emi_2,
+        title: Strings.TaxCalculation,
+        navigate: NavRoutes.TaxCalculation,
+      },
+    ],
   };
 };
 

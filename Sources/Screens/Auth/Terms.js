@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LOTerms, NativeAd, RenderTerms } from '../../Components';
+import { EATerms, NativeAd, RenderTerms } from '../../Components';
 import { RNButton, RNContainer, RNHeader } from '../../Common';
 import { useDummyData, useUserClick } from '../../Hooks';
 import { NavRoutes } from '../../Navigation';
@@ -25,7 +25,7 @@ const Terms = ({ navigation }) => {
         {termsOfUse.map((v, i) => (
           <RenderTerms key={i} item={v} index={i} onPress={onItemPress} />
         ))}
-        <LOTerms
+        <EATerms
           isChecked={State.isChecked}
           onPress={() => setState(p => ({ ...p, isChecked: !p.isChecked }))}
           title={Strings.Pleasecheckforaccept}

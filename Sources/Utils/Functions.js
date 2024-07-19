@@ -61,6 +61,55 @@ const ShareApp = async ({ title, message, url } = {}) => {
   });
 };
 
+const formatDate = ({ date }) => {
+  const d = new Date(date);
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+  const month = months[d.getMonth()];
+  const day = d.getDate();
+  const year = d.getFullYear();
+  if (day && month && year) {
+    return `${day || ''} ${month || ''} ${year || ''}`;
+  }
+};
+
+const EMI = ({ principalAmount, interestRate, tenureMonths }) => {
+  const monthlyInterestRate = parseInt(interestRate) / 12 / 100;
+  const principalAmountNum = parseInt(principalAmount);
+  return toFixed(
+    (principalAmountNum *
+      monthlyInterestRate *
+      Math.pow(1 + monthlyInterestRate, tenureMonths)) /
+      (Math.pow(1 + monthlyInterestRate, tenureMonths) - 1),
+  );
+};
+
+const toFixed = (amount, digit = 2) => {
+  if (!amount) return 0;
+  return parseFloat(amount).toFixed(digit);
+};
+
+const loanTenure = (startDate, tenure) => {
+  const newDate = new Date(startDate);
+  newDate.setMonth(newDate.getMonth() + tenure);
+  return formatDate({ date: newDate });
+};
+
+const tenure = (tenure, isYear) =>
+  isYear ? parseInt(tenure) * 12 : parseInt(tenure);
+
 const Functions = {
   isDev,
   ALERT,
@@ -70,6 +119,11 @@ const Functions = {
   wait,
   RateUs,
   ShareApp,
+  formatDate,
+  EMI,
+  toFixed,
+  loanTenure,
+  tenure,
 };
 
 export default Functions;

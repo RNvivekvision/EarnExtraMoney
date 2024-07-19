@@ -13,7 +13,7 @@ const dotSize = wp(3);
 const increase = wp(5);
 const width = wp(100);
 
-const LOPagginationDots = ({ scroll, length }) => {
+const EAPagginationDots = ({ scroll, length }) => {
   return (
     <View style={styles.container}>
       {Array.from({ length }).map((v, i) => (
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LOPagginationDots;
+export default EAPagginationDots;

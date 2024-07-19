@@ -3,7 +3,7 @@ import { RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { Svg } from '../../Constants';
 
-const LOTerms = ({ containerStyle, onPress, isChecked, title }) => {
+const EATerms = ({ containerStyle, onPress, isChecked, title }) => {
   const onBoxPress = () => {
     onPress?.(!isChecked);
   };
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LOTerms;
+export default EATerms;

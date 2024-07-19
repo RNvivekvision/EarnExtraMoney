@@ -1058,6 +1058,8 @@ PODS:
   - react-native-admob-native-ads (0.6.6):
     - Google-Mobile-Ads-SDK
     - React-Core
+  - react-native-date-picker (5.0.4):
+    - React-Core
   - react-native-fbsdk-next (13.0.0):
     - React-Core
     - react-native-fbsdk-next/Core (= 13.0.0)
@@ -1292,6 +1294,8 @@ PODS:
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
     - React-RCTImage
+  - RNShare (10.2.1):
+    - React-Core
   - RNSVG (15.4.0):
     - React-Core
   - RNVectorIcons (10.1.0):
@@ -1339,6 +1343,7 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - react-native-admob-native-ads (from `../node_modules/react-native-admob-native-ads`)
+  - react-native-date-picker (from `../node_modules/react-native-date-picker`)
   - react-native-fbsdk-next (from `../node_modules/react-native-fbsdk-next`)
   - react-native-restart (from `../node_modules/react-native-restart`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
@@ -1376,6 +1381,7 @@ DEPENDENCIES:
   - RNRate (from `../node_modules/react-native-rate`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNShare (from `../node_modules/react-native-share`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -1470,6 +1476,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   react-native-admob-native-ads:
     :path: "../node_modules/react-native-admob-native-ads"
+  react-native-date-picker:
+    :path: "../node_modules/react-native-date-picker"
   react-native-fbsdk-next:
     :path: "../node_modules/react-native-fbsdk-next"
   react-native-restart:
@@ -1544,6 +1552,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNShare:
+    :path: "../node_modules/react-native-share"
   RNSVG:
     :path: "../node_modules/react-native-svg"
   RNVectorIcons:
@@ -1607,6 +1617,7 @@ SPEC CHECKSUMS:
   React-logger: 3eb80a977f0d9669468ef641a5e1fabbc50a09ec
   React-Mapbuffer: 84ea43c6c6232049135b1550b8c60b2faac19fab
   react-native-admob-native-ads: 97b6667c5d4d3e5a75baf264450dbb54ba53a181
+  react-native-date-picker: 6891317e850deae5b53d51355226e07a495aba61
   react-native-fbsdk-next: 84746ea062dc3b1a422154d7674ba4c5836b6d82
   react-native-restart: 7595693413fe3ca15893702f2c8306c62a708162
   react-native-safe-area-context: b7daa1a8df36095a032dff095a1ea8963cb48371
@@ -1644,6 +1655,7 @@ SPEC CHECKSUMS:
   RNRate: ef3bcff84f39bb1d1e41c5593d3eea4aab2bd73a
   RNReanimated: f1ce27e7d23e6f941024b862ad76a7fdae93dea9
   RNScreens: e842cdccb23c0a084bd6307f6fa83fd1c1738029
+  RNShare: 0fad69ae2d71de9d1f7b9a43acf876886a6cb99c
   RNSVG: cb24fb322de8c1ebf59904e7aca0447bb8dbed5a
   RNVectorIcons: 96e8c5c45609932bb2f8347e1c709bcca0e95654
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17

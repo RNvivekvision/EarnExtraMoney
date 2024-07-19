@@ -3,7 +3,7 @@ import { RNImage, RNStyles } from '../../Common';
 import { Images } from '../../Constants';
 import { Colors, wp } from '../../Theme';
 
-const LOClose = ({ onPress }) => {
+const EAClose = ({ onPress }) => {
   return (
     <TouchableOpacity
       activeOpacity={0.6}
@@ -29,4 +29,5 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
 });
-export default LOClose;
+
+export default EAClose;

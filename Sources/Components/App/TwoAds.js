@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { I18nManager, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Reanimated, { FadeInDown } from 'react-native-reanimated';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { RNImage, RNStyles, RNText } from '../../Common';
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: -wp(4.5),
-    transform: [{ rotate: '-40deg' }],
+    transform: [{ rotate: I18nManager.isRTL ? '40deg' : '-40deg' }],
   },
   adText: {
     fontSize: FontSize.font10,

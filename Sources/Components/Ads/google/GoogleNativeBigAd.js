@@ -5,6 +5,8 @@ import NativeAdView, {
   HeadlineView,
   IconView,
   ImageView,
+  StarRatingView,
+  StoreView,
   TaglineView,
   TestIds,
 } from 'react-native-admob-native-ads';
@@ -68,6 +70,10 @@ const GoogleNativeBigAd = () => {
                 numberOfLines={1}
                 style={[styles.taglineView, textColor]}
               />
+              <View style={RNStyles.flexRow}>
+                <StarRatingView />
+                <StoreView />
+              </View>
             </View>
           </View>
           <ImageView style={styles.largeIcon} />
@@ -112,7 +118,7 @@ const styles = StyleSheet.create({
   taglineView: {
     fontSize: FontSize.font12,
     fontFamily: FontFamily.Regular,
-    color: Colors.White,
+    color: Colors.Black,
     width: '75%',
   },
   button: {

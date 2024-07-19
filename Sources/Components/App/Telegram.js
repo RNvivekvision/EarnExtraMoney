@@ -2,7 +2,7 @@ import { Modal, StyleSheet, View } from 'react-native';
 import { RNButton, RNImage, RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { Images, Strings } from '../../Constants';
-import { LOClose } from '../Common';
+import { EAClose } from '../Common';
 
 const Telegram = ({ visible, onClose, onPress }) => {
   return (
@@ -13,7 +13,7 @@ const Telegram = ({ visible, onClose, onPress }) => {
       onRequestClose={onClose}>
       <View style={styles.overlay}>
         <View style={styles.content}>
-          <LOClose onPress={onClose} />
+          <EAClose onPress={onClose} />
           <RNImage source={Images.telegram} style={styles.icon} />
           <RNText style={styles.title}>{Strings.joinTelegram}</RNText>
           <RNText style={styles.text}>{Strings.joinTelegramDesc}</RNText>

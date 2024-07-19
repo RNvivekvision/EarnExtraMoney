@@ -1,12 +1,17 @@
 import { RNContainer, RNHeader } from '../../Common';
-import { RenderSmartWays, TwoAds } from '../../Components';
+import {
+  EAScreen,
+  EMICalculator,
+  NativeAd,
+  RenderSmartWays,
+  TwoAds,
+} from '../../Components';
 import { useDummyData, useUserClick } from '../../Hooks';
 import { NavRoutes } from '../../Navigation';
 import { Strings } from '../../Constants';
-import { Functions } from '../../Utils';
 
 const SmartWays = ({ navigation }) => {
-  const { smartWays } = useDummyData();
+  const { smartWays, emi } = useDummyData();
   const { incrementCount } = useUserClick();
 
   const onItemPress = async item => {
@@ -17,8 +22,13 @@ const SmartWays = ({ navigation }) => {
     });
   };
 
-  // onSettigPress={() => navigation.navigate(NavRoutes.Setting)}
-  // onSharePress={Functions.ShareApp}
+  const onPress = async item => {
+    await incrementCount();
+    // console.log('item -> ', JSON.stringify(item, null, 2));
+    if (item.navigate) {
+      return navigation.navigate(item.navigate);
+    }
+  };
 
   return (
     <RNContainer>
@@ -26,6 +36,8 @@ const SmartWays = ({ navigation }) => {
         back={false}
         title={Strings.SmartWaytoEarnMoney}
         onDrawerPress={() => navigation.openDrawer()}>
+        <EMICalculator onPress={() => navigation.navigate(NavRoutes.EMI)} />
+        <NativeAd />
         {smartWays.map((v, i) => (
           <RenderSmartWays
             key={i}
@@ -35,6 +47,7 @@ const SmartWays = ({ navigation }) => {
             isParent={true}
           />
         ))}
+        <EAScreen title={Strings.EMICalculator} data={emi} onPress={onPress} />
         <TwoAds />
       </RNHeader>
     </RNContainer>
