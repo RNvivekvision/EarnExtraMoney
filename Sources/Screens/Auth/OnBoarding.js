@@ -166,10 +166,10 @@ const useStyles = () => {
       borderRadius: wp(1),
       paddingVertical: hp(1),
       paddingHorizontal: wp(2),
-      backgroundColor: Colors.skip,
+      backgroundColor: Colors.Primary + '20',
     },
     skipText: {
-      color: Colors.Black,
+      color: Colors.Primary,
       fontSize: FontSize.font13,
     },
   });

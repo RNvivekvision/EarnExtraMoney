@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { I18nManager } from 'react-native';
 import RNRestart from 'react-native-restart';
-import { RNContainer, RNHeader, RNText } from '../../Common';
+import { RNButton, RNContainer, RNHeader, RNText } from '../../Common';
 import { FontFamily, FontSize, hp } from '../../Theme';
 import { NativeAd, RenderLanguages } from '../../Components';
 import { useDummyData, useUserClick } from '../../Hooks';
@@ -43,8 +43,8 @@ const Langugage = ({ navigation }) => {
   };
 
   return (
-    <RNContainer>
-      <RNHeader title={Strings.SelectyourLanguages} onNextPress={onNextPress}>
+    <RNContainer useSafeArea>
+      <RNHeader title={Strings.SelectyourLanguages}>
         <RNText
           spacing={1}
           size={FontSize.font13}
@@ -64,6 +64,7 @@ const Langugage = ({ navigation }) => {
           />
         ))}
       </RNHeader>
+      <RNButton title={Strings.Next} onPress={onNextPress} />
 
       <NativeAd big />
     </RNContainer>

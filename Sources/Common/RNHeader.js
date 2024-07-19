@@ -17,7 +17,6 @@ const RNHeader = ({
   back,
   onSettigPress,
   onSharePress,
-  onNextPress,
 }) => {
   const { incrementCount } = useUserClick();
   const navigation = useNavigation();
@@ -36,11 +35,6 @@ const RNHeader = ({
   const setting = async () => {
     await incrementCount();
     onSettigPress?.();
-  };
-
-  const next = async () => {
-    await incrementCount();
-    onNextPress?.();
   };
 
   return (
@@ -69,16 +63,6 @@ const RNHeader = ({
             onPress={setting}
             containerStyle={styles.icon}
           />
-        )}
-        {onNextPress && (
-          <TouchableOpacity onPress={next} style={styles.next}>
-            <RNText
-              color={Colors.White}
-              family={FontFamily.SemiBold}
-              size={FontSize.font12}>
-              {Strings.Next}
-            </RNText>
-          </TouchableOpacity>
         )}
       </View>
       {noScroll ? (
@@ -121,12 +105,6 @@ const useStyles = () => {
       fontFamily: FontFamily.Medium,
       color: Colors.White,
       flex: 1,
-    },
-    next: {
-      borderRadius: wp(2),
-      backgroundColor: Colors.White + '20',
-      paddingHorizontal: wp(3),
-      paddingVertical: hp(1),
     },
   });
 };
