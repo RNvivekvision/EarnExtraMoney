@@ -6,7 +6,7 @@ import { Strings } from '../../Constants';
 import { useUserClick } from '../../Hooks';
 import { DummyData, Functions } from '../../Utils';
 
-const ContactUs = ({ navigation }) => {
+const ContactUs = () => {
   const InputRef = useRef();
   const { incrementCount } = useUserClick();
   const [State, setState] = useState({
