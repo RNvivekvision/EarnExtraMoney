@@ -17,12 +17,15 @@ const SmartWays = ({ navigation }) => {
     });
   };
 
+  // onSettigPress={() => navigation.navigate(NavRoutes.Setting)}
+  // onSharePress={Functions.ShareApp}
+
   return (
     <RNContainer>
       <RNHeader
+        back={false}
         title={Strings.SmartWaytoEarnMoney}
-        onSettigPress={() => navigation.navigate(NavRoutes.Setting)}
-        onSharePress={Functions.ShareApp}>
+        onDrawerPress={() => navigation.openDrawer()}>
         {smartWays.map((v, i) => (
           <RenderSmartWays
             key={i}

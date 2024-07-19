@@ -7,10 +7,9 @@ const NavRoutes = {
 
   // App
   Welcome: 'Welcome',
+  Drawer: 'Drawer',
   SmartWays: 'Smart Ways',
   Details: 'Details',
-  Html: 'Html',
-  Setting: 'Setting',
   ContactUs: 'Contact Us',
   HelpAndFeedback: 'Help & Feedback',
   AboutUs: 'About Us',

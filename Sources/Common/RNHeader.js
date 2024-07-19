@@ -12,11 +12,9 @@ const RNHeader = ({
   titleStyle,
   children,
   style,
-  footer,
   noScroll,
-  back,
-  onSettigPress,
-  onSharePress,
+  back = true,
+  onDrawerPress,
 }) => {
   const { incrementCount } = useUserClick();
   const navigation = useNavigation();
@@ -27,15 +25,14 @@ const RNHeader = ({
     navigation.goBack();
   };
 
-  const share = async () => {
+  const drawer = async () => {
     await incrementCount();
-    onSharePress?.();
+    onDrawerPress?.();
   };
 
-  const setting = async () => {
-    await incrementCount();
-    onSettigPress?.();
-  };
+  const Empty = () => (
+    <View style={{ width: size.iconContainer, height: size.iconContainer }} />
+  );
 
   return (
     <View style={RNStyles.container}>
@@ -48,22 +45,17 @@ const RNHeader = ({
             containerStyle={styles.icon}
           />
         )}
-        <RNText style={[styles.title, titleStyle]}>{title}</RNText>
-        {onSharePress && (
+        {onDrawerPress && (
           <RNIcon
-            icon={Images.setting_8}
-            iconStyle={{ tintColor: Colors.White }}
-            onPress={share}
-            containerStyle={[styles.icon, { marginRight: wp(4) }]}
-          />
-        )}
-        {onSettigPress && (
-          <RNIcon
-            icon={Images.settingHeader}
-            onPress={setting}
+            icon={Images.drawer}
+            onPress={drawer}
             containerStyle={styles.icon}
+            iconStyle={{ tintColor: Colors.White }}
           />
         )}
+        {!back && !onDrawerPress && <Empty />}
+        <RNText style={[styles.title, titleStyle]}>{title}</RNText>
+        <Empty />
       </View>
       {noScroll ? (
         children
@@ -72,7 +64,6 @@ const RNHeader = ({
           {children}
         </RNScrollView>
       )}
-      {footer && <View style={styles.footer}>{footer}</View>}
     </View>
   );
 };
@@ -81,11 +72,8 @@ const useStyles = () => {
   const inset = useInset();
 
   return StyleSheet.create({
-    footer: {
-      paddingBottom: inset.bottom,
-    },
     Container: {
-      ...RNStyles.flexRowBetween,
+      ...RNStyles.flexRow,
       backgroundColor: Colors.Primary,
       paddingHorizontal: wp(4),
       paddingTop: inset.top + hp(2),
@@ -104,11 +92,12 @@ const useStyles = () => {
       fontSize: FontSize.font18,
       fontFamily: FontFamily.Medium,
       color: Colors.White,
+      textAlign: 'center',
       flex: 1,
     },
   });
 };
 
-const size = { icon: wp(4), iconContainer: wp(7) };
+const size = { icon: wp(4), iconContainer: wp(8) };
 
 export default RNHeader;

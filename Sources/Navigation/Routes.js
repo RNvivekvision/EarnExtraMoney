@@ -14,13 +14,12 @@ import {
   Html,
   Langugage,
   Onboarding,
-  Setting,
-  SmartWays,
   SplashScreen,
   Terms,
   Welcome,
 } from '../Screens';
 import { useGoogleAds } from '../Hooks';
+import Drawer from './Drawer';
 
 const Stack = createStackNavigator();
 
@@ -59,10 +58,8 @@ const Routes = () => {
 
         {/* App */}
         <Stack.Screen name={NavRoutes.Welcome} component={Welcome} />
-        <Stack.Screen name={NavRoutes.SmartWays} component={SmartWays} />
+        <Stack.Screen name={NavRoutes.SmartWays} component={Drawer} />
         <Stack.Screen name={NavRoutes.Details} component={Details} />
-        <Stack.Screen name={NavRoutes.Html} component={Html} />
-        <Stack.Screen name={NavRoutes.Setting} component={Setting} />
         <Stack.Screen
           name={NavRoutes.HelpAndFeedback}
           component={HelpAndFeedback}

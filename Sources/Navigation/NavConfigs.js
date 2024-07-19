@@ -3,7 +3,12 @@ const screenOptions = {
   headerShown: false,
   ...TransitionPresets.SlideFromRightIOS,
 };
-const NavConfigs = {
-  screenOptions,
+const drawerOptions = {
+  ...screenOptions,
+  drawerType: 'front',
+  drawerStyle: {
+    width: '75%',
+  },
 };
+const NavConfigs = { drawerOptions, screenOptions };
 export default NavConfigs;

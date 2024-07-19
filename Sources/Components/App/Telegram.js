@@ -1,7 +1,8 @@
-import { Modal, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Modal, StyleSheet, View } from 'react-native';
 import { RNButton, RNImage, RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { Images, Strings } from '../../Constants';
+import { LOClose } from '../Common';
 
 const Telegram = ({ visible, onClose, onPress }) => {
   return (
@@ -12,12 +13,7 @@ const Telegram = ({ visible, onClose, onPress }) => {
       onRequestClose={onClose}>
       <View style={styles.overlay}>
         <View style={styles.content}>
-          <TouchableOpacity
-            activeOpacity={0.6}
-            onPress={onClose}
-            style={styles.closeIcon}>
-            <RNImage source={Images.cross} style={RNStyles.image50} />
-          </TouchableOpacity>
+          <LOClose onPress={onClose} />
           <RNImage source={Images.telegram} style={styles.icon} />
           <RNText style={styles.title}>{Strings.joinTelegram}</RNText>
           <RNText style={styles.text}>{Strings.joinTelegramDesc}</RNText>
@@ -34,8 +30,7 @@ const Telegram = ({ visible, onClose, onPress }) => {
 
 const size = {
   box: wp(90),
-  cross: wp(8),
-  telegram: wp(30),
+  telegram: wp(25),
 };
 const styles = StyleSheet.create({
   overlay: {
@@ -45,22 +40,9 @@ const styles = StyleSheet.create({
   },
   content: {
     backgroundColor: Colors.White,
-    // width: size.box,
-    // height: size.box,
     marginHorizontal: wp(4),
     paddingHorizontal: wp(4),
     borderRadius: wp(4),
-  },
-  closeIcon: {
-    ...RNStyles.center,
-    ...RNStyles.shadow,
-    width: size.cross,
-    height: size.cross,
-    backgroundColor: Colors.White,
-    borderRadius: wp(2),
-    position: 'absolute',
-    top: wp(3),
-    right: wp(3),
   },
   title: {
     textAlign: 'center',
@@ -79,6 +61,7 @@ const styles = StyleSheet.create({
   joinNow: {
     borderRadius: wp(3),
     marginVertical: hp(2),
+    backgroundColor: Colors.telegram,
   },
   icon: {
     width: size.telegram,

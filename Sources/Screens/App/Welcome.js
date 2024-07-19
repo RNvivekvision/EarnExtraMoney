@@ -35,7 +35,7 @@ const Welcome = ({ navigation }) => {
 
   return (
     <RNContainer>
-      <RNHeader title={Strings.WelcometoEasyEarnings}>
+      <RNHeader title={Strings.WelcometoEasyEarnings} back={false}>
         <RNText style={styles.title1}>
           {Strings.WelcometoEasyEarnings_title0}
         </RNText>

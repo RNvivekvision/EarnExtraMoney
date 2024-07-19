@@ -32,6 +32,7 @@ const Images = {
   playGames: require(imagePath + 'playGames' + png),
   playQuiz: require(imagePath + 'playQuiz' + png),
   back: require(imagePath + 'back' + png),
+  drawer: require(imagePath + 'drawer' + png),
   telegram: require(imagePath + 'telegram' + png),
   settingHeader: require(imagePath + 'settingHeader' + png),
   setting_0: require(imagePath + 'setting_0' + png),
