@@ -10,6 +10,8 @@ import EADatePicker from './EADatePicker';
 import EAResult from './EAResult';
 import EAYearMonth from './EAYearMonth';
 import EAButtons from './EAButtons';
+import EATopTabs from './EATopTabs';
+import EADropDown from './EADropDown';
 export {
   EAInput,
   EAPagginationDots,
@@ -23,4 +25,6 @@ export {
   EAResult,
   EAYearMonth,
   EAButtons,
+  EATopTabs,
+  EADropDown,
 };

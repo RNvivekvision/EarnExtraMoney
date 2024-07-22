@@ -9,6 +9,25 @@ import LoanEligibility from './LoanEligibility';
 import CompareLoans from './CompareLoans';
 import TaxCalculation from './TaxCalculation';
 export {
+  EquityLinkedScheme,
+  Lumpsum,
+  SIP,
+  SWP,
+  Theory,
+  FAQ,
+  FixedDeposit,
+  RecurringDeposit,
+  PublicProvidentFund,
+  SimpleAndCompound,
+  CurrencyConversion,
+  DiscountCalculator,
+  PriceCalculator,
+  MarginCalculator,
+  MarkupCalculator,
+  OperatingMargin,
+  MarginWithSales,
+} from './Calculators';
+export {
   Welcome,
   SmartWays,
   HelpAndFeedback,

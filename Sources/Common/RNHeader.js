@@ -90,7 +90,7 @@ const useStyles = () => {
       paddingHorizontal: hp(1),
       marginHorizontal: hp(1),
       fontSize: FontSize.font18,
-      fontFamily: FontFamily.Medium,
+      fontFamily: FontFamily.SemiBold,
       color: Colors.White,
       textAlign: 'center',
       flex: 1,

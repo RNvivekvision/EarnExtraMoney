@@ -10,15 +10,32 @@ import {
   AboutUs,
   CompareLoans,
   ContactUs,
+  CurrencyConversion,
   Details,
+  DiscountCalculator,
   EMI,
+  EquityLinkedScheme,
+  FAQ,
+  FixedDeposit,
   HelpAndFeedback,
   Langugage,
   LoanEligibility,
+  Lumpsum,
+  MarginCalculator,
+  MarginWithSales,
+  MarkupCalculator,
   Onboarding,
+  OperatingMargin,
+  PriceCalculator,
+  PublicProvidentFund,
+  RecurringDeposit,
+  SimpleAndCompound,
+  SIP,
   SplashScreen,
+  SWP,
   TaxCalculation,
   Terms,
+  Theory,
   Welcome,
 } from '../Screens';
 import { useGoogleAds } from '../Hooks';
@@ -79,6 +96,56 @@ const Routes = () => {
         />
         <Stack.Screen name={NavRoutes.ContactUs} component={ContactUs} />
         <Stack.Screen name={NavRoutes.AboutUs} component={AboutUs} />
+        <Stack.Screen name={NavRoutes.Lumpsum} component={Lumpsum} />
+        <Stack.Screen name={NavRoutes.SIP} component={SIP} />
+        <Stack.Screen name={NavRoutes.SWP} component={SWP} />
+        <Stack.Screen name={NavRoutes.Theory} component={Theory} />
+        <Stack.Screen name={NavRoutes.FAQ} component={FAQ} />
+        <Stack.Screen name={NavRoutes.FixedDeposit} component={FixedDeposit} />
+        <Stack.Screen
+          name={NavRoutes.DiscountCalculator}
+          component={DiscountCalculator}
+        />
+        <Stack.Screen
+          name={NavRoutes.PriceCalculator}
+          component={PriceCalculator}
+        />
+        <Stack.Screen
+          name={NavRoutes.MarginCalculator}
+          component={MarginCalculator}
+        />
+        <Stack.Screen
+          name={NavRoutes.MarkupCalculator}
+          component={MarkupCalculator}
+        />
+        <Stack.Screen
+          name={NavRoutes.OperatingMargin}
+          component={OperatingMargin}
+        />
+        <Stack.Screen
+          name={NavRoutes.MarginWithSales}
+          component={MarginWithSales}
+        />
+        <Stack.Screen
+          name={NavRoutes.RecurringDeposit}
+          component={RecurringDeposit}
+        />
+        <Stack.Screen
+          name={NavRoutes.PublicProvidentFund}
+          component={PublicProvidentFund}
+        />
+        <Stack.Screen
+          name={NavRoutes.SimpleAndCompound}
+          component={SimpleAndCompound}
+        />
+        <Stack.Screen
+          name={NavRoutes.CurrencyConversion}
+          component={CurrencyConversion}
+        />
+        <Stack.Screen
+          name={NavRoutes.EquityLinkedScheme}
+          component={EquityLinkedScheme}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

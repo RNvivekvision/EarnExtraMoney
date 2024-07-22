@@ -17,6 +17,23 @@ const NavRoutes = {
   LoanEligibility: 'Loan Eligibility',
   CompareLoans: 'Compare Loans',
   TaxCalculation: 'Tax Calculation',
+  EquityLinkedScheme: 'Equity Linked Scheme',
+  Lumpsum: 'Lumpsum',
+  SIP: 'SIP',
+  SWP: 'SWP',
+  Theory: 'Theory',
+  FAQ: 'FAQ',
+  FixedDeposit: 'Fixed Deposit',
+  RecurringDeposit: 'Recurring Deposit',
+  PublicProvidentFund: 'Public Provident Fund',
+  SimpleAndCompound: 'Simple & Compound',
+  CurrencyConversion: 'Currency Conversion',
+  DiscountCalculator: 'Discount Calculator',
+  PriceCalculator: 'Price Calculator',
+  MarginCalculator: 'Margin Calculator',
+  MarkupCalculator: 'Markup Calculator',
+  OperatingMargin: 'Operating Margin',
+  MarginWithSales: 'Margin With Sales',
 };
 
 export default NavRoutes;

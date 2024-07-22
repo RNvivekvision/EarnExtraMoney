@@ -13,6 +13,8 @@ export {
   EAResult,
   EAYearMonth,
   EAButtons,
+  EATopTabs,
+  EADropDown,
 } from './Common';
 export {
   RenderSmartWays,
@@ -21,3 +23,10 @@ export {
   Telegram,
   EMICalculator,
 } from './App';
+export {
+  HStack,
+  VStack,
+  RenderTopTabs,
+  RenderTabContent,
+  RenderFAQ,
+} from './Renders';

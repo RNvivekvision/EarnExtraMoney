@@ -14,7 +14,7 @@ const HStack = ({ item, index, onPress }) => {
         activeOpacity={0.6}
         style={styles.card}>
         <View style={styles.image}>
-          <RNImage source={item.image} style={RNStyles.image70} />
+          <RNImage source={item.image} style={styles.icon} />
         </View>
         <RNText style={styles.title}>{item.title}</RNText>
       </TouchableOpacity>
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     marginHorizontal: wp(1.9),
     borderRadius: wp(4),
     marginBottom: hp(2),
-    backgroundColor: Colors.White + '15',
+    backgroundColor: Colors.Primary + '15',
   },
   card: {
     ...RNStyles.flexRowCenter,
@@ -41,14 +41,18 @@ const styles = StyleSheet.create({
     ...RNStyles.center,
     width: iconSize,
     height: iconSize,
-    backgroundColor: Colors.Button,
+    backgroundColor: Colors.Primary,
     borderRadius: 100,
   },
   title: {
     flex: 1,
     fontSize: FontSize.font12,
     fontFamily: FontFamily.Medium,
-    paddingHorizontal: wp(2),
+    paddingLeft: wp(2),
+  },
+  icon: {
+    ...RNStyles.image60,
+    tintColor: Colors.White,
   },
 });
 
