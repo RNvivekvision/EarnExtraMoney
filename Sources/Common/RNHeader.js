@@ -1,9 +1,9 @@
-import { StatusBar, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StatusBar, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RNIcon, RNStyles, RNText, RNScrollView } from './index';
 import { useInset, useUserClick } from '../Hooks';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
-import { Images, Strings } from '../Constants';
+import { Images } from '../Constants';
 
 const RNHeader = ({
   title,

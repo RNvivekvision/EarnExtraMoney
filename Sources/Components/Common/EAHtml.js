@@ -21,6 +21,10 @@ const EAHtml = ({ visible, onClose, html }) => {
         style={RNStyles.container}
         onLoadStart={() => setState(p => ({ ...p, isLoading: true }))}
         onLoadEnd={() => setState(p => ({ ...p, isLoading: false }))}
+        onError={e => console.log('Erro WebView -> ', e)}
+        javaScriptEnabled={true}
+        domStorageEnabled={true}
+        startInLoadingState={true}
       />
       <NativeAd big />
     </Modal>
