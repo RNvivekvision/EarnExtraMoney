@@ -17,11 +17,12 @@ const EAHtml = ({ visible, onClose, html }) => {
       <EAClose onPress={onClose} />
       <RNLoader visible={State.isLoading} />
       <WebView
+        originWhitelist={['*']}
         source={html}
         style={RNStyles.container}
         onLoadStart={() => setState(p => ({ ...p, isLoading: true }))}
         onLoadEnd={() => setState(p => ({ ...p, isLoading: false }))}
-        onError={e => console.log('Erro WebView -> ', e)}
+        onError={e => console.log('Error WebView -> ', e)}
         javaScriptEnabled={true}
         domStorageEnabled={true}
         startInLoadingState={true}
