@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { requestTrackingPermission } from 'react-native-tracking-transparency';
 import { StatusBar, StyleSheet, View } from 'react-native';
 import { useGoogleAds, useLocalStorage } from '../Hooks';
 import { RNProgress, RNStyles, RNText } from '../Common';
@@ -6,7 +8,6 @@ import { Colors, FontFamily, hp, wp } from '../Theme';
 import { Strings, Svg } from '../Constants';
 import { NavRoutes } from '../Navigation';
 import { useSharedValue, withTiming } from 'react-native-reanimated';
-import { useEffect } from 'react';
 
 const SplashScreen = ({ navigation }) => {
   const progress = useSharedValue(0);
@@ -20,10 +21,19 @@ const SplashScreen = ({ navigation }) => {
   }, [adData]);
 
   const onProgressStart = async () => {
+    await requestPermission();
     showAppOpenAd();
     progress.value = withTiming(100, {
       duration: duration,
     });
+  };
+
+  const requestPermission = async () => {
+    try {
+      const status = await requestTrackingPermission();
+    } catch (e) {
+      console.log('Error requestPermission -> ', e);
+    }
   };
 
   useEffect(() => {
